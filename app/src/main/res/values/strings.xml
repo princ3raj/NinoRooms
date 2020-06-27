@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">NinoRooms</string>
+
+    <string name="find_deals">
+
+           Find Home
+     </string>
+
+
+    <!-- strings.xml -->
+
+
+    <!-- strings.xml -->
+    <string name="popular_places">
+
+       Places to be
+        </string>
+
+    <string name="hello_prince">
+
+     Hello, Prince
+    </string>
+    <string name="find_locality_near_by">Find Locality Near by</string>
+
+
+    <!-- strings.xml -->
+    <string name="view_all">
+
+View all
+</string>
+    <string name="tag_line">More than a house and Just Like Home</string>
+    <string name="rating_price"><![CDATA[Rating & Price]]></string>
+    <string name="comfort">Comfort</string>
+    <string name="cheapest">Cheapest</string>
+    <string name="top">Top</string>
+    <string name="rooms_found">315 Rooms found</string>
+    <string name="home">Home</string>
+    <string name="bookmark">Bookmark</string>
+    <string name="history">history</string>
+    <string name="setting">Setting</string>
+
+    <string name="favourites">Favourites</string>
+    <string name="history_menu">History</string>
+
+</resources>
