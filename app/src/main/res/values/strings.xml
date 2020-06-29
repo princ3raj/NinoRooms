@@ -18,7 +18,7 @@
 
     <string name="hello_prince">
 
-     Hello, Prince
+     Hello, Students
     </string>
     <string name="find_locality_near_by">Find Locality Near by</string>
 
@@ -33,13 +33,14 @@ View all
     <string name="comfort">Comfort</string>
     <string name="cheapest">Cheapest</string>
     <string name="top">Top</string>
-    <string name="rooms_found">315 Rooms found</string>
+    <string name="rooms_found">No Rooms found</string>
     <string name="home">Home</string>
     <string name="bookmark">Bookmark</string>
-    <string name="history">history</string>
+    <string name="history">History</string>
     <string name="setting">Setting</string>
 
     <string name="favourites">Favourites</string>
     <string name="history_menu">History</string>
+    <string name="city">City</string>
 
 </resources>

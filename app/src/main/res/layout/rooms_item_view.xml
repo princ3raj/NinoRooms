@@ -7,137 +7,161 @@
     android:layout_height="wrap_content">
 
 
-
-
-    <LinearLayout
-        android:background="@drawable/room_view_one"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"/>
-
-    <LinearLayout
-        android:orientation="vertical"
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
 
-        <LinearLayout
-
-            android:weightSum="100"
-            android:layout_margin="5dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <View
-
-                android:visibility="invisible"
-                android:layout_weight="1"
-                android:layout_width="16dp"
-                android:layout_height="20dp"/>
-
-            <TextView
-                android:text="Ajnara Fragnance"
-                android:textAppearance="@style/pg_name_recycler_view_item"
-                android:layout_weight="40"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <View
-
-                android:visibility="invisible"
-                android:layout_weight="34"
-                android:layout_width="16dp"
-                android:layout_height="20dp"/>
-
-            <TextView
-                android:text="Rs.15000"
-                android:textAppearance="@style/pg_name_recycler_view_item"
-                android:layout_weight="25"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
 
 
 
-
-        </LinearLayout>
-
-        <LinearLayout
-
-            android:weightSum="100"
-            android:layout_margin="5dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <View
-
-                android:visibility="invisible"
-                android:layout_weight="1"
-                android:layout_width="16dp"
-                android:layout_height="20dp"/>
-
-            <TextView
-                android:text="Sector 121, Noida"
-                android:textAppearance="@style/short_address_style"
-                android:layout_weight="40"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <View
-
-                android:visibility="invisible"
-                android:layout_weight="34"
-                android:layout_width="16dp"
-                android:layout_height="20dp"/>
-
-            <TextView
-                android:text="1 month"
-                android:textAppearance="@style/short_address_style"
-                android:layout_weight="25"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-
-
-
-        </LinearLayout>
 
 
         <LinearLayout
-
-            android:weightSum="100"
-            android:layout_margin="5dp"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
 
 
             <ImageView
-               android:src="@drawable/location"
-                android:layout_weight="10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="centerCrop"
+                android:id="@+id/pg_image"
+                android:src="@drawable/ic_launcher_background"/>
 
 
-            <TextView
-                android:text="5km from center"
-                android:textAppearance="@style/short_address_style"
-                android:layout_weight="55"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+            <LinearLayout
 
-            <View
+                android:weightSum="100"
+                android:layout_margin="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-                android:visibility="invisible"
-                android:layout_weight="34"
-                android:layout_width="16dp"
-                android:layout_height="20dp"/>
-            <View
+                <View
 
-                android:visibility="invisible"
-                android:layout_weight="1"
-                android:layout_width="16dp"
-                android:layout_height="20dp"/>
+                    android:visibility="invisible"
+                    android:layout_weight="1"
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"/>
+
+                <TextView
+                    android:id="@+id/pg_name"
+                    android:text="Ajnara Fragnance"
+                    android:textAppearance="@style/pg_name_recycler_view_item"
+                    android:layout_weight="40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+
+                    android:visibility="invisible"
+                    android:layout_weight="34"
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"/>
+
+                <TextView
+                    android:id="@+id/ac_price"
+                    android:text="Rs.15000"
+                    android:textAppearance="@style/pg_name_recycler_view_item"
+                    android:layout_weight="25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+
+                android:weightSum="100"
+                android:layout_margin="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <View
+
+                    android:visibility="invisible"
+                    android:layout_weight="1"
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"/>
+
+                <TextView
+                    android:id="@+id/location"
+                    android:text="Sector 121, Noida"
+                    android:textAppearance="@style/short_address_style"
+                    android:layout_weight="40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <View
+
+                    android:visibility="invisible"
+                    android:layout_weight="34"
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"/>
+
+                <TextView
+                    android:text="1 month"
+                    android:textAppearance="@style/short_address_style"
+                    android:layout_weight="25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+
+                android:weightSum="100"
+                android:layout_margin="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+
+                <ImageView
+                    android:src="@drawable/location"
+                    android:layout_weight="10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+                <TextView
+                    android:id="@+id/details"
+                    android:text="5km from center"
+                    android:textAppearance="@style/short_address_style"
+                    android:layout_weight="55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <View
+
+                    android:visibility="invisible"
+                    android:layout_weight="34"
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"/>
+                <View
+
+                    android:visibility="invisible"
+                    android:layout_weight="1"
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"/>
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
 
 
 
@@ -152,7 +176,28 @@
 
 
 
-    </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

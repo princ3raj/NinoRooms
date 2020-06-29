@@ -3,29 +3,32 @@ package nino.rooms.pgcompany;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.util.Log;
 import android.view.MenuItem;
-import android.widget.EditText;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.Objects;
-import java.util.Timer;
-import java.util.TimerTask;
+import java.util.List;
 
 import nino.rooms.pgcompany.fragments.BookmarkFragment;
 import nino.rooms.pgcompany.fragments.HistoryFragment;
 import nino.rooms.pgcompany.fragments.HomeFragment;
 import nino.rooms.pgcompany.fragments.SettingFragment;
+import nino.rooms.pgcompany.model.NinoRooms;
+import nino.rooms.pgcompany.requests.RestApi;
+import nino.rooms.pgcompany.requests.RetrofitClientInstance;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = "MainActivity";
 
 
    private BottomNavigationView bottomNavigation;
@@ -100,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+//        TestRetrofitClient();
 
 
 
@@ -123,7 +126,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
-
+//    private void TestRetrofitClient()
+//    {
+//
+//        RestApi restApi= RetrofitClientInstance.getRetrofitInstance().create(RestApi.class);
+//
+//        Call<List<NinoRooms>> call=restApi.getNinoRooms();
+//
+//        call.enqueue(new Callback<List<NinoRooms>>() {
+//            @Override
+//            public void onResponse(Call<List<NinoRooms>> call, Response<List<NinoRooms>> response) {
+//                Log.d(TAG, "onResponse: called");
+//
+//            }
+//
+//            @Override
+//            public void onFailure(Call<List<NinoRooms>> call, Throwable t) {
+//                Log.d(TAG, "onFailure: called");
+//            }
+//        });
+//
+//
+//
+//
+//
+//
+//    }
 
 }
