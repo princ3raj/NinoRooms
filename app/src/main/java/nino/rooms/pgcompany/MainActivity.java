@@ -1,29 +1,21 @@
 package nino.rooms.pgcompany;
 
+import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
-import android.os.Bundle;
-import android.util.Log;
-import android.view.MenuItem;
-
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.List;
 
 import nino.rooms.pgcompany.fragments.BookmarkFragment;
 import nino.rooms.pgcompany.fragments.HistoryFragment;
 import nino.rooms.pgcompany.fragments.HomeFragment;
 import nino.rooms.pgcompany.fragments.SettingFragment;
-import nino.rooms.pgcompany.model.NinoRooms;
-import nino.rooms.pgcompany.requests.RestApi;
-import nino.rooms.pgcompany.requests.RetrofitClientInstance;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -49,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Hide the status bar.
+        View decorView = getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
 
 
         bottomNavigation=findViewById(R.id.bottom_navigation);

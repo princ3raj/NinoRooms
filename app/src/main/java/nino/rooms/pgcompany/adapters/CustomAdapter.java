@@ -2,6 +2,7 @@ package nino.rooms.pgcompany.adapters;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,12 +18,14 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import nino.rooms.pgcompany.R;
+import nino.rooms.pgcompany.RoomDetailsActivity;
 import nino.rooms.pgcompany.model.NinoRooms;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
 
     private   List<NinoRooms> mNinoRooms;
     private Context context;
+    private static final String EXTRA_TEXT = "position";
 
     public CustomAdapter(Context context,List<NinoRooms> ninoRooms){
         this.context = context;
@@ -59,7 +62,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     }
 
     @Override
-    public void onBindViewHolder(@NonNull CustomViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull CustomViewHolder holder, final int position) {
         holder.pg_name.setText(mNinoRooms.get(position).getPg_name());
         holder.location.setText(mNinoRooms.get(position).getLocation());
         holder.details.setText(mNinoRooms.get(position).getDetails());
@@ -71,6 +74,15 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
                 .placeholder((R.drawable.ic_launcher_background))
                 .error(R.drawable.ic_launcher_background)
                 .into(holder.pg_image);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, RoomDetailsActivity.class);
+                intent.putExtra(Intent.EXTRA_TEXT, "" + position);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -37,7 +36,19 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view=inflater.inflate(R.layout.fragment_home, container,false);
 
-        mDelhiImageView=(CircleImageView) view.findViewById(R.id.delhi);
+//        View decorView = getActivity().getWindow().getDecorView();
+//        // Hide the status bar.
+//        int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+//        decorView.setSystemUiVisibility(uiOptions);
+
+
+        // Hide the status bar.
+        View decorView = getActivity().getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
+
+        mDelhiImageView = view.findViewById(R.id.delhi);
         mDelhiImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

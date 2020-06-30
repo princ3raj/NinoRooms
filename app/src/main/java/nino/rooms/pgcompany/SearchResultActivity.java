@@ -1,28 +1,23 @@
 package nino.rooms.pgcompany;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import androidx.lifecycle.ViewModelProviders;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-
 import android.util.Log;
 import android.view.View;
-
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.MessageFormat;
 import java.util.List;
 
 import nino.rooms.pgcompany.adapters.CustomAdapter;
-
 import nino.rooms.pgcompany.model.NinoRooms;
 import nino.rooms.pgcompany.requests.RestApi;
 import nino.rooms.pgcompany.requests.RetrofitClientInstance;
@@ -67,6 +62,11 @@ public class SearchResultActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_result);
+        View decorView = getWindow().getDecorView();
+
+        // Hide the status bar.
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
 
         progressDialog = new ProgressDialog(SearchResultActivity.this);
         progressDialog.setMessage("Loading....");
