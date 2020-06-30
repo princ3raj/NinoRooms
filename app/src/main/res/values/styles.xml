@@ -338,4 +338,18 @@
         </item>
 
     </style>
+
+
+    <style name="facility_text">
+
+        <item name="android:textSize">
+            14sp
+        </item>
+
+        <item name="android:textColor">
+            #838383
+        </item>
+
+    </style>
+
 </resources>

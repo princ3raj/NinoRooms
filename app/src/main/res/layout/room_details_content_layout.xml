@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
 
@@ -21,8 +22,12 @@
 
 
                 <ss.com.bannerslider.Slider
+                    app:slider_animateIndicators="true"
                     android:id="@+id/banner_slider1"
                     android:layout_width="match_parent"
+                    app:slider_interval="3000"
+                    app:slider_loopSlides="true"
+                    app:slider_selectedSlideIndicator="@drawable/unselected_slide_indicator"
                     android:layout_height="400dp" />
 
 
@@ -31,7 +36,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="25dp"
-                    android:background="@drawable/ic_svg_arrow_back" />
+                    android:background="@drawable/ic_black_back_arrow" />
 
 
                 <ImageButton
@@ -39,7 +44,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_margin="25dp"
-                    android:background="@drawable/ic_svg_arrow_back" />
+                    android:background="@drawable/ic_bookmark_unactive" />
 
 
                 <TextView
@@ -166,10 +171,124 @@
                     android:text="Facilities"
                     android:textAppearance="@style/details" />
 
-                <View
+
+                <LinearLayout
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1080dp"
+                    android:orientation="horizontal"
+                    android:padding="20dp"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="1050dp" />
+                    android:weightSum="100">
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="20"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_wifi_facility" />
+
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:text="Internet"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/facility_text" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="20"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_ac_facility" />
+
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:text="Ac"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/facility_text" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="20"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_powerbackup_facility" />
+
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:text="Power"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/facility_text" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="20"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_washing_machine_facility" />
+
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:text="Machine"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/facility_text" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="20"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_cctv_facility" />
+
+                        <TextView
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content"
+                            android:text="CCTv"
+                            android:textAlignment="center"
+                            android:textAppearance="@style/facility_text" />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
 
 
             </RelativeLayout>
