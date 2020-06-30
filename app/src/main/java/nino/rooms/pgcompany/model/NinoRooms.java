@@ -1,8 +1,11 @@
 package nino.rooms.pgcompany.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
-public class NinoRooms {
+public class NinoRooms implements Parcelable {
 
     @SerializedName("id")
     private int id;
@@ -53,6 +56,32 @@ public class NinoRooms {
         this.pg_image_three = pg_image_three;
     }
 
+
+    public static final Creator<NinoRooms> CREATOR = new Creator<NinoRooms>() {
+        @Override
+        public NinoRooms createFromParcel(Parcel in) {
+            return new NinoRooms(in);
+        }
+
+        @Override
+        public NinoRooms[] newArray(int size) {
+            return new NinoRooms[size];
+        }
+    };
+
+    protected NinoRooms(Parcel in) {
+        id = in.readInt();
+        pg_name = in.readString();
+        phone_number = in.readString();
+        owner_name = in.readString();
+        location = in.readString();
+        details = in.readString();
+        ac_prices = in.readString();
+        non_ac_prices = in.readString();
+        pg_image = in.readString();
+        pg_image_two = in.readString();
+        pg_image_three = in.readString();
+    }
 
     public int getId() {
         return id;
@@ -157,6 +186,26 @@ public class NinoRooms {
                 ", pg_image_two='" + pg_image_two + '\'' +
                 ", pg_image_three='" + pg_image_three + '\'' +
                 '}';
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(pg_name);
+        dest.writeString(phone_number);
+        dest.writeString(owner_name);
+        dest.writeString(location);
+        dest.writeString(details);
+        dest.writeString(ac_prices);
+        dest.writeString(non_ac_prices);
+        dest.writeString(pg_image);
+        dest.writeString(pg_image_two);
+        dest.writeString(pg_image_three);
     }
 }
 

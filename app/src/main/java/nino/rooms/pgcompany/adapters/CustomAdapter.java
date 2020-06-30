@@ -79,7 +79,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, RoomDetailsActivity.class);
-                intent.putExtra(Intent.EXTRA_TEXT, "" + position);
+                intent.putExtra("NinoRooms", mNinoRooms.get(position));
                 context.startActivity(intent);
             }
         });

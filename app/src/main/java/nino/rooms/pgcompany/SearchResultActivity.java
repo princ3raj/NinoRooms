@@ -56,6 +56,7 @@ public class SearchResultActivity extends AppCompatActivity {
 
     //progressBar
     ProgressDialog progressDialog;
+    private NinoRooms NinoRooms;
 
 
     @Override
@@ -164,6 +165,8 @@ public class SearchResultActivity extends AppCompatActivity {
          City=intent.getStringExtra("Delhi");
 
 
+//         IntentAction();
+
         TestRetrofitClient();
 
 
@@ -251,5 +254,11 @@ public class SearchResultActivity extends AppCompatActivity {
 
 
     }
+
+    private void IntentAction() {
+
+
+    }
+
 }
 

@@ -9,234 +9,214 @@
     tools:context=".SearchResultActivity"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_margin="10dp"
+
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorPrimaryDark"
-        android:orientation="vertical">
-
-
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="?android:attr/actionBarSize"
-            android:background="@color/colorPrimaryDark"
-
-            app:title="">
-
-
-
-        </androidx.appcompat.widget.Toolbar>
+        android:layout_height="match_parent">
 
 
         <LinearLayout
-
-            android:weightSum="100"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="vertical">
 
-            <TextView
-                android:textStyle="bold"
-                android:layout_weight="43"
-                android:layout_margin="18dp"
 
-                android:text="@string/city"
-                android:id="@+id/city_name"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                android:layout_margin="10dp"
+                android:background="@color/colorPrimaryDark"
+
+                app:title="">
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <TextView
+                    android:id="@+id/city_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_margin="18dp"
+                    android:layout_weight="43"
+                    android:text="@string/city"
+                    android:textColor="#000"
+                    android:textSize="39sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_margin="18dp"
+                    android:layout_weight="14"
+                    android:visibility="invisible" />
+
+                <ImageView
+                    android:id="@+id/filter_search"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_margin="18dp"
+                    android:layout_weight="43"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/filter" />
+
+
+            </LinearLayout>
+
+            <!-- Line 1 -->
+            <View
+                android:id="@+id/line_1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="18dp"
+                android:background="@drawable/vertical_line" />
+
+            <LinearLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                android:weightSum="100">
+
+                <View
+
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="10"
+                    android:visibility="invisible" />
+
+
+                <TextView
+                    android:id="@+id/top"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="10"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="@string/top"
+                    android:textAppearance="@style/filter_text_view" />
+
+                <TextView
+                    android:id="@+id/cheapest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="25"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="@string/cheapest"
+                    android:textAppearance="@style/filter_text_view" />
+
+
+                <TextView
+                    android:id="@+id/rating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="25"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="@string/rating_price"
+                    android:textAppearance="@style/filter_text_view" />
+
+
+                <TextView
+                    android:id="@+id/comfort"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="2dp"
+                    android:layout_weight="15"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:text="@string/comfort"
+                    android:textAppearance="@style/filter_text_view" />
+
+                <View
+
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"
+                    android:layout_margin="5dp"
+                    android:layout_weight="10"
+                    android:visibility="invisible" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="39sp"
-                android:textColor="#000"/>
-
-            <View
-                android:layout_margin="18dp"
-                android:visibility="invisible"
-                android:layout_weight="14"
-                android:layout_width="45dp"
-                android:layout_height="45dp"/>
-
-            <ImageView
-                android:clickable="true"
-                android:id="@+id/filter_search"
-                android:layout_margin="18dp"
-                android:layout_weight="43"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:src="@drawable/filter"
-                android:focusable="true" />
+                android:orientation="horizontal"
+                android:weightSum="10">
 
 
-
-        </LinearLayout>
-
-        <!-- Line 1 -->
-        <View
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
-            android:id="@+id/line_1"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/vertical_line"
-            />
-
-        <LinearLayout
-
-            android:weightSum="100"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <View
-
-                android:layout_margin="5dp"
-                android:visibility="invisible"
-                android:layout_weight="10"
-                android:layout_width="16dp"
-                android:layout_height="20dp"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="4dp"
+                    android:layout_weight="0.5"
+                    android:padding="10dp"
+                    android:visibility="invisible" />
 
 
-            <TextView
-                android:id="@+id/top"
-                android:focusable="true"
-                android:clickable="true"
-                android:layout_margin="5dp"
-                android:text="@string/top"
-                android:layout_weight="10"
-                android:textAppearance="@style/filter_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/cheapest"
-                android:focusable="true"
-                android:clickable="true"
-                android:layout_margin="5dp"
-                android:text="@string/cheapest"
-                android:layout_weight="25"
-                android:textAppearance="@style/filter_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                <TextView
+                    android:id="@+id/rooms_found"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="30dp"
+                    android:layout_weight="9"
+                    android:background="@drawable/rectangle_four"
+                    android:padding="10dp"
+                    android:text="@string/rooms_found"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/rooms_found" />
 
 
-            <TextView
-                android:id="@+id/rating"
-                android:focusable="true"
-                android:clickable="true"
-                android:layout_margin="5dp"
-                android:text="@string/rating_price"
-                android:layout_weight="25"
-                android:textAppearance="@style/filter_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_margin="4dp"
+                    android:layout_weight="0.5"
+                    android:padding="10dp"
+                    android:visibility="invisible" />
 
 
-            <TextView
-                android:id="@+id/comfort"
-                android:focusable="true"
-                android:clickable="true"
-                android:layout_margin="5dp"
-                android:text="@string/comfort"
-                android:layout_weight="15"
-                android:textAppearance="@style/filter_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <View
-
-                android:layout_margin="5dp"
-                android:visibility="invisible"
-                android:layout_weight="10"
-                android:layout_width="16dp"
-                android:layout_height="20dp"/>
+            </LinearLayout>
 
 
+            <!-- recycler_view_set_up -->
 
+            <!--    <include layout="@layout/rooms_item_view"/>-->
 
+            <!--    <include layout="@layout/rooms_item_view"/>-->
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/nino_rooms_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
 
         </LinearLayout>
 
 
-        <LinearLayout
-            android:weightSum="10"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
-
-            <View
-                android:padding="10dp"
-                android:layout_margin="4dp"
-                android:visibility="invisible"
-                android:layout_weight="0.5"
-                android:layout_width="0dp"
-                android:layout_height="50dp"/>
-
-
-            <TextView
-                android:layout_weight="9"
-                android:id="@+id/rooms_found"
-                android:padding="10dp"
-                android:textAlignment="center"
-                android:layout_margin="30dp"
-                android:textAppearance="@style/rooms_found"
-                android:text="@string/rooms_found"
-                android:background="@drawable/rectangle_four"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-
-
-            <View
-                android:padding="10dp"
-                android:layout_margin="4dp"
-                android:visibility="invisible"
-                android:layout_weight="0.5"
-                android:layout_width="0dp"
-                android:layout_height="50dp"/>
-
-
-
-
-        </LinearLayout>
-
-
-
-
-
-        <!-- recycler_view_set_up -->
-
-        <!--    <include layout="@layout/rooms_item_view"/>-->
-
-        <!--    <include layout="@layout/rooms_item_view"/>-->
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/nino_rooms_view"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </LinearLayout>
-
-
+    </androidx.core.widget.NestedScrollView>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
