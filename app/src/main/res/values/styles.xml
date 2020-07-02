@@ -343,7 +343,7 @@
     <style name="facility_text">
 
         <item name="android:textSize">
-            14sp
+            18sp
         </item>
 
         <item name="android:textColor">

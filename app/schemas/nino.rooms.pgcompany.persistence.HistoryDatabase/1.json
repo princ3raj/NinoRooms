@@ -1,0 +1,100 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "bb4b6985163640e1d5d9595207c6fe4c",
+    "entities": [
+      {
+        "tableName": "history",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `id` INTEGER NOT NULL, `pg_name` TEXT, `phone_number` TEXT, `owner_name` TEXT, `location` TEXT, `details` TEXT, `ac_prices` TEXT, `non_ac_prices` TEXT, `pg_image` TEXT, `pg_image_two` TEXT, `pg_image_three` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "uid",
+            "columnName": "uid",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "pg_name",
+            "columnName": "pg_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "phone_number",
+            "columnName": "phone_number",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "owner_name",
+            "columnName": "owner_name",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "location",
+            "columnName": "location",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "details",
+            "columnName": "details",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ac_prices",
+            "columnName": "ac_prices",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "non_ac_prices",
+            "columnName": "non_ac_prices",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pg_image",
+            "columnName": "pg_image",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pg_image_two",
+            "columnName": "pg_image_two",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pg_image_three",
+            "columnName": "pg_image_three",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "uid"
+          ],
+          "autoGenerate": true
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'bb4b6985163640e1d5d9595207c6fe4c')"
+    ]
+  }
+}

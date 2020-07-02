@@ -20,6 +20,9 @@ import nino.rooms.pgcompany.SearchResultActivity;
 
 public class HomeFragment extends Fragment {
 
+    private static final String TAG = "HomeFragment";
+
+
     private Context mContext;
 
     private CircleImageView mDelhiImageView;
@@ -61,8 +64,11 @@ public class HomeFragment extends Fragment {
             }
         });
 
+
         return  view;
 
 
     }
+
+
 }

@@ -58,6 +58,10 @@ public class SearchResultActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     private NinoRooms NinoRooms;
 
+    //history setup
+//    private HistoryRepository mHistoryRepository;
+//    private NinoRooms mHistoryModel;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -161,59 +165,21 @@ public class SearchResultActivity extends AppCompatActivity {
             }
         });
 
-         Intent intent=getIntent();
-         City=intent.getStringExtra("Delhi");
 
+        Intent intent = getIntent();
+        City = intent.getStringExtra("Delhi");
 
-//         IntentAction();
+//        Intent intentAction = getIntent();
+//        NinoRooms ninoRooms = intentAction.getParcelableExtra("NinoRooms");
+
 
         TestRetrofitClient();
 
 
+
     }
 
-//    private void subscribeObservers()
-//    {
-//        mNinoRoomsViewModel.getRooms().observe(this, new Observer<List<NinoRooms>>() {
-//            @Override
-//            public void onChanged(List<NinoRooms> ninoRooms) {
-//
-//                if(ninoRooms!=null){
-//
-//                    Testing.printRecipes(ninoRooms, "ninorooms test");
-//                    mNinoRoomsViewModel.setIsPerformingQuery(false);
-//                    mNinoRoomsAdapter.setNinoRooms(ninoRooms);
-//
-//
-//                }
-//
-//            }
-//        });
-//
-//
-//    }
 
-//    private void searchRooms()
-//    {
-//        mNinoRoomsViewModel.searchNinoRoomsApi();
-//    }
-
-
-//    private void initRecyclerView(){
-//
-//
-//
-//        mNinoRoomsAdapter = new NinoRoomsAdapter(this);
-//        mRecyclerView.setAdapter(mNinoRoomsAdapter);
-//        mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-//
-//    }
-
-//
-//    @Override
-//    public void onRoomsClick(int position) {
-//
-//    }
 
 
     /*Method to generate List of data using RecyclerView with custom adapter*/
@@ -255,10 +221,6 @@ public class SearchResultActivity extends AppCompatActivity {
 
     }
 
-    private void IntentAction() {
-
-
-    }
 
 }
 

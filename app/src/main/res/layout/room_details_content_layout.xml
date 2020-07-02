@@ -40,6 +40,7 @@
 
 
                 <ImageButton
+                    android:id="@+id/bookmark"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -113,18 +114,22 @@
                     android:text="@string/details_text"
                     android:textAppearance="@style/details_text" />
 
+
                 <TextView
+                    android:id="@+id/contact_owner"
                     android:layout_width="650dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="700dp"
                     android:layout_marginEnd="25dp"
                     android:background="@drawable/select_room"
+                    android:clickable="true"
                     android:padding="15dp"
-                    android:text="Book rooms"
+                    android:focusable="true"
                     android:textAlignment="center"
                     android:textColor="#FFF"
                     android:textSize="21sp"
+                    android:text="Contact Owner"
                     android:textStyle="bold" />
 
                 <TextView
@@ -135,7 +140,11 @@
                     android:text="Location"
                     android:textAppearance="@style/details" />
 
+
                 <ImageButton
+                    android:id="@+id/location_call"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:layout_width="match_parent"
                     android:layout_height="167dp"
                     android:layout_marginStart="25dp"
@@ -176,7 +185,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1080dp"
                     android:orientation="horizontal"
-                    android:padding="20dp"
+                    android:padding="25dp"
                     android:layout_width="match_parent"
                     android:weightSum="100">
 
