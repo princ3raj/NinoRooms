@@ -15,8 +15,13 @@ import nino.rooms.pgcompany.model.NinoRooms;
 @Dao
 public interface HistoryDao {
 
+
     @Query("SELECT * FROM history")
     LiveData<List<NinoRooms>> retrieveHistory();
+
+
+    @Query("SELECT * FROM history WHERE bookmark LIKE:bookmark")
+    LiveData<List<NinoRooms>> retrieveBookMark(String bookmark);
 
 
     @Insert

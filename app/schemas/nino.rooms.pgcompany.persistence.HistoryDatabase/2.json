@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "c10c1b038ea0343a2587976e1cd69d22",
+    "identityHash": "93389d1c021fd04d3fa778466e14c13d",
     "entities": [
       {
         "tableName": "history",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `id` TEXT, `pg_name` TEXT, `phone_number` TEXT, `owner_name` TEXT, `location` TEXT, `details` TEXT, `ac_prices` TEXT, `non_ac_prices` TEXT, `pg_image` TEXT, `pg_image_two` TEXT, `pg_image_three` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `bookmark` TEXT, `pg_name` TEXT, `phone_number` TEXT, `owner_name` TEXT, `location` TEXT, `details` TEXT, `ac_prices` TEXT, `non_ac_prices` TEXT, `pg_image` TEXT, `pg_image_two` TEXT, `pg_image_three` TEXT, `id` TEXT)",
         "fields": [
           {
             "fieldPath": "uid",
@@ -15,8 +15,8 @@
             "notNull": true
           },
           {
-            "fieldPath": "id",
-            "columnName": "id",
+            "fieldPath": "bookmark",
+            "columnName": "bookmark",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -79,6 +79,12 @@
             "columnName": "pg_image_three",
             "affinity": "TEXT",
             "notNull": false
+          },
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "TEXT",
+            "notNull": false
           }
         ],
         "primaryKey": {
@@ -94,7 +100,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c10c1b038ea0343a2587976e1cd69d22')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '93389d1c021fd04d3fa778466e14c13d')"
     ]
   }
 }

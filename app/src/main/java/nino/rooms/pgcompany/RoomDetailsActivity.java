@@ -59,16 +59,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
     private String non_ac_prices;
     private int Uid;
 
-//
-//    //
-//    //all variables are for searchactivity intent object
-//    private String phone_number_history;
-//    private String location_history;
-//    private String details_histroy;
-//    private String pg_name_history;
-//    private int id_history;
-//    private String ac_prices_history;
-//    private String non_ac_prices_history;
+
 
 
     //contact owner button setup
@@ -86,6 +77,10 @@ public class RoomDetailsActivity extends AppCompatActivity {
     //for ninorooms searchobject
     private NinoRooms mNinoRoomsHistoryObject;
 
+    //for ninorooms bookmarks object
+    private NinoRooms mBookmarksObject;
+    private String bookmark;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,6 +91,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
         View decorView = getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
+
 
 
         //back_arrow reference
@@ -112,6 +108,8 @@ public class RoomDetailsActivity extends AppCompatActivity {
         Intent intentAction = getIntent();
         ninoRooms = intentAction.getParcelableExtra("NinoRooms");
         if (ninoRooms != null) {
+
+            Log.d(TAG, "onCreate: searchDetails called");
             //collecting all the properties values
             id = ninoRooms.getId();
             pg_name = ninoRooms.getPg_name();
@@ -125,6 +123,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
             pg_image_three = ninoRooms.getPg_image_three();
             mHistoryRepository = new HistoryRepository(this);
             saveNewHistory(ninoRooms);
+            bookmark = "true";
         }
 
         //this intent is coming from history
@@ -133,8 +132,8 @@ public class RoomDetailsActivity extends AppCompatActivity {
         //extracting the value from history objects;
         Intent intentHistory = getIntent();
         mNinoRoomsHistoryObject = intentHistory.getParcelableExtra("object");
-        Log.d(TAG, "onCreate: " + mNinoRoomsHistoryObject);
         if (mNinoRoomsHistoryObject != null) {
+            Log.d(TAG, "onCreate: history called");
             Uid = mNinoRoomsHistoryObject.getUid();
             id = mNinoRoomsHistoryObject.getId();
             pg_name = mNinoRoomsHistoryObject.getPg_name();
@@ -148,8 +147,30 @@ public class RoomDetailsActivity extends AppCompatActivity {
             pg_image_three = mNinoRoomsHistoryObject.getPg_image_three();
         }
 
+        //this intent is coming from bookmark
+        //fragment and as per the intent action
+        //setup the features
+        //extracting the value from bookmark objects;
+        Intent intentBookmark = getIntent();
+        mBookmarksObject = intentBookmark.getParcelableExtra("bookmark");
+
+        if (mBookmarksObject != null) {
+            Log.d(TAG, "onCreate: bookmark called");
+            //collecting all the properties values
+            id = mBookmarksObject.getId();
+            pg_name = mBookmarksObject.getPg_name();
+            phone_number = mBookmarksObject.getPhone_number();
+            location = mBookmarksObject.getLocation();
+            details = mBookmarksObject.getDetails();
+            ac_prices = mBookmarksObject.getAc_prices();
+            non_ac_prices = mBookmarksObject.getNon_ac_prices();
+            pg_image = mBookmarksObject.getPg_image();
+            pg_image_two = mBookmarksObject.getPg_image_two();
+            pg_image_three = mBookmarksObject.getPg_image_three();
+            bookmark = mBookmarksObject.getBookmark();
 
 
+        }
 
 
         //attaching all views by referencing to its ids
@@ -182,8 +203,13 @@ public class RoomDetailsActivity extends AppCompatActivity {
 
 
                 if (bookmark_increment % 2 == 0) {
-                    isClicked(true);
+
                     // TODO insertion opeartion
+                    if (bookmark == null) {
+                        mBookmarks.setImageResource(R.drawable.ic_active_bookmark);
+                    } else {
+                        isClicked(true);
+                    }
 
 
                 } else {
@@ -243,18 +269,23 @@ public class RoomDetailsActivity extends AppCompatActivity {
 
     private void isClicked(boolean clicked) {
         if (clicked) {
-            mBookmarks.setImageResource(R.drawable.ic_active_bookmark);
-        } else {
-            mBookmarks.setImageResource(R.drawable.ic_bookmark_unactive);
-        }
 
+            ninoRooms.setBookmark("bookmark");
+            saveNewHistory(ninoRooms);
+            mBookmarks.setImageResource(R.drawable.ic_active_bookmark);
+
+        } else {
+
+            mBookmarks.setImageResource(R.drawable.ic_bookmark_unactive);
+
+        }
     }
 
 
     private void saveNewHistory(NinoRooms ninoRooms) {
 
+
         mHistoryRepository.insertHistory(ninoRooms);
-        Log.d(TAG, "saveNewHistory: " + ninoRooms.toString());
     }
 
     @Override
@@ -273,8 +304,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
     protected void onStop() {
         super.onStop();
         Log.d(TAG, "onStop: on called");
-        ninoRooms = null;
-        Log.d(TAG, "onStop: called" + ninoRooms);
+
     }
 }
 
