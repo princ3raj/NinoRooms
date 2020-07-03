@@ -183,13 +183,13 @@ public class SearchResultActivity extends AppCompatActivity {
 
 
     /*Method to generate List of data using RecyclerView with custom adapter*/
-    private void generateDataList(List<NinoRooms> photoList) {
+    private void generateDataList(List<NinoRooms> ninoRooms) {
         recyclerView = findViewById(R.id.nino_rooms_view);
-        adapter = new CustomAdapter(this, photoList);
+        adapter = new CustomAdapter(this, ninoRooms);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(SearchResultActivity.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
-        Rooms= adapter.getItemCount();
+        Rooms = adapter.getItemCount();
         RoomsFound.setText(MessageFormat.format("{0} Rooms Found", Rooms));
         CityName.setText(City);
 
@@ -207,6 +207,7 @@ public class SearchResultActivity extends AppCompatActivity {
             public void onResponse(Call<List<NinoRooms>> call, Response<List<NinoRooms>> response) {
                 progressDialog.dismiss();
                 generateDataList(response.body());
+                Log.d(TAG, "onResponse: " + response.body().toString());
 
             }
 

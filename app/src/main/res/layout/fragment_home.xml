@@ -117,31 +117,17 @@
 
 
 
-<!--                    <EditText-->
-<!--                        android:id="@+id/search_view"-->
-<!--                        android:layout_width="487dp"-->
-<!--                        android:layout_height="45dp"-->
-<!--                        android:layout_alignParentStart="true"-->
-<!--                        android:layout_alignParentTop="true"-->
-<!--                        android:layout_alignParentEnd="true"-->
-<!--                        android:layout_marginStart="25dp"-->
-<!--                        android:layout_marginTop="134dp"-->
-<!--                        android:layout_marginEnd="25dp"-->
-<!--                        android:background="@drawable/rounded_edittext"-->
-<!--                        android:drawableStart="@drawable/ic_search_black_24dp"-->
-<!--                        android:drawablePadding="10dp"-->
-<!--                        android:hint="@string/find_locality_near_by"-->
-<!--                        android:inputType="text"-->
-<!--                        android:padding="10dp"/>-->
+
 
 
                         <androidx.appcompat.widget.SearchView
+                            android:id="@+id/search_icon"
                             android:layout_width="487dp"
                             android:layout_height="45dp"
                             android:layout_marginTop="134dp"
                             android:layout_marginStart="25dp"
                             android:layout_marginEnd="25dp"
-                            app:queryHint="Find Locality Near by"
+                            app:queryHint="@string/search_hint"
                             android:background="@drawable/rounded_edittext"/>
 
 

@@ -37,18 +37,16 @@ public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter<HistoryRecy
 
     @NonNull
     @Override
-    public HistoryRecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.history_item_view, parent, false);
         return new ViewHolder(view, mOnHistoryListener);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HistoryRecyclerViewAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
 
         try {
-
-            Log.d(TAG, "onBindViewHolder: " + mHistories.get(position).toString());
 
 
             holder.pg_name.setText(mHistories.get(position).getPg_name());
@@ -75,10 +73,7 @@ public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter<HistoryRecy
         return mHistories.size();
     }
 
-    public interface OnHistoryListener {
-        void onHistoryClick(int position);
 
-    }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -97,7 +92,6 @@ public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter<HistoryRecy
             pg_image = itemView.findViewById(R.id.pg_image);
             details = itemView.findViewById(R.id.details);
             location = itemView.findViewById(R.id.location);
-
             mOnHistoryListener = onHistoryListener;
 
 
@@ -112,6 +106,11 @@ public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter<HistoryRecy
 
         }
 
+
+    }
+
+    public interface OnHistoryListener {
+        void onHistoryClick(int position);
 
     }
 

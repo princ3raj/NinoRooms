@@ -3,6 +3,7 @@ package nino.rooms.pgcompany.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -11,7 +12,6 @@ import com.google.gson.annotations.SerializedName;
 
 @Entity(tableName = "history")
 public class NinoRooms implements Parcelable {
-
 
     public static final Creator<NinoRooms> CREATOR = new Creator<NinoRooms>() {
         @Override
@@ -24,11 +24,9 @@ public class NinoRooms implements Parcelable {
             return new NinoRooms[size];
         }
     };
+    @NonNull
     @PrimaryKey(autoGenerate = true)
     private int uid;
-    @ColumnInfo(name = "id")
-    @SerializedName("id")
-    private int id;
     @ColumnInfo(name = "pg_name")
     @SerializedName("pg_name")
     private String pg_name;
@@ -49,7 +47,7 @@ public class NinoRooms implements Parcelable {
     private  String ac_prices;
     @ColumnInfo(name = "non_ac_prices")
     @SerializedName("non_ac_prices")
-    private  String non_ac_prices;
+    private String non_ac_prices;
     @ColumnInfo(name = "pg_image")
     @SerializedName("pg_image")
     private String pg_image;
@@ -59,8 +57,11 @@ public class NinoRooms implements Parcelable {
     @ColumnInfo(name = "pg_image_three")
     @SerializedName("pg_image_three")
     private String pg_image_three;
+    @ColumnInfo(name = "id")
+    @SerializedName("id")
+    private String id;
 
-    public NinoRooms(int uid, int id, String pg_name, String phone_number, String owner_name, String location, String details, String ac_prices, String non_ac_prices, String pg_image, String pg_image_two, String pg_image_three) {
+    public NinoRooms(int uid, String id, String pg_name, String phone_number, String owner_name, String location, String details, String ac_prices, String non_ac_prices, String pg_image, String pg_image_two, String pg_image_three) {
         this.uid = uid;
         this.id = id;
         this.pg_name = pg_name;
@@ -77,7 +78,7 @@ public class NinoRooms implements Parcelable {
 
     protected NinoRooms(Parcel in) {
         uid = in.readInt();
-        id = in.readInt();
+        id = in.readString();
         pg_name = in.readString();
         phone_number = in.readString();
         owner_name = in.readString();
@@ -90,27 +91,6 @@ public class NinoRooms implements Parcelable {
         pg_image_three = in.readString();
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(uid);
-        dest.writeInt(id);
-        dest.writeString(pg_name);
-        dest.writeString(phone_number);
-        dest.writeString(owner_name);
-        dest.writeString(location);
-        dest.writeString(details);
-        dest.writeString(ac_prices);
-        dest.writeString(non_ac_prices);
-        dest.writeString(pg_image);
-        dest.writeString(pg_image_two);
-        dest.writeString(pg_image_three);
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
     public int getUid() {
         return uid;
     }
@@ -119,11 +99,11 @@ public class NinoRooms implements Parcelable {
         this.uid = uid;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -207,22 +187,26 @@ public class NinoRooms implements Parcelable {
         this.pg_image_three = pg_image_three;
     }
 
+
     @Override
-    public String toString() {
-        return "NinoRooms{" +
-                "uid=" + uid +
-                ", id=" + id +
-                ", pg_name='" + pg_name + '\'' +
-                ", phone_number='" + phone_number + '\'' +
-                ", owner_name='" + owner_name + '\'' +
-                ", location='" + location + '\'' +
-                ", details='" + details + '\'' +
-                ", ac_prices='" + ac_prices + '\'' +
-                ", non_ac_prices='" + non_ac_prices + '\'' +
-                ", pg_image='" + pg_image + '\'' +
-                ", pg_image_two='" + pg_image_two + '\'' +
-                ", pg_image_three='" + pg_image_three + '\'' +
-                '}';
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(uid);
+        dest.writeString(id);
+        dest.writeString(pg_name);
+        dest.writeString(phone_number);
+        dest.writeString(owner_name);
+        dest.writeString(location);
+        dest.writeString(details);
+        dest.writeString(ac_prices);
+        dest.writeString(non_ac_prices);
+        dest.writeString(pg_image);
+        dest.writeString(pg_image_two);
+        dest.writeString(pg_image_three);
     }
 }
 

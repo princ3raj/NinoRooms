@@ -10,15 +10,13 @@ import nino.rooms.pgcompany.model.NinoRooms;
 
 
 @Database(entities = {NinoRooms
-        .class}, version = 1)
+        .class}, version = 2)
 public abstract class HistoryDatabase extends RoomDatabase {
 
     public static final String DATABASE_NAME = "extra_features";
 
     private static HistoryDatabase instance;
 
-    public HistoryDatabase() {
-    }
 
     static HistoryDatabase getInstance(final Context context) {
 

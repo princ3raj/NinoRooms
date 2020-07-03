@@ -3,6 +3,7 @@ package nino.rooms.pgcompany.adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,13 +24,15 @@ import nino.rooms.pgcompany.model.NinoRooms;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
 
-    private   List<NinoRooms> mNinoRooms;
+    private static final String TAG = "CustomAdapter";
+    private List<NinoRooms> mNinoRooms;
     private Context context;
     private static final String EXTRA_TEXT = "position";
 
     public CustomAdapter(Context context,List<NinoRooms> ninoRooms){
         this.context = context;
         this.mNinoRooms = ninoRooms;
+        Log.d(TAG, "CustomAdapter:called " + ninoRooms);
     }
 
     class CustomViewHolder extends RecyclerView.ViewHolder {

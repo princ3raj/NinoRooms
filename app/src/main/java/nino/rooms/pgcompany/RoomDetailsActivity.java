@@ -54,7 +54,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
     private String location;
     private String details;
     private String pg_name;
-    private int id;
+    private String id;
     private String ac_prices;
     private String non_ac_prices;
     private int Uid;
@@ -106,18 +106,12 @@ public class RoomDetailsActivity extends AppCompatActivity {
                 onBackPressed();
             }
         });
-
+        //this intent is coming from CustomAdapter
+        //an adapter of SearchResultActivity
         //extracting the value from parcelable object
         Intent intentAction = getIntent();
         ninoRooms = intentAction.getParcelableExtra("NinoRooms");
-
-        //extracting the value from history objects;
-        Intent intentHistory = getIntent();
-        mNinoRoomsHistoryObject = intentHistory.getParcelableExtra("selected_item");
-
         if (ninoRooms != null) {
-
-
             //collecting all the properties values
             id = ninoRooms.getId();
             pg_name = ninoRooms.getPg_name();
@@ -129,12 +123,18 @@ public class RoomDetailsActivity extends AppCompatActivity {
             pg_image = ninoRooms.getPg_image();
             pg_image_two = ninoRooms.getPg_image_two();
             pg_image_three = ninoRooms.getPg_image_three();
+            mHistoryRepository = new HistoryRepository(this);
+            saveNewHistory(ninoRooms);
+        }
 
-        } else {
-
-            //collecting all the properties values
-            assert mNinoRoomsHistoryObject != null;
-
+        //this intent is coming from history
+        //fragment and as per the intent action
+        //setup the features
+        //extracting the value from history objects;
+        Intent intentHistory = getIntent();
+        mNinoRoomsHistoryObject = intentHistory.getParcelableExtra("object");
+        Log.d(TAG, "onCreate: " + mNinoRoomsHistoryObject);
+        if (mNinoRoomsHistoryObject != null) {
             Uid = mNinoRoomsHistoryObject.getUid();
             id = mNinoRoomsHistoryObject.getId();
             pg_name = mNinoRoomsHistoryObject.getPg_name();
@@ -146,9 +146,10 @@ public class RoomDetailsActivity extends AppCompatActivity {
             pg_image = mNinoRoomsHistoryObject.getPg_image();
             pg_image_two = mNinoRoomsHistoryObject.getPg_image_two();
             pg_image_three = mNinoRoomsHistoryObject.getPg_image_three();
-
-
         }
+
+
+
 
 
         //attaching all views by referencing to its ids
@@ -238,14 +239,6 @@ public class RoomDetailsActivity extends AppCompatActivity {
         });
 
 
-        //sending NinoRooms object that i took from
-        //searchResultactivity and passing it on
-        //this saveNewHistory function for
-        //performing a database insertion operation
-        mHistoryRepository = new HistoryRepository(this);
-        saveNewHistory(ninoRooms);
-
-
     }
 
     private void isClicked(boolean clicked) {
@@ -261,6 +254,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
     private void saveNewHistory(NinoRooms ninoRooms) {
 
         mHistoryRepository.insertHistory(ninoRooms);
+        Log.d(TAG, "saveNewHistory: " + ninoRooms.toString());
     }
 
     @Override
@@ -280,6 +274,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
         super.onStop();
         Log.d(TAG, "onStop: on called");
         ninoRooms = null;
+        Log.d(TAG, "onStop: called" + ninoRooms);
     }
 }
 

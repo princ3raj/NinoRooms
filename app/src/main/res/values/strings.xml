@@ -50,4 +50,5 @@ Remarkable and world-class amenities nearby ranging from from health to educatio
 </string>
     <string name="non_ac_price">Non-Ac Rs.</string>
     <string name="ac_price">Ac Rs.</string>
+    <string name="search_hint">Find Locality Near by</string>
 </resources>

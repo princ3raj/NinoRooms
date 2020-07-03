@@ -79,10 +79,10 @@ public class HistoryFragment extends Fragment implements
 
     private void InitRecyclerview() {
         Log.d(TAG, "InitRecyclerview: called");
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(mContext);
         mHistoryRecyclerView.setLayoutManager(linearLayoutManager);
         new ItemTouchHelper(itemTouchHelperCallBack).attachToRecyclerView(mHistoryRecyclerView);
-        mHistoryRecyclerViewAdapter = new HistoryRecyclerViewAdapter(mHistories, getContext(), this);
+        mHistoryRecyclerViewAdapter = new HistoryRecyclerViewAdapter(mHistories, mContext, this);
         mHistoryRecyclerView.setAdapter(mHistoryRecyclerViewAdapter);
 
 
@@ -101,8 +101,7 @@ public class HistoryFragment extends Fragment implements
                 if (historyModels != null) {
 
                     mHistories.addAll(historyModels);
-//                    mHistoryRecyclerViewAdapter = new HistoryRecyclerViewAdapter(mHistories, getContext());
-//                    mHistoryRecyclerView.setAdapter(mHistoryRecyclerViewAdapter);
+                    Log.d(TAG, "onChanged: called" + mHistories.toString());
 
 
                 }
@@ -115,6 +114,7 @@ public class HistoryFragment extends Fragment implements
     }
 
     private void deleteHistory(NinoRooms historyModel) {
+        Log.d(TAG, "deleteHistory: called");
         mHistories.remove(historyModel);
         mHistoryRecyclerViewAdapter.notifyDataSetChanged();
         mHistoryRepository.deleteHistory(historyModel);
@@ -133,10 +133,14 @@ public class HistoryFragment extends Fragment implements
 
         Log.d(TAG, "onNoteClick: " + position);
 
-        Intent intent = new Intent(getActivity(), RoomDetailsActivity.class);
+        Intent intent = new Intent(mContext, RoomDetailsActivity.class);
 
-        intent.putExtra("selected_item", mHistories.get(position));
+        Log.d(TAG, "onHistoryClick: called" + mHistories.toString());
+
+        intent.putExtra("object", mHistories.get(position));
+        Log.d(TAG, "onHistoryClick: " + mHistories.get(position));
         startActivity(intent);
+
 
     }
 }

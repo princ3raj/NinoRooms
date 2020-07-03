@@ -24,5 +24,5 @@ public interface HistoryDao {
 
 
     @Delete
-    int deleteHistory(NinoRooms... historyModels);
+    void deleteHistory(NinoRooms... historyModels);
 }
