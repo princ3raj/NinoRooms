@@ -167,7 +167,9 @@ public class RoomDetailsActivity extends AppCompatActivity {
             pg_image = mBookmarksObject.getPg_image();
             pg_image_two = mBookmarksObject.getPg_image_two();
             pg_image_three = mBookmarksObject.getPg_image_three();
-            bookmark = mBookmarksObject.getBookmark();
+            bookmark = null;
+            mBookmarks = findViewById(R.id.bookmark);
+            mBookmarks.setImageResource(R.drawable.ic_active_bookmark);
 
 
         }
