@@ -62,6 +62,11 @@ public class HistoryFragment extends Fragment implements
 
         View view = inflater.inflate(R.layout.fragment_history, container, false);
 
+        // Hide the status bar.
+        View decorView = getActivity().getWindow().getDecorView();
+        int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
+        decorView.setSystemUiVisibility(uiOptions);
+
 
         mHistoryRepository = new HistoryRepository(getActivity());
 
