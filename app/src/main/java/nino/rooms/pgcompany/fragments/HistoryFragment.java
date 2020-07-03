@@ -142,7 +142,7 @@ public class HistoryFragment extends Fragment implements
 
         Log.d(TAG, "onHistoryClick: called" + mHistories.toString());
 
-        intent.putExtra("object", mHistories.get(position));
+        intent.putExtra("history", mHistories.get(position));
         Log.d(TAG, "onHistoryClick: " + mHistories.get(position));
         startActivity(intent);
 

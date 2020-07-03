@@ -29,6 +29,8 @@ public class RoomDetailsActivity extends AppCompatActivity {
     // to access this variable in other class
     //as in this case i am accessing this variable in mainsliderAdapter
     private HistoryRepository mHistoryRepository;
+    private HistoryRepository mBookMarkRepository;
+
     //bookmark setup variables
     private ImageButton mBookmarks;
 
@@ -80,6 +82,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
     //for ninorooms bookmarks object
     private NinoRooms mBookmarksObject;
     private String bookmark;
+    private String test = null;
 
 
     @Override
@@ -131,7 +134,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
         //setup the features
         //extracting the value from history objects;
         Intent intentHistory = getIntent();
-        mNinoRoomsHistoryObject = intentHistory.getParcelableExtra("object");
+        mNinoRoomsHistoryObject = intentHistory.getParcelableExtra("history");
         if (mNinoRoomsHistoryObject != null) {
             Log.d(TAG, "onCreate: history called");
             Uid = mNinoRoomsHistoryObject.getUid();
@@ -145,6 +148,10 @@ public class RoomDetailsActivity extends AppCompatActivity {
             pg_image = mNinoRoomsHistoryObject.getPg_image();
             pg_image_two = mNinoRoomsHistoryObject.getPg_image_two();
             pg_image_three = mNinoRoomsHistoryObject.getPg_image_three();
+            mBookMarkRepository = new HistoryRepository(this);
+            test = "yeahOk";
+
+
         }
 
         //this intent is coming from bookmark
@@ -208,8 +215,21 @@ public class RoomDetailsActivity extends AppCompatActivity {
 
                     // TODO insertion opeartion
                     if (bookmark == null) {
-                        mBookmarks.setImageResource(R.drawable.ic_active_bookmark);
+
+
+                        if (test != null) {
+
+                            Log.d(TAG, "run this block");
+                            mNinoRoomsHistoryObject.setBookmark("bookmark");
+                            Uid = mNinoRoomsHistoryObject.getUid();
+                            Uid = Uid + 19873;
+                            mNinoRoomsHistoryObject.setUid(Uid);
+                            Uid = Uid + 27989;
+                            saveNewBookMark(mNinoRoomsHistoryObject);
+                            mBookmarks.setImageResource(R.drawable.ic_active_bookmark);
+                        }
                     } else {
+                        Log.d(TAG, "onClick: this one called");
                         isClicked(true);
                     }
 
@@ -289,6 +309,13 @@ public class RoomDetailsActivity extends AppCompatActivity {
 
         mHistoryRepository.insertHistory(ninoRooms);
     }
+
+    private void saveNewBookMark(NinoRooms ninoRooms) {
+
+
+        mBookMarkRepository.insertHistory(ninoRooms);
+    }
+
 
     @Override
     protected void onStart() {
