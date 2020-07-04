@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,11 +101,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        TestRetrofitClient();
-
-
-
-
 
     }
 
@@ -122,32 +118,5 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
-//    private void TestRetrofitClient()
-//    {
-//
-//        RestApi restApi= RetrofitClientInstance.getRetrofitInstance().create(RestApi.class);
-//
-//        Call<List<NinoRooms>> call=restApi.getNinoRooms();
-//
-//        call.enqueue(new Callback<List<NinoRooms>>() {
-//            @Override
-//            public void onResponse(Call<List<NinoRooms>> call, Response<List<NinoRooms>> response) {
-//                Log.d(TAG, "onResponse: called");
-//
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<NinoRooms>> call, Throwable t) {
-//                Log.d(TAG, "onFailure: called");
-//            }
-//        });
-//
-//
-//
-//
-//
-//
-//    }
 
 }

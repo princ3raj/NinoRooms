@@ -39,7 +39,7 @@ View all
     <string name="history">History</string>
     <string name="setting">Setting</string>
 
-    <string name="favourites">Favourites</string>
+    <string name="favourite">Favourites</string>
     <string name="history_menu">History</string>
     <string name="city">City</string>
 
@@ -51,4 +51,5 @@ Remarkable and world-class amenities nearby ranging from from health to educatio
     <string name="non_ac_price">Non-Ac Rs.</string>
     <string name="ac_price">Ac Rs.</string>
     <string name="search_hint">Find Locality Near by</string>
+    <string name="favourites">Favourites</string>
 </resources>

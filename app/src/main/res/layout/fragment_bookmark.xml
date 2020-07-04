@@ -3,6 +3,7 @@
 
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="#fff"
     android:layout_height="match_parent">
 
 
@@ -13,8 +14,28 @@
         android:orientation="vertical">
 
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/favourites"
+            android:textAppearance="@style/favourites" />
+
+
+        <ImageButton
+            android:id="@+id/filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="50dp"
+            android:layout_marginEnd="25dp"
+            android:background="@drawable/filter" />
+
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/bookmark_recycler_view"
+            android:layout_marginTop="140dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="#fff" />

@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -38,6 +39,7 @@ public class BookmarkFragment extends Fragment implements
     private RecyclerView mBookmarkRecyclerView;
     private BookMarkAdapter mBookMarkAdapter;
     private HistoryRepository mHistoryRepository;
+    private ImageButton mFilterIcon;
 
 
     @Override
@@ -73,6 +75,16 @@ public class BookmarkFragment extends Fragment implements
         progressDialog.show();
 
         mBookmarkRecyclerView = view.findViewById(R.id.bookmark_recycler_view);
+        mFilterIcon = view.findViewById(R.id.filter);
+        mFilterIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progressDialog.show();
+                retrieveBookmark();
+
+
+            }
+        });
 
         InitRecyclerview();
         retrieveBookmark();

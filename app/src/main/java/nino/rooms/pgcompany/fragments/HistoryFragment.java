@@ -8,10 +8,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentActivity;
 import androidx.lifecycle.Observer;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -36,6 +38,9 @@ public class HistoryFragment extends Fragment implements
     //progressBar
     ProgressDialog progressDialog;
 
+    private ImageButton mHistoryRefresh;
+
+
     private ArrayList<NinoRooms> mHistories = new ArrayList<>();
     private RecyclerView mHistoryRecyclerView;
     private HistoryRecyclerViewAdapter mHistoryRecyclerViewAdapter;
@@ -52,6 +57,7 @@ public class HistoryFragment extends Fragment implements
         }
 
     };
+    private FragmentActivity activity;
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -63,13 +69,23 @@ public class HistoryFragment extends Fragment implements
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
-
         View view = inflater.inflate(R.layout.fragment_history, container, false);
+
 
         // Hide the status bar.
         View decorView = getActivity().getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
+        mHistoryRefresh = view.findViewById(R.id.history_refresh);
+        mHistoryRefresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progressDialog.show();
+                retrieveHistory();
+
+            }
+        });
+
 
         progressDialog = new ProgressDialog(mContext);
         progressDialog.setMessage("Loading....");
@@ -138,6 +154,8 @@ public class HistoryFragment extends Fragment implements
 
     @Override
     public void onClick(View v) {
+
+        activity.onBackPressed();
 
 
     }

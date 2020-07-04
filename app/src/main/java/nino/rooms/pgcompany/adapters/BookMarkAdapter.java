@@ -39,7 +39,7 @@ public class BookMarkAdapter extends RecyclerView.Adapter<BookMarkAdapter.ViewHo
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.bookmarks_item_view, parent, false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.new_bookmark_item_layout, parent, false);
         return new ViewHolder(view, mOnBookMarkListener);
     }
 
@@ -52,7 +52,7 @@ public class BookMarkAdapter extends RecyclerView.Adapter<BookMarkAdapter.ViewHo
 
             holder.pg_name.setText(mHistories.get(position).getPg_name());
             holder.location.setText(mHistories.get(position).getLocation());
-            holder.details.setText(mHistories.get(position).getDetails());
+//            holder.details.setText(mHistories.get(position).getDetails());
             holder.ac_prices.setText(mHistories.get(position).getAc_prices());
 
             Picasso.Builder builder = new Picasso.Builder(context);
@@ -84,7 +84,7 @@ public class BookMarkAdapter extends RecyclerView.Adapter<BookMarkAdapter.ViewHo
 
         TextView ac_prices;
         TextView pg_name;
-        TextView details;
+        //        TextView details;
         TextView location;
         ImageView pg_image;
         OnBookMarkListener mOnBookMarkListener;
@@ -95,7 +95,7 @@ public class BookMarkAdapter extends RecyclerView.Adapter<BookMarkAdapter.ViewHo
             ac_prices = itemView.findViewById(R.id.ac_price);
             pg_name = itemView.findViewById(R.id.pg_name);
             pg_image = itemView.findViewById(R.id.pg_image);
-            details = itemView.findViewById(R.id.details);
+//            details = itemView.findViewById(R.id.details);
             location = itemView.findViewById(R.id.location);
             mOnBookMarkListener = onBookMarkListener;
 

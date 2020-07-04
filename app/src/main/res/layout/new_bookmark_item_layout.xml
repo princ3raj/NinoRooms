@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="25dp"
+    android:background="#ffff"
+    android:padding="20dp"
+    app:cardCornerRadius="25dp"
+    app:cardElevation="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:id="@+id/pg_image"
+            android:layout_width="match_parent"
+            android:layout_height="124dp"
+            android:background="@drawable/apartment_resized"
+            android:scaleType="centerCrop"
+            android:tint="#8F000000" />
+
+        <ImageButton
+            android:id="@+id/arrow_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="15dp"
+            android:background="@drawable/ic_active_bookmark" />
+
+        <TextView
+            android:id="@+id/pg_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="60dp"
+            android:text="Ajnara Fragnance"
+            android:textAppearance="@style/new_bookmark_pg_name" />
+
+
+        <TextView
+            android:id="@+id/ac_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="15dp"
+            android:text="Rs. 15000"
+            android:textAppearance="@style/new_bookmark_pg_name" />
+
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="90dp"
+            android:text="Sector 121, Noida"
+            android:textAppearance="@style/new_bookmark_address" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="90dp"
+            android:layout_marginEnd="15dp"
+            android:text="1 month"
+            android:textAppearance="@style/new_bookmark_address" />
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>
+
+
+
+
+
