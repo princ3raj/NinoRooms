@@ -221,6 +221,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
                         if (test != null) {
 
                             Log.d(TAG, "run this block");
+                            mNinoRoomsHistoryObject.setHistory("");
                             mNinoRoomsHistoryObject.setBookmark("bookmark");
                             Uid = mNinoRoomsHistoryObject.getUid();
                             Uid = Uid + 19873;
