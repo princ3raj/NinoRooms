@@ -31,7 +31,7 @@ public class HistoryRepository {
 
     public LiveData<List<NinoRooms>> retrieveHistory() {
 
-        return mHistoryDatabase.getHistoryDao().retrieveHistory();
+        return mHistoryDatabase.getHistoryDao().retrieveHistory("history");
     }
 
     public LiveData<List<NinoRooms>> retrieveBookmark() {

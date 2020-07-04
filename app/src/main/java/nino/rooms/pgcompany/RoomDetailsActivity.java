@@ -125,6 +125,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
             pg_image_two = ninoRooms.getPg_image_two();
             pg_image_three = ninoRooms.getPg_image_three();
             mHistoryRepository = new HistoryRepository(this);
+            ninoRooms.setHistory("history");
             saveNewHistory(ninoRooms);
             bookmark = "true";
         }
@@ -292,6 +293,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
     private void isClicked(boolean clicked) {
         if (clicked) {
 
+            ninoRooms.setHistory("");
             ninoRooms.setBookmark("bookmark");
             saveNewHistory(ninoRooms);
             mBookmarks.setImageResource(R.drawable.ic_active_bookmark);
@@ -320,6 +322,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
         Log.d(TAG, "onStart: called");
     }
 
@@ -332,8 +335,10 @@ public class RoomDetailsActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        Log.d(TAG, "onStop: on called");
+
 
     }
+
+
 }
 
