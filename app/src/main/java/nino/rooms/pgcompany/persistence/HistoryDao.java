@@ -16,11 +16,11 @@ import nino.rooms.pgcompany.model.NinoRooms;
 public interface HistoryDao {
 
 
-    @Query("SELECT *FROM history WHERE history LIKE:history")
+    @Query("SELECT *FROM history WHERE history LIKE:history ORDER BY uid DESC LIMIT 20")
     LiveData<List<NinoRooms>> retrieveHistory(String history);
 
 
-    @Query("SELECT * FROM history WHERE bookmark LIKE:bookmark")
+    @Query("SELECT * FROM history WHERE bookmark LIKE:bookmark ORDER BY uid DESC LIMIT 20")
     LiveData<List<NinoRooms>> retrieveBookMark(String bookmark);
 
 

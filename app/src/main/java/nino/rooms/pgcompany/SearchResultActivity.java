@@ -58,10 +58,6 @@ public class SearchResultActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     private NinoRooms NinoRooms;
 
-    //history setup
-//    private HistoryRepository mHistoryRepository;
-//    private NinoRooms mHistoryModel;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,10 +74,6 @@ public class SearchResultActivity extends AppCompatActivity {
         progressDialog.show();
 
         recyclerView = findViewById(R.id.nino_rooms_view);
-
-
-
-//        mNinoRoomsViewModel= ViewModelProviders.of(this).get(NinoRoomsViewModel.class);
 
 
         //toolbar setup
@@ -169,8 +161,7 @@ public class SearchResultActivity extends AppCompatActivity {
         Intent intent = getIntent();
         City = intent.getStringExtra("Delhi");
 
-//        Intent intentAction = getIntent();
-//        NinoRooms ninoRooms = intentAction.getParcelableExtra("NinoRooms");
+
 
 
         TestRetrofitClient();
@@ -198,6 +189,7 @@ public class SearchResultActivity extends AppCompatActivity {
 
     private void TestRetrofitClient() {
 
+
         RestApi restApi = RetrofitClientInstance.getRetrofitInstance().create(RestApi.class);
 
         Call<List<NinoRooms>> call = restApi.getNinoRooms();
@@ -215,6 +207,7 @@ public class SearchResultActivity extends AppCompatActivity {
             public void onFailure(Call<List<NinoRooms>> call, Throwable t) {
                 Log.d(TAG, "onFailure: called");
                 progressDialog.dismiss();
+
                 Toast.makeText(SearchResultActivity.this, "Make sure you are connected to internet", Toast.LENGTH_SHORT).show();
             }
         });

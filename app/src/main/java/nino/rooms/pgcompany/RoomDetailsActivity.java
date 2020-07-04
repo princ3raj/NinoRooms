@@ -22,7 +22,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
 
     private static final String TAG = "RoomDetailsActivity";
 
-    public static String pg_image;
+
 
 
     //made this static so i could able
@@ -37,9 +37,14 @@ public class RoomDetailsActivity extends AppCompatActivity {
 
     //back_arrow
     private ImageButton mBackArrow;
+    public static String pg_image;
     public static String pg_image_two;
     public static String pg_image_three;
+
+    //used this variable to implement odd
+    //and even function
     private int bookmark_increment = 0;
+
     //slider
     private Slider mSlider;
 
@@ -214,13 +219,18 @@ public class RoomDetailsActivity extends AppCompatActivity {
 
                 if (bookmark_increment % 2 == 0) {
 
-                    // TODO insertion opeartion
+
                     if (bookmark == null) {
 
 
                         if (test != null) {
 
                             Log.d(TAG, "run this block");
+                            //setting history to blank and
+                            //bookmark to bookmark, because we don't want duplicacy
+                            //when historyadapter shows its data
+                            //for more details, look at retrieveHistory from Historydao
+                            //you will get to understand everything
                             mNinoRoomsHistoryObject.setHistory("");
                             mNinoRoomsHistoryObject.setBookmark("bookmark");
                             Uid = mNinoRoomsHistoryObject.getUid();
@@ -291,6 +301,9 @@ public class RoomDetailsActivity extends AppCompatActivity {
 
     }
 
+
+    //this function will get called
+    //whenever user clicks bookmark button
     private void isClicked(boolean clicked) {
         if (clicked) {
 
@@ -306,15 +319,18 @@ public class RoomDetailsActivity extends AppCompatActivity {
         }
     }
 
-
+    //made this function,so we can call it
+    //when user open roomdetails activity
+    // coming from searchresultactivity
     private void saveNewHistory(NinoRooms ninoRooms) {
-
 
         mHistoryRepository.insertHistory(ninoRooms);
     }
 
+    //made this function,so we can call it
+    //when user open roomdetails activity
+    // fragment coming from history
     private void saveNewBookMark(NinoRooms ninoRooms) {
-
 
         mBookMarkRepository.insertHistory(ninoRooms);
     }

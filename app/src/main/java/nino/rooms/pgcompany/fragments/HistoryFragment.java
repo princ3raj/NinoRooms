@@ -1,5 +1,6 @@
 package nino.rooms.pgcompany.fragments;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -31,6 +32,9 @@ public class HistoryFragment extends Fragment implements
 
     private Context mContext;
     private static final String TAG = "HistoryFragment";
+
+    //progressBar
+    ProgressDialog progressDialog;
 
     private ArrayList<NinoRooms> mHistories = new ArrayList<>();
     private RecyclerView mHistoryRecyclerView;
@@ -66,6 +70,10 @@ public class HistoryFragment extends Fragment implements
         View decorView = getActivity().getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
+
+        progressDialog = new ProgressDialog(mContext);
+        progressDialog.setMessage("Loading....");
+        progressDialog.show();
 
 
         mHistoryRepository = new HistoryRepository(getActivity());
@@ -111,6 +119,7 @@ public class HistoryFragment extends Fragment implements
 
                 }
                 mHistoryRecyclerViewAdapter.notifyDataSetChanged();
+                progressDialog.dismiss();
 
             }
 

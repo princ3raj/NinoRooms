@@ -1,6 +1,7 @@
 package nino.rooms.pgcompany.fragments;
 
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,6 +30,8 @@ import nino.rooms.pgcompany.persistence.HistoryRepository;
 public class BookmarkFragment extends Fragment implements
         BookMarkAdapter.OnBookMarkListener, View.OnClickListener {
     private static final String TAG = "BookmarkFragment";
+    //progressBar
+    ProgressDialog progressDialog;
 
     private Context mContext;
     private ArrayList<NinoRooms> mHistories = new ArrayList<>();
@@ -65,6 +68,9 @@ public class BookmarkFragment extends Fragment implements
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
         mHistoryRepository = new HistoryRepository(getActivity());
+        progressDialog = new ProgressDialog(mContext);
+        progressDialog.setMessage("Loading....");
+        progressDialog.show();
 
         mBookmarkRecyclerView = view.findViewById(R.id.bookmark_recycler_view);
 
@@ -105,6 +111,7 @@ public class BookmarkFragment extends Fragment implements
 
                 }
                 mBookMarkAdapter.notifyDataSetChanged();
+                progressDialog.dismiss();
 
             }
 
