@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -58,6 +59,8 @@ public class SearchResultActivity extends AppCompatActivity {
     ProgressDialog progressDialog;
     private NinoRooms NinoRooms;
 
+    private ImageView mSearchRefreshIcon;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +77,15 @@ public class SearchResultActivity extends AppCompatActivity {
         progressDialog.show();
 
         recyclerView = findViewById(R.id.nino_rooms_view);
+        mSearchRefreshIcon = findViewById(R.id.refresh_search);
+
+        mSearchRefreshIcon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                progressDialog.show();
+                TestRetrofitClient();
+            }
+        });
 
 
         //toolbar setup

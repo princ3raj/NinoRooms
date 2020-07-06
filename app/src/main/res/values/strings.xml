@@ -52,4 +52,11 @@ Remarkable and world-class amenities nearby ranging from from health to educatio
     <string name="ac_price">Ac Rs.</string>
     <string name="search_hint">Find Locality Near by</string>
     <string name="favourites">Favourites</string>
+
+    <string name="last_section">
+
+Here Life is a wonderful concept. The facilities and hassle-free accommodation is what makes here life interesting.
+</string>
+
+
 </resources>

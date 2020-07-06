@@ -64,14 +64,14 @@
                     android:visibility="invisible" />
 
                 <ImageView
-                    android:id="@+id/filter_search"
+                    android:id="@+id/refresh_search"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_margin="18dp"
                     android:layout_weight="43"
                     android:clickable="true"
                     android:focusable="true"
-                    android:src="@drawable/filter" />
+                    android:src="@drawable/ic_option_1" />
 
 
             </LinearLayout>

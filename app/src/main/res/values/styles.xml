@@ -395,5 +395,16 @@
 
     </style>
 
+    <style name="last_section">
+
+        <item name="android:textSize">
+            14sp
+        </item>
+
+        <item name="android:textColor">
+            #C4C4C4
+        </item>
+    </style>
+
 
 </resources>
