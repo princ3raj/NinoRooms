@@ -176,92 +176,15 @@
 
                     </LinearLayout>
 
-
-
-                    <LinearLayout
-                        android:weightSum="100"
-                        android:layout_marginTop="300dp"
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:id="@+id/delhi"
-                            android:layout_width="0dp"
-                            android:layout_weight="25"
-                            android:layout_height="70dp"
-                            android:src="@drawable/ic_delhi"
-                            />
-
-
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:layout_weight="25"
-                            android:layout_width="0dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/ic_ghaziabad"
-                            />
-
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:layout_weight="25"
-                            android:layout_width="0dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/ic_jaipur"
-                            />
-
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:layout_weight="25"
-                            android:layout_width="0dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/ic_c"
-                            />
-
-                    </LinearLayout>
+                    <include layout="@layout/city_section" />
 
 
 
 
-                    <LinearLayout
-                        android:id="@+id/image_column_one"
-                        android:weightSum="100"
-                        android:layout_marginTop="393dp"
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:layout_width="0dp"
-                            android:layout_weight="25"
-                            android:layout_height="70dp"
-                            android:src="@drawable/ic_b"
-
-                            />
-
-
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:layout_weight="25"
-                            android:layout_width="0dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/ic_c"
-                            />
-
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:layout_weight="25"
-                            android:layout_width="0dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/ic_a"
-                            />
-
-                        <de.hdodenhof.circleimageview.CircleImageView
-                            android:layout_weight="25"
-                            android:layout_width="0dp"
-                            android:layout_height="70dp"
-                            android:src="@drawable/ic_rajasthan_90x90"
-                            />
 
 
 
 
-                    </LinearLayout>
 
 
 
@@ -330,11 +253,11 @@
                             <TextView
                                 android:layout_marginRight="40dp"
                                 android:layout_marginLeft="40dp"
-                                android:textAppearance="@style/safety_and_security"
+                                android:text="Safety and Homely stay"
                                 android:layout_weight="1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="Safety and Security"/>
+                                android:textAppearance="@style/illustrations" />
 
 
 
@@ -615,12 +538,12 @@
 
                                 <TextView
                                     android:layout_marginStart="27dp"
-                                    android:layout_marginRight="27dp"
+                                    android:layout_marginEnd="27dp"
                                     android:layout_marginTop="73dp"
                                     android:textAppearance="@style/illustration_two_style"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Washing Machine"
+                                    android:text="@string/machine"
                                     />
 
 
@@ -667,14 +590,14 @@
 
                                 <TextView
                                     android:lines="1"
-                                    android:layout_marginStart="20dp"
-                                    android:layout_marginRight="20dp"
+                                    android:layout_marginStart="32dp"
+                                    android:layout_marginEnd="32dp"
+                                    android:text="@string/fridge"
                                     android:layout_marginTop="80dp"
                                     android:textAppearance="@style/illustration_two_style"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Refrigerator"
-                                    />
+                                    android:textAlignment="center" />
 
                             </RelativeLayout>
 
@@ -811,14 +734,13 @@
 
 
                                 <TextView
-                                    android:layout_marginStart="32.5dp"
-                                    android:layout_marginRight="32.5dp"
+                                    android:layout_marginStart="26.5dp"
+                                    android:layout_marginRight="26.5dp"
                                     android:layout_marginTop="73dp"
                                     android:textAppearance="@style/illustration_two_style"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Power Backup"
-                                    />
+                                    android:text="Generator" />
 
                             </RelativeLayout>
 
@@ -898,11 +820,13 @@
 
 
                         <EditText
+                            android:drawableStart="@drawable/ic_newicon"
+                            android:focusable="false"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="20dp"
                             android:background="@drawable/last_section"
-                            android:drawableStart="@drawable/ic_bangalore_new_90x90"
+                            android:inputType="none"
                             android:drawablePadding="10dp"
                             android:padding="10dp"
                             android:text="@string/last_section"

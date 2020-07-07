@@ -181,6 +181,7 @@
                     android:textAppearance="@style/details" />
 
 
+
                 <LinearLayout
                     android:layout_height="wrap_content"
                     android:layout_marginTop="1080dp"
@@ -289,7 +290,7 @@
                         <TextView
                             android:layout_width="70dp"
                             android:layout_height="wrap_content"
-                            android:text="CCTv"
+                            android:text="CCTV"
                             android:textAlignment="center"
                             android:textAppearance="@style/facility_text" />
 

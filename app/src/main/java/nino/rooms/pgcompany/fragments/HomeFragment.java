@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -16,7 +17,6 @@ import androidx.fragment.app.Fragment;
 
 import java.util.Objects;
 
-import de.hdodenhof.circleimageview.CircleImageView;
 import nino.rooms.pgcompany.R;
 import nino.rooms.pgcompany.SearchResultActivity;
 
@@ -27,7 +27,7 @@ public class HomeFragment extends Fragment {
 
     private Context mContext;
 
-    private CircleImageView mDelhiImageView;
+    private ImageView mDelhiImageView;
 
     private SearchView mSearchView;
 
@@ -57,7 +57,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), SearchResultActivity.class);
-                intent.putExtra("Delhi", "Delhi");
+                intent.putExtra("Delhi", "Noida");
                 Objects.requireNonNull(getActivity()).startActivity(intent);
 
 
