@@ -1,6 +1,5 @@
 package nino.rooms.pgcompany.fragments;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -35,8 +34,8 @@ public class HistoryFragment extends Fragment implements
     private Context mContext;
     private static final String TAG = "HistoryFragment";
 
-    //progressBar
-    ProgressDialog progressDialog;
+//    //progressBar
+//    ProgressDialog progressDialog;
 
     private ImageButton mHistoryRefresh;
 
@@ -80,16 +79,16 @@ public class HistoryFragment extends Fragment implements
         mHistoryRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                progressDialog.show();
+//                progressDialog.show();
                 retrieveHistory();
 
             }
         });
 
-
-        progressDialog = new ProgressDialog(mContext);
-        progressDialog.setMessage("Loading....");
-        progressDialog.show();
+//
+//        progressDialog = new ProgressDialog(mContext);
+//        progressDialog.setMessage("Loading....");
+//        progressDialog.show();
 
 
         mHistoryRepository = new HistoryRepository(getActivity());
@@ -135,7 +134,7 @@ public class HistoryFragment extends Fragment implements
 
                 }
                 mHistoryRecyclerViewAdapter.notifyDataSetChanged();
-                progressDialog.dismiss();
+//                progressDialog.dismiss();
 
             }
 

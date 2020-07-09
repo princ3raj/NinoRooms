@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "721151120511",
+    "firebase_url": "https://ninorooms-8bdd9.firebaseio.com",
+    "project_id": "ninorooms-8bdd9",
+    "storage_bucket": "ninorooms-8bdd9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:721151120511:android:11571c931473e4a4389b4a",
+        "android_client_info": {
+          "package_name": "nino.rooms.pgcompany"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "721151120511-42a8m79qst4sadv502qp4910mi2l2b1o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9Xv2pSUuo-RTDmzE_eaaTxR4w5fgI7gM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "721151120511-42a8m79qst4sadv502qp4910mi2l2b1o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

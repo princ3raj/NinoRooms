@@ -109,14 +109,16 @@ public class MainActivity extends AppCompatActivity {
     public void setFragment(Fragment fragment)
     {
 
-        FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.framelayout,fragment);
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.framelayout, fragment);
         fragmentTransaction.commit();
-
-
 
 
     }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish();
+    }
 }
