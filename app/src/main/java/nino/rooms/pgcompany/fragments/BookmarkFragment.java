@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -30,8 +31,9 @@ import nino.rooms.pgcompany.persistence.HistoryRepository;
 public class BookmarkFragment extends Fragment implements
         BookMarkAdapter.OnBookMarkListener, View.OnClickListener {
     private static final String TAG = "BookmarkFragment";
-//    //progressBar
+    //    //progressBar
 //    ProgressDialog progressDialog;
+    private ImageView mEmptyView;
 
     private Context mContext;
     private ArrayList<NinoRooms> mHistories = new ArrayList<>();
@@ -72,6 +74,8 @@ public class BookmarkFragment extends Fragment implements
 //        progressDialog = new ProgressDialog(mContext);
 //        progressDialog.setMessage("Loading....");
 //        progressDialog.show();
+        mEmptyView = view.findViewById(R.id.empty_view);
+
 
         mBookmarkRecyclerView = view.findViewById(R.id.bookmark_recycler_view);
         mFilterIcon = view.findViewById(R.id.filter);
@@ -121,7 +125,17 @@ public class BookmarkFragment extends Fragment implements
 
 
                 }
-                mBookMarkAdapter.notifyDataSetChanged();
+
+                if (mBookMarkAdapter.getItemCount() == 0) {
+                    mBookMarkAdapter.notifyDataSetChanged();
+                    mEmptyView.setVisibility(View.VISIBLE);
+
+                } else {
+                    mEmptyView.setVisibility(View.GONE);
+                    mBookMarkAdapter.notifyDataSetChanged();
+                }
+
+
 //                progressDialog.dismiss();
 
             }

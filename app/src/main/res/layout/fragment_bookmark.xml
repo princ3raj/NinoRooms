@@ -41,6 +41,15 @@
             android:background="#fff" />
 
 
+        <ImageView
+            android:id="@+id/empty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="580dp"
+            android:src="@drawable/bookmark_empty_view" />
+
+
     </RelativeLayout>
 
 

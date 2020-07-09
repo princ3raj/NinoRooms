@@ -432,4 +432,32 @@
     </style>
 
 
+    ->
+    <!-- styles.xml -->
+    <style name="swipe_right">
+
+        <item name="android:textSize">
+            20sp
+        </item>
+
+        <item name="android:textColor">
+            #5744F6
+        </item>
+
+    </style>
+
+
+    <style name="no_favourite_text">
+
+        <item name="android:textSize">
+            20sp
+        </item>
+
+        <item name="android:textColor">
+            #C4C4C4
+        </item>
+
+    </style>
+
+
 </resources>

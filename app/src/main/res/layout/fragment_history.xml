@@ -41,6 +41,15 @@
             android:background="#fff" />
 
 
+        <ImageView
+            android:id="@+id/history_empty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="550dp"
+            android:src="@drawable/ic_history_empty_view" />
+
+
     </RelativeLayout>
 
 

@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -38,6 +39,8 @@ public class HistoryFragment extends Fragment implements
 //    ProgressDialog progressDialog;
 
     private ImageButton mHistoryRefresh;
+
+    private ImageView mEmptyView;
 
 
     private ArrayList<NinoRooms> mHistories = new ArrayList<>();
@@ -76,6 +79,7 @@ public class HistoryFragment extends Fragment implements
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
         mHistoryRefresh = view.findViewById(R.id.history_refresh);
+        mEmptyView = view.findViewById(R.id.history_empty_view);
         mHistoryRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -133,7 +137,16 @@ public class HistoryFragment extends Fragment implements
 
 
                 }
-                mHistoryRecyclerViewAdapter.notifyDataSetChanged();
+                if (mHistoryRecyclerViewAdapter.getItemCount() == 0) {
+                    mEmptyView.setVisibility(View.VISIBLE);
+                    mHistoryRecyclerViewAdapter.notifyDataSetChanged();
+
+                } else {
+                    mEmptyView.setVisibility(View.GONE);
+                    mHistoryRecyclerViewAdapter.notifyDataSetChanged();
+
+                }
+
 //                progressDialog.dismiss();
 
             }
