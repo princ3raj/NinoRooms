@@ -8,7 +8,7 @@ import nino.rooms.pgcompany.persistence.HistoryDao;
 
 public class DeleteAsyncTask extends AsyncTask<NinoRooms, Void, Void> {
 
-    private HistoryDao mHistoryDao;
+    private final HistoryDao mHistoryDao;
 
     public DeleteAsyncTask(HistoryDao historyDao) {
         mHistoryDao = historyDao;

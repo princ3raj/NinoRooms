@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
 
@@ -31,12 +32,20 @@
                     android:layout_height="400dp" />
 
 
-                <ImageButton
+                <ImageView
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/tint_arrowback"
+                    android:clickable="true"
+                    android:contentDescription="@string/todo"
+                    android:focusable="true"
+                    android:src="@drawable/ic_black_back_arrow"
+                    android:tint="@android:color/transparent"
                     android:id="@+id/arrow_back"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="25dp"
-                    android:background="@drawable/ic_black_back_arrow" />
+                    android:tintMode="src_in"
+                    tools:layout_gravity="center" />
 
 
                 <ImageButton
@@ -45,7 +54,8 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_margin="25dp"
-                    android:background="@drawable/ic_bookmark_unactive" />
+                    android:background="@drawable/ic_bookmark_unactive"
+                    android:contentDescription="@string/todo" />
 
 
                 <TextView
@@ -54,7 +64,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="410dp"
-                    android:text="Ace Divino"
+                    android:text="@string/ace_divino"
                     android:textAppearance="@style/pg_name" />
 
                 <TextView
@@ -64,7 +74,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="410dp"
                     android:layout_marginEnd="25dp"
-                    android:text="Rs.7,640"
+                    android:text="@string/rs_7_640"
                     android:textAppearance="@style/price_tag" />
 
 
@@ -74,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="460dp"
-                    android:text="Sector 121, Noida"
+                    android:text="@string/sector_121_noida"
                     android:textAppearance="@style/address" />
 
                 <TextView
@@ -84,7 +94,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="460dp"
                     android:layout_marginEnd="25dp"
-                    android:text="1 month"
+                    android:text="@string/_1_month"
                     android:textAppearance="@style/month" />
 
                 <View
@@ -101,7 +111,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="520dp"
-                    android:text="Details"
+                    android:text="@string/details"
                     android:textAppearance="@style/details" />
 
                 <TextView
@@ -116,20 +126,25 @@
 
 
                 <TextView
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/tint_select_room"
+                    android:src="@drawable/select_room"
+                    android:text="@string/contact_owner"
+                    android:tint="@android:color/transparent"
                     android:id="@+id/contact_owner"
                     android:layout_width="650dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="700dp"
                     android:layout_marginEnd="25dp"
-                    android:background="@drawable/select_room"
+                    android:tintMode="src_in"
                     android:clickable="true"
                     android:padding="15dp"
                     android:focusable="true"
                     android:textAlignment="center"
                     android:textColor="#FFF"
                     android:textSize="21sp"
-                    android:text="Contact Owner"
+                    tools:layout_gravity="center"
                     android:textStyle="bold" />
 
                 <TextView
@@ -137,7 +152,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="785dp"
-                    android:text="Location"
+                    android:text="@string/location"
                     android:textAppearance="@style/details" />
 
 
@@ -150,7 +165,8 @@
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="840dp"
                     android:layout_marginEnd="25dp"
-                    android:background="@drawable/google_map" />
+                    android:background="@drawable/google_map"
+                    android:contentDescription="@string/todo" />
 
                 <ImageButton
 
@@ -160,7 +176,8 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="188dp"
                     android:layout_marginTop="910dp"
-                    android:background="@drawable/gps" />
+                    android:background="@drawable/gps"
+                    android:contentDescription="@string/todo" />
 
                 <ImageButton
 
@@ -170,14 +187,15 @@
                     android:layout_alignParentTop="true"
                     android:layout_marginStart="197dp"
                     android:layout_marginTop="920dp"
-                    android:background="@drawable/gps_point" />
+                    android:background="@drawable/gps_point"
+                    android:contentDescription="@string/todo" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="25dp"
                     android:layout_marginTop="1030dp"
-                    android:text="Facilities"
+                    android:text="@string/facilities"
                     android:textAppearance="@style/details" />
 
 
@@ -188,6 +206,7 @@
                     android:orientation="horizontal"
                     android:padding="25dp"
                     android:layout_width="match_parent"
+                    android:baselineAligned="false"
                     android:weightSum="100">
 
 
@@ -200,12 +219,13 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:contentDescription="@string/todo"
                             android:src="@drawable/ic_wifi_facility" />
 
                         <TextView
                             android:layout_width="70dp"
                             android:layout_height="wrap_content"
-                            android:text="Internet"
+                            android:text="@string/internet"
                             android:textAlignment="center"
                             android:textAppearance="@style/facility_text" />
 
@@ -222,12 +242,13 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:contentDescription="@string/todo"
                             android:src="@drawable/ic_ac_facility" />
 
                         <TextView
                             android:layout_width="70dp"
                             android:layout_height="wrap_content"
-                            android:text="Ac"
+                            android:text="@string/ac"
                             android:textAlignment="center"
                             android:textAppearance="@style/facility_text" />
 
@@ -243,12 +264,13 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:contentDescription="@string/todo"
                             android:src="@drawable/ic_powerbackup_facility" />
 
                         <TextView
                             android:layout_width="70dp"
                             android:layout_height="wrap_content"
-                            android:text="Power"
+                            android:text="@string/power"
                             android:textAlignment="center"
                             android:textAppearance="@style/facility_text" />
 
@@ -264,12 +286,13 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:contentDescription="@string/todo"
                             android:src="@drawable/ic_washing_machine_facility" />
 
                         <TextView
                             android:layout_width="70dp"
                             android:layout_height="wrap_content"
-                            android:text="Machine"
+                            android:text="@string/machine"
                             android:textAlignment="center"
                             android:textAppearance="@style/facility_text" />
 
@@ -285,12 +308,13 @@
                         <ImageView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:contentDescription="@string/todo"
                             android:src="@drawable/ic_cctv_facility" />
 
                         <TextView
                             android:layout_width="70dp"
                             android:layout_height="wrap_content"
-                            android:text="CCTV"
+                            android:text="@string/cctv"
                             android:textAlignment="center"
                             android:textAppearance="@style/facility_text" />
 

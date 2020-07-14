@@ -24,10 +24,10 @@ public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter<HistoryRecy
 
     private static final String TAG = "HistoryRecyclerViewAdap";
 
-    private ArrayList<NinoRooms> mHistories = new ArrayList<>();
+    private final ArrayList<NinoRooms> mHistories;
 
-    private Context context;
-    private OnHistoryListener mOnHistoryListener;
+    private final Context context;
+    private final OnHistoryListener mOnHistoryListener;
 
     public HistoryRecyclerViewAdapter(ArrayList<NinoRooms> histories, Context context, OnHistoryListener onHistoryListener) {
         this.context = context;
@@ -74,15 +74,14 @@ public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter<HistoryRecy
     }
 
 
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-
-        TextView ac_prices;
-        TextView pg_name;
-        TextView details;
-        TextView location;
-        ImageView pg_image;
-        OnHistoryListener mOnHistoryListener;
+        final TextView ac_prices;
+        final TextView pg_name;
+        final TextView details;
+        final TextView location;
+        final ImageView pg_image;
+        final OnHistoryListener mOnHistoryListener;
 
 
         public ViewHolder(@NonNull View itemView, OnHistoryListener onHistoryListener) {

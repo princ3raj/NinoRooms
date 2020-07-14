@@ -7,7 +7,7 @@ import nino.rooms.pgcompany.persistence.HistoryDao;
 
 public class InsertAsyncTask extends AsyncTask<NinoRooms, Void, Void> {
 
-    private HistoryDao mHistoryDao;
+    private final HistoryDao mHistoryDao;
 
     public InsertAsyncTask(HistoryDao dao) {
         mHistoryDao = dao;

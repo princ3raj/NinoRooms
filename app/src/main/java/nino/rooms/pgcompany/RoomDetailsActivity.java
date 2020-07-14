@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -35,8 +36,6 @@ public class RoomDetailsActivity extends AppCompatActivity {
     private ImageButton mBookmarks;
 
 
-    //back_arrow
-    private ImageButton mBackArrow;
     public static String pg_image;
     public static String pg_image_two;
     public static String pg_image_three;
@@ -45,36 +44,15 @@ public class RoomDetailsActivity extends AppCompatActivity {
     //and even function
     private int bookmark_increment = 0;
 
-    //slider
-    private Slider mSlider;
-
-
-    //all views widgets variables
-    private TextView mPg_name;
-    private TextView mAc_price;
-    private TextView mNon_ac_price;
-    private TextView mDetails;
-    private TextView mLocation;
 
     //all variables are for searchactivity intent object
     private String phone_number;
     private String location;
     private String details;
     private String pg_name;
-    private String id;
     private String ac_prices;
     private String non_ac_prices;
     private int Uid;
-
-
-
-
-    //contact owner button setup
-    //and make a action call through intent
-    private TextView mContactOwner;
-
-    //location setup variable
-    private ImageButton mLocationCall;
 
 
     //for ninorooms searchobject
@@ -84,8 +62,6 @@ public class RoomDetailsActivity extends AppCompatActivity {
     //for ninorooms searchobject
     private NinoRooms mNinoRoomsHistoryObject;
 
-    //for ninorooms bookmarks object
-    private NinoRooms mBookmarksObject;
     private String bookmark;
     private String test = null;
 
@@ -101,10 +77,10 @@ public class RoomDetailsActivity extends AppCompatActivity {
         decorView.setSystemUiVisibility(uiOptions);
 
 
-
         //back_arrow reference
-        mBackArrow = findViewById(R.id.arrow_back);
-        mBackArrow.setOnClickListener(new View.OnClickListener() {
+        //back_arrow
+        ImageView backArrow = findViewById(R.id.arrow_back);
+        backArrow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 onBackPressed();
@@ -115,11 +91,11 @@ public class RoomDetailsActivity extends AppCompatActivity {
         //extracting the value from parcelable object
         Intent intentAction = getIntent();
         ninoRooms = intentAction.getParcelableExtra("NinoRooms");
+        String id;
         if (ninoRooms != null) {
 
             Log.d(TAG, "onCreate: searchDetails called");
             //collecting all the properties values
-            id = ninoRooms.getId();
             pg_name = ninoRooms.getPg_name();
             phone_number = ninoRooms.getPhone_number();
             location = ninoRooms.getLocation();
@@ -144,7 +120,6 @@ public class RoomDetailsActivity extends AppCompatActivity {
         if (mNinoRoomsHistoryObject != null) {
             Log.d(TAG, "onCreate: history called");
             Uid = mNinoRoomsHistoryObject.getUid();
-            id = mNinoRoomsHistoryObject.getId();
             pg_name = mNinoRoomsHistoryObject.getPg_name();
             phone_number = mNinoRoomsHistoryObject.getPhone_number();
             location = mNinoRoomsHistoryObject.getLocation();
@@ -165,21 +140,21 @@ public class RoomDetailsActivity extends AppCompatActivity {
         //setup the features
         //extracting the value from bookmark objects;
         Intent intentBookmark = getIntent();
-        mBookmarksObject = intentBookmark.getParcelableExtra("bookmark");
+        //for ninorooms bookmarks object
+        NinoRooms bookmarksObject = intentBookmark.getParcelableExtra("bookmark");
 
-        if (mBookmarksObject != null) {
+        if (bookmarksObject != null) {
             Log.d(TAG, "onCreate: bookmark called");
             //collecting all the properties values
-            id = mBookmarksObject.getId();
-            pg_name = mBookmarksObject.getPg_name();
-            phone_number = mBookmarksObject.getPhone_number();
-            location = mBookmarksObject.getLocation();
-            details = mBookmarksObject.getDetails();
-            ac_prices = mBookmarksObject.getAc_prices();
-            non_ac_prices = mBookmarksObject.getNon_ac_prices();
-            pg_image = mBookmarksObject.getPg_image();
-            pg_image_two = mBookmarksObject.getPg_image_two();
-            pg_image_three = mBookmarksObject.getPg_image_three();
+            pg_name = bookmarksObject.getPg_name();
+            phone_number = bookmarksObject.getPhone_number();
+            location = bookmarksObject.getLocation();
+            details = bookmarksObject.getDetails();
+            ac_prices = bookmarksObject.getAc_prices();
+            non_ac_prices = bookmarksObject.getNon_ac_prices();
+            pg_image = bookmarksObject.getPg_image();
+            pg_image_two = bookmarksObject.getPg_image_two();
+            pg_image_three = bookmarksObject.getPg_image_three();
             bookmark = null;
             mBookmarks = findViewById(R.id.bookmark);
             mBookmarks.setImageResource(R.drawable.ic_active_bookmark);
@@ -189,25 +164,27 @@ public class RoomDetailsActivity extends AppCompatActivity {
 
 
         //attaching all views by referencing to its ids
-        mPg_name = findViewById(R.id.pg_name);
-        mAc_price = findViewById(R.id.ac_price);
-        mNon_ac_price = findViewById(R.id.non_ac_price);
-        mDetails = findViewById(R.id.details);
-        mLocation = findViewById(R.id.location);
+        //all views widgets variables
+        TextView pg_name1 = findViewById(R.id.pg_name);
+        TextView ac_price = findViewById(R.id.ac_price);
+        TextView non_ac_price = findViewById(R.id.non_ac_price);
+        TextView details1 = findViewById(R.id.details);
+        TextView location1 = findViewById(R.id.location);
 
 
         //set text to all views
-        mPg_name.setText(pg_name);
-        mLocation.setText(location);
-        mDetails.setText(details);
-        mNon_ac_price.setText(String.format("%s%s", getString(R.string.non_ac_price), non_ac_prices));
-        mAc_price.setText(String.format("%s%s", getString(R.string.ac_price), ac_prices));
+        pg_name1.setText(pg_name);
+        location1.setText(location);
+        details1.setText(details);
+        non_ac_price.setText(String.format("%s%s", getString(R.string.non_ac_price), non_ac_prices));
+        ac_price.setText(String.format("%s%s", getString(R.string.ac_price), ac_prices));
 
 
         //slider initiliaztion and setup
         Slider.init(new PicassoImageLoadingService(this));
-        mSlider = findViewById(R.id.banner_slider1);
-        mSlider.setAdapter(new MainSliderAdapter());
+        //slider
+        Slider slider = findViewById(R.id.banner_slider1);
+        slider.setAdapter(new MainSliderAdapter());
 
         //bookmark accessing and set up active and inactive feature
         mBookmarks = findViewById(R.id.bookmark);
@@ -258,8 +235,10 @@ public class RoomDetailsActivity extends AppCompatActivity {
 
 
         //contact owner setup
-        mContactOwner = findViewById(R.id.contact_owner);
-        mContactOwner.setOnClickListener(new View.OnClickListener() {
+        //contact owner button setup
+        //and make a action call through intent
+        TextView contactOwner = findViewById(R.id.contact_owner);
+        contactOwner.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -287,11 +266,12 @@ public class RoomDetailsActivity extends AppCompatActivity {
 
 
         //Location Call setup
-        mLocationCall = findViewById(R.id.location_call);
-        mLocationCall.setOnClickListener(new View.OnClickListener() {
+        //location setup variable
+        ImageButton locationCall = findViewById(R.id.location_call);
+        locationCall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri gmmIntentUri = Uri.parse(location);
+                Uri gmmIntentUri = Uri.parse("google.navigation:q=" + location);
                 Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
                 mapIntent.setPackage("com.google.android.apps.maps");
                 startActivity(mapIntent);
@@ -347,13 +327,6 @@ public class RoomDetailsActivity extends AppCompatActivity {
     protected void onPause() {
         super.onPause();
         Log.d(TAG, "onPause: called");
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-
-
     }
 
 

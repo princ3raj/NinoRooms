@@ -71,7 +71,6 @@
                                 android:layout_height="wrap_content">
 
                                 <TextView
-                                    android:id="@+id/find_home"
                                     android:text="@string/find_deals"
                                     android:textAppearance="@style/find_deals"
                                     android:layout_width="wrap_content"
@@ -148,7 +147,6 @@
                         <TextView
                             android:textStyle="bold"
                             android:layout_weight="0.6"
-                            android:id="@+id/popular_places"
                             android:layout_width="155dp"
                             android:layout_height="27dp"
                             android:layout_margin="25dp"
@@ -162,7 +160,6 @@
                         <TextView
                             android:layout_margin="25dp"
                             android:layout_weight="0.3"
-                            android:id="@+id/view_all"
                             android:layout_width="70dp"
                             android:layout_height="27dp"
                             android:text="@string/view_all"
@@ -194,7 +191,6 @@
                         android:weightSum="2"
                         android:padding="30dp"
                         android:background="#F6F6F6"
-                        android:id="@+id/illustraion_part_1"
                         android:layout_marginTop="530dp"
                         android:orientation="vertical"
                         android:layout_width="match_parent"
@@ -222,13 +218,15 @@
                                 android:layout_weight="50"
                                 android:layout_height="168dp"
                                 android:layout_width="0dp"
-                                android:src="@drawable/illustration_one"/>
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/illustration_one" />
 
                             <ImageView
                                 android:layout_weight="50"
                                 android:layout_height="168dp"
                                 android:layout_width="0dp"
-                                android:src="@drawable/illustration_two"/>
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/illustration_two" />
 
 
                         </LinearLayout>
@@ -248,12 +246,12 @@
                                 android:layout_weight="1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="Comfort and Convenience"/>
+                                android:text="@string/comfort_and_convenience" />
 
                             <TextView
                                 android:layout_marginRight="40dp"
                                 android:layout_marginLeft="40dp"
-                                android:text="Safety and Homely stay"
+                                android:text="@string/safety_and_homely_stay"
                                 android:layout_weight="1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
@@ -280,13 +278,15 @@
                                 android:layout_weight="50"
                                 android:layout_height="168dp"
                                 android:layout_width="0dp"
-                                android:src="@drawable/illustration_three"/>
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/illustration_three" />
 
                             <ImageView
                                 android:layout_weight="50"
                                 android:layout_height="168dp"
                                 android:layout_width="0dp"
-                                android:src="@drawable/illustration_four"/>
+                                android:contentDescription="@string/todo"
+                                android:src="@drawable/illustration_four" />
 
 
                         </LinearLayout>
@@ -307,7 +307,7 @@
                                 android:layout_weight="1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="Food and Drinks"/>
+                                android:text="@string/food_and_drinks" />
 
                             <TextView
                                 android:layout_marginRight="40dp"
@@ -316,7 +316,7 @@
                                 android:layout_weight="1"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
-                                android:text="Pocket-Friendly"/>
+                                android:text="@string/pocket_friendly" />
 
 
 
@@ -343,7 +343,6 @@
 
                 <LinearLayout
                     android:orientation="vertical"
-                    android:id="@+id/parent_illustraion_two"
                     android:background="#FFFFFF"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -352,7 +351,7 @@
                     <TextView
                         android:textStyle="bold"
                         android:layout_margin="15dp"
-                        android:text="Amenities"
+                        android:text="@string/amenities"
                         android:textAppearance="@style/just_like_home"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
@@ -383,7 +382,6 @@
 
 
                                 <View
-                                    android:id="@+id/wifi"
                                     android:layout_centerInParent="true"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"
@@ -396,7 +394,7 @@
                                     android:textAppearance="@style/illustration_two_style"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="WiFi"
+                                    android:text="@string/wifi"
                                     />
 
 
@@ -449,7 +447,7 @@
                                     android:textAppearance="@style/illustration_two_style"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="TV"
+                                    android:text="@string/tv"
                                     />
 
 
@@ -489,7 +487,7 @@
                                     android:textAppearance="@style/illustration_two_style"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="DTH"
+                                    android:text="@string/dth"
                                     />
 
 
@@ -635,7 +633,7 @@
                                     android:textAppearance="@style/illustration_two_style"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="CCTV"
+                                    android:text="@string/cctv"
                                     />
 
 
@@ -687,7 +685,7 @@
                                     android:textAppearance="@style/illustration_two_style"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="AC"
+                                    android:text="@string/ac"
                                     />
 
 
@@ -740,7 +738,7 @@
                                     android:textAppearance="@style/illustration_two_style"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Generator" />
+                                    android:text="@string/generator" />
 
                             </RelativeLayout>
 
@@ -778,7 +776,7 @@
                                     android:textAppearance="@style/illustration_two_style"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="Cooler"
+                                    android:text="@string/cooler"
                                     />
 
 
@@ -808,7 +806,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="20dp"
                         android:background="#fff"
-                        android:text="What makes us better"
+                        android:text="@string/what_makes_us_better"
                         android:textAppearance="@style/just_like_home"
                         android:textStyle="bold" />
 
@@ -831,6 +829,7 @@
                             android:padding="10dp"
                             android:text="@string/last_section"
                             android:textAppearance="@style/last_section"
+                            android:autofillHints=""
                             android:textColor="#C4C4C4" />
 
 

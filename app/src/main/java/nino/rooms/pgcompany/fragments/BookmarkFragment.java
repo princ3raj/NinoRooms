@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -21,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import nino.rooms.pgcompany.R;
 import nino.rooms.pgcompany.RoomDetailsActivity;
@@ -36,11 +36,10 @@ public class BookmarkFragment extends Fragment implements
     private ImageView mEmptyView;
 
     private Context mContext;
-    private ArrayList<NinoRooms> mHistories = new ArrayList<>();
+    private final ArrayList<NinoRooms> mHistories = new ArrayList<>();
     private RecyclerView mBookmarkRecyclerView;
     private BookMarkAdapter mBookMarkAdapter;
     private HistoryRepository mHistoryRepository;
-    private ImageButton mFilterIcon;
 
 
     @Override
@@ -49,7 +48,7 @@ public class BookmarkFragment extends Fragment implements
         super.onAttach(context);
     }
 
-    private ItemTouchHelper.SimpleCallback itemTouchHelperCallBack = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+    private final ItemTouchHelper.SimpleCallback itemTouchHelperCallBack = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
         @Override
         public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
             return false;
@@ -67,7 +66,7 @@ public class BookmarkFragment extends Fragment implements
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_bookmark, container, false);
         // Hide the status bar.
-        View decorView = getActivity().getWindow().getDecorView();
+        View decorView = Objects.requireNonNull(getActivity()).getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
         mHistoryRepository = new HistoryRepository(getActivity());
@@ -78,8 +77,8 @@ public class BookmarkFragment extends Fragment implements
 
 
         mBookmarkRecyclerView = view.findViewById(R.id.bookmark_recycler_view);
-        mFilterIcon = view.findViewById(R.id.filter);
-        mFilterIcon.setOnClickListener(new View.OnClickListener() {
+        ImageView filterIcon = view.findViewById(R.id.filter);
+        filterIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                progressDialog.show();

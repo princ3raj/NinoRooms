@@ -21,6 +21,8 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import java.util.Objects;
+
 import nino.rooms.pgcompany.MainActivity;
 import nino.rooms.pgcompany.R;
 
@@ -29,7 +31,6 @@ public class LoginFragment extends Fragment {
 
     private EditText mEmail;
     private EditText mPassword;
-    private TextView mSignIn;
 
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
@@ -48,7 +49,7 @@ public class LoginFragment extends Fragment {
         mFirebaseAuth = FirebaseAuth.getInstance();
         mEmail = view.findViewById(R.id.login_email);
         mPassword = view.findViewById(R.id.login_password);
-        mSignIn = view.findViewById(R.id.login);
+        TextView signIn = view.findViewById(R.id.login);
         progressDialog = new ProgressDialog(getContext());
 
 
@@ -59,7 +60,7 @@ public class LoginFragment extends Fragment {
                 if (mFirebaseUser != null) {
                     Toast.makeText(getContext(), "You are logged in", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getContext(), MainActivity.class));
-                    getActivity().finish();
+                    Objects.requireNonNull(getActivity()).finish();
 
                 }
 
@@ -67,7 +68,7 @@ public class LoginFragment extends Fragment {
         };
 
 
-        mSignIn.setOnClickListener(new View.OnClickListener() {
+        signIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 progressDialog.setMessage("Logging you in...");
@@ -103,7 +104,7 @@ public class LoginFragment extends Fragment {
 
         //creating a new user
         mFirebaseAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(Objects.requireNonNull(getActivity()), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
@@ -111,11 +112,11 @@ public class LoginFragment extends Fragment {
                         if (task.isSuccessful()) {
                             progressDialog.dismiss();
                             Intent intent = new Intent(getContext(), MainActivity.class);
-                            getContext().startActivity(intent);
+                            Objects.requireNonNull(getContext()).startActivity(intent);
                             Toast.makeText(getContext(), "success", Toast.LENGTH_SHORT).show();
                         } else {
                             progressDialog.dismiss();
-                            Log.e(TAG, "onComplete: Failed=" + task.getException().getMessage());
+                            Log.e(TAG, "onComplete: Failed=" + Objects.requireNonNull(task.getException()).getMessage());
                             Toast.makeText(getContext(), "email or password incorrect", Toast.LENGTH_SHORT).show();
                         }
 

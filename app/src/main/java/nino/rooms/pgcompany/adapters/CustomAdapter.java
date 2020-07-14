@@ -25,25 +25,25 @@ import nino.rooms.pgcompany.model.NinoRooms;
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomViewHolder> {
 
     private static final String TAG = "CustomAdapter";
-    private List<NinoRooms> mNinoRooms;
-    private Context context;
+    private final List<NinoRooms> mNinoRooms;
+    private final Context context;
     private static final String EXTRA_TEXT = "position";
 
-    public CustomAdapter(Context context,List<NinoRooms> ninoRooms){
+    public CustomAdapter(Context context, List<NinoRooms> ninoRooms) {
         this.context = context;
         this.mNinoRooms = ninoRooms;
         Log.d(TAG, "CustomAdapter:called " + ninoRooms);
     }
 
-    class CustomViewHolder extends RecyclerView.ViewHolder {
+    static class CustomViewHolder extends RecyclerView.ViewHolder {
 
         public final View mView;
 
-        private TextView pg_name;
-        private TextView location;
-        private TextView details;
-        private TextView ac_prices;
-        private ImageView pg_image;
+        private final TextView pg_name;
+        private final TextView location;
+        private final TextView details;
+        private final TextView ac_prices;
+        private final ImageView pg_image;
 
         CustomViewHolder(View itemView) {
             super(itemView);
@@ -52,7 +52,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             location = mView.findViewById(R.id.location);
             details = mView.findViewById(R.id.details);
             pg_image = mView.findViewById(R.id.pg_image);
-            ac_prices=mView.findViewById(R.id.ac_price);
+            ac_prices = mView.findViewById(R.id.ac_price);
         }
     }
 

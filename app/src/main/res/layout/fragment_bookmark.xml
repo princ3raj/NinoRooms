@@ -3,6 +3,7 @@
 
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="#fff"
     android:layout_height="match_parent">
 
@@ -23,14 +24,22 @@
             android:textAppearance="@style/favourites" />
 
 
-        <ImageButton
+        <ImageView
+            android:adjustViewBounds="true"
+            android:background="@drawable/tint_refresh"
+            android:clickable="true"
+            android:contentDescription="@string/todo"
+            android:focusable="true"
+            android:src="@drawable/ic_option_1"
+            android:tint="@android:color/transparent"
             android:id="@+id/filter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_marginTop="50dp"
             android:layout_marginEnd="25dp"
-            android:background="@drawable/ic_option_1" />
+            android:tintMode="src_in"
+            tools:layout_gravity="center" />
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -47,7 +56,8 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginTop="580dp"
-            android:src="@drawable/bookmark_empty_view" />
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_newbookmarkstate" />
 
 
     </RelativeLayout>

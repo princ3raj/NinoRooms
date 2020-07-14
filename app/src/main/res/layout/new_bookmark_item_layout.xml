@@ -22,6 +22,7 @@
             android:layout_height="124dp"
             android:background="@drawable/apartment_resized"
             android:scaleType="centerCrop"
+            android:contentDescription="TODO"
             android:tint="#8F000000" />
 
         <ImageButton
@@ -29,7 +30,8 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_margin="15dp"
-            android:background="@drawable/ic_active_bookmark" />
+            android:background="@drawable/ic_active_bookmark"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/pg_name"

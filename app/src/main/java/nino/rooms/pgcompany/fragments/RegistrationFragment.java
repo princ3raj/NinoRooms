@@ -20,6 +20,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+import java.util.Objects;
+
 import nino.rooms.pgcompany.MainActivity;
 import nino.rooms.pgcompany.R;
 
@@ -29,7 +31,6 @@ public class RegistrationFragment extends Fragment {
 
 
     private EditText mEmail, mPassword;
-    private TextView mRegister;
     //defining firebaseauth object
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
@@ -49,10 +50,10 @@ public class RegistrationFragment extends Fragment {
 
         mEmail = view.findViewById(R.id.email_id);
         mPassword = view.findViewById(R.id.password);
-        mRegister = view.findViewById(R.id.register);
+        TextView register = view.findViewById(R.id.register);
         progressDialog = new ProgressDialog(getContext());
 
-        mRegister.setOnClickListener(new View.OnClickListener() {
+        register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 progressDialog.setMessage("Registering Please Wait...");
@@ -88,7 +89,7 @@ public class RegistrationFragment extends Fragment {
 
         //creating a new user
         firebaseAuth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+                .addOnCompleteListener(Objects.requireNonNull(getActivity()), new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
@@ -96,11 +97,11 @@ public class RegistrationFragment extends Fragment {
                         if (task.isSuccessful()) {
                             progressDialog.dismiss();
                             Intent intent = new Intent(getContext(), MainActivity.class);
-                            getContext().startActivity(intent);
+                            Objects.requireNonNull(getContext()).startActivity(intent);
                             Toast.makeText(getContext(), "success", Toast.LENGTH_SHORT).show();
                         } else {
                             progressDialog.dismiss();
-                            Log.e(TAG, "onComplete: Failed=" + task.getException().getMessage());
+                            Log.e(TAG, "onComplete: Failed=" + Objects.requireNonNull(task.getException()).getMessage());
                             Toast.makeText(getContext(), "Email already exists", Toast.LENGTH_SHORT).show();
                         }
 

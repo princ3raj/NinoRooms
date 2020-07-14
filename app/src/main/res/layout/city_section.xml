@@ -3,6 +3,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_marginTop="260dp"
     android:orientation="vertical">
 
@@ -25,10 +26,18 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/tint_delhi"
+                    android:clickable="true"
+                    android:contentDescription="@string/todo"
+                    android:focusable="true"
+                    android:src="@drawable/ic_minorchanges_delhi"
+                    android:tint="@android:color/transparent"
                     android:id="@+id/delhi"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/ic_minorchanges_noida" />
+                    android:tintMode="src_in"
+                    tools:layout_gravity="center" />
 
 
             </RelativeLayout>
@@ -47,9 +56,18 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/noida"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/tint_noida"
+                    android:clickable="true"
+                    android:contentDescription="@string/todo"
+                    android:focusable="true"
+                    android:src="@drawable/ic_minorchanges_noida"
+                    android:tint="@android:color/transparent"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/ic_lat_ghaziabad" />
+                    android:tintMode="src_in"
+                    tools:layout_gravity="center" />
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -65,9 +83,18 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/ghaziabad"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/tint_ghaziabad"
+                    android:clickable="true"
+                    android:contentDescription="@string/todo"
+                    android:focusable="true"
+                    android:src="@drawable/ic_lat_ghaziabad"
+                    android:tint="@android:color/transparent"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/ic_minorchanges_delhi" />
+                    android:tintMode="src_in"
+                    tools:layout_gravity="center" />
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -83,9 +110,18 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/gurgaon"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/tint_guragaon"
+                    android:clickable="true"
+                    android:contentDescription="@string/todo"
+                    android:focusable="true"
+                    android:src="@drawable/ic_minorchanges_gurgaon"
+                    android:tint="@android:color/transparent"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/ic_lat_jaipur" />
+                    android:tintMode="src_in"
+                    tools:layout_gravity="center" />
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -112,9 +148,18 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/jaipur"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/tint_jaipur"
+                    android:clickable="true"
+                    android:contentDescription="@string/todo"
+                    android:focusable="true"
+                    android:src="@drawable/ic_lat_jaipur"
+                    android:tint="@android:color/transparent"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/ic_minorchanges_gurgaon" />
+                    android:tintMode="src_in"
+                    tools:layout_gravity="center" />
 
 
             </RelativeLayout>
@@ -133,9 +178,18 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/kota"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/tint_kota"
+                    android:clickable="true"
+                    android:contentDescription="@string/todo"
+                    android:focusable="true"
+                    android:src="@drawable/ic_kota"
+                    android:tint="@android:color/transparent"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/ic_c" />
+                    android:tintMode="src_in"
+                    tools:layout_gravity="center" />
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -151,9 +205,18 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/bhopal"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/tint_bhopal"
+                    android:clickable="true"
+                    android:contentDescription="@string/todo"
+                    android:focusable="true"
+                    android:src="@drawable/ic_bhopal"
+                    android:tint="@android:color/transparent"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/ic_ghaziabad" />
+                    android:tintMode="src_in"
+                    tools:layout_gravity="center" />
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>
@@ -169,9 +232,18 @@
                 android:layout_height="wrap_content">
 
                 <ImageView
+                    android:id="@+id/indore"
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/tint_indore"
+                    android:clickable="true"
+                    android:contentDescription="@string/todo"
+                    android:focusable="true"
+                    android:src="@drawable/ic_indore_new"
+                    android:tint="@android:color/transparent"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/ic_delhi" />
+                    android:tintMode="src_in"
+                    tools:layout_gravity="center" />
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>

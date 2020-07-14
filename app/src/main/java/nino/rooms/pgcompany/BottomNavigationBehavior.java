@@ -1,8 +1,6 @@
 package nino.rooms.pgcompany;
 
 
-import android.content.Context;
-import android.util.AttributeSet;
 import android.view.View;
 import android.widget.FrameLayout;
 
@@ -18,17 +16,13 @@ public class BottomNavigationBehavior extends CoordinatorLayout.Behavior<BottomN
         super();
     }
 
-    public BottomNavigationBehavior(Context context, AttributeSet attrs) {
-        super(context, attrs);
-    }
-
     @Override
     public boolean layoutDependsOn(@NonNull CoordinatorLayout parent, @NonNull BottomNavigationView child, @NonNull View dependency) {
         return dependency instanceof FrameLayout;
     }
 
     @Override
-    public boolean onStartNestedScroll(@NonNull CoordinatorLayout coordinatorLayout, @NonNull BottomNavigationView child, @NonNull View directTargetChild, View target, int nestedScrollAxes) {
+    public boolean onStartNestedScroll(@NonNull CoordinatorLayout coordinatorLayout, @NonNull BottomNavigationView child, @NonNull View directTargetChild, @NonNull View target, int nestedScrollAxes) {
         return nestedScrollAxes == ViewCompat.SCROLL_AXIS_VERTICAL;
     }
 

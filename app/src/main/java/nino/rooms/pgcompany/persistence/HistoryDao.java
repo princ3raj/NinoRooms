@@ -25,7 +25,7 @@ public interface HistoryDao {
 
 
     @Insert
-    long[] insertHistory(NinoRooms... historyModels);
+    void insertHistory(NinoRooms... historyModels);
 
 
     @Delete

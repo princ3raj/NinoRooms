@@ -20,7 +20,6 @@
 
      Hello, Students
     </string>
-    <string name="find_locality_near_by">Find Locality Near by</string>
 
 
     <!-- strings.xml -->
@@ -35,18 +34,15 @@ View all
     <string name="top">Top</string>
     <string name="rooms_found">No Rooms found</string>
     <string name="home">Home</string>
-    <string name="bookmark">Bookmark</string>
-    <string name="history">History</string>
     <string name="setting">Setting</string>
 
-    <string name="favourite">Favourites</string>
     <string name="history_menu">History</string>
     <string name="city">City</string>
 
 
     <string name="details_text">
 
-Remarkable and world-class amenities nearby ranging from from health to educational centers to shopping centers which are all a stone throw away from Ace Divino.
+Remarkable and world-class amenities nearby ranging from health to educational centers to shopping centers which are all a stone throw away from Ace Divino.
 </string>
     <string name="non_ac_price">Non-Ac Rs.</string>
     <string name="ac_price">Ac Rs.</string>
@@ -59,6 +55,31 @@ Here Life is a wonderful concept. The facilities and hassle-free accommodation i
 </string>
     <string name="fridge">Fridge</string>
     <string name="machine">Laundry</string>
+    <string name="todo">TODO</string>
+    <string name="history">History</string>
+    <string name="comfort_and_convenience">Comfort and Convenience</string>
+    <string name="safety_and_homely_stay">Safety and Homely stay</string>
+    <string name="food_and_drinks">Food and Drinks</string>
+    <string name="pocket_friendly">Pocket-Friendly</string>
+    <string name="amenities">Amenities</string>
+    <string name="wifi">WiFi</string>
+    <string name="tv">TV</string>
+    <string name="dth">DTH</string>
+    <string name="cctv">CCTV</string>
+    <string name="ac">AC</string>
+    <string name="generator">Generator</string>
+    <string name="cooler">Cooler</string>
+    <string name="what_makes_us_better">What makes us better</string>
+    <string name="ace_divino">Ace Divino</string>
+    <string name="rs_7_640">Rs.7,640</string>
+    <string name="sector_121_noida">Sector 121, Noida</string>
+    <string name="_1_month">1 month</string>
+    <string name="details">Details</string>
+    <string name="contact_owner">Contact Owner</string>
+    <string name="location">Location</string>
+    <string name="facilities">Facilities</string>
+    <string name="internet">Internet</string>
+    <string name="power">Power</string>
 
 
 </resources>

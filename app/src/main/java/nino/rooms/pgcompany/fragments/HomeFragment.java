@@ -27,10 +27,6 @@ public class HomeFragment extends Fragment {
 
     private Context mContext;
 
-    private ImageView mDelhiImageView;
-
-    private SearchView mSearchView;
-
 
     @Override
     public void onAttach(@NonNull Context context) {
@@ -44,29 +40,107 @@ public class HomeFragment extends Fragment {
         View view=inflater.inflate(R.layout.fragment_home, container,false);
 
 
-
-
         // Hide the status bar.
-        View decorView = getActivity().getWindow().getDecorView();
+        View decorView = Objects.requireNonNull(getActivity()).getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
 
 
-        mDelhiImageView = view.findViewById(R.id.delhi);
-        mDelhiImageView.setOnClickListener(new View.OnClickListener() {
+        ImageView delhiImageView = view.findViewById(R.id.delhi);
+        delhiImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), SearchResultActivity.class);
-                intent.putExtra("Delhi", "Noida");
+                intent.putExtra("city", "Delhi");
                 Objects.requireNonNull(getActivity()).startActivity(intent);
 
 
             }
         });
 
+        ImageView noidaImageView = view.findViewById(R.id.noida);
+        noidaImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SearchResultActivity.class);
+                intent.putExtra("city", "Noida");
+                Objects.requireNonNull(getActivity()).startActivity(intent);
+
+            }
+        });
+
+        ImageView ghaziabadImageView = view.findViewById(R.id.ghaziabad);
+        ghaziabadImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SearchResultActivity.class);
+                intent.putExtra("city", "Ghaziabad");
+                Objects.requireNonNull(getActivity()).startActivity(intent);
+
+            }
+        });
+
+
+        ImageView gurgaonImageView = view.findViewById(R.id.gurgaon);
+        gurgaonImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SearchResultActivity.class);
+                intent.putExtra("city", "Gurgaon");
+                Objects.requireNonNull(getActivity()).startActivity(intent);
+
+            }
+        });
+
+
+        ImageView jaipurImageView = view.findViewById(R.id.jaipur);
+        jaipurImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SearchResultActivity.class);
+                intent.putExtra("city", "Jaipur");
+                Objects.requireNonNull(getActivity()).startActivity(intent);
+
+            }
+        });
+
+        ImageView kotaImageView = view.findViewById(R.id.kota);
+        kotaImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SearchResultActivity.class);
+                intent.putExtra("city", "Kota");
+                Objects.requireNonNull(getActivity()).startActivity(intent);
+
+
+            }
+        });
+
+        ImageView bhopalImageView = view.findViewById(R.id.bhopal);
+        bhopalImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SearchResultActivity.class);
+                intent.putExtra("city", "Bhopal");
+                Objects.requireNonNull(getActivity()).startActivity(intent);
+
+            }
+        });
+
+        ImageView indoreImageView = view.findViewById(R.id.indore);
+        indoreImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), SearchResultActivity.class);
+                intent.putExtra("city", "Indore");
+                Objects.requireNonNull(getActivity()).startActivity(intent);
+
+            }
+        });
+
         //searchIcon setup
-        mSearchView = view.findViewById(R.id.search_icon);
-        mSearchView.setOnSearchClickListener(new View.OnClickListener() {
+        SearchView searchView = view.findViewById(R.id.search_icon);
+        searchView.setOnSearchClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(mContext, "search is not enabled yet", Toast.LENGTH_SHORT).show();
@@ -74,7 +148,7 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 Toast.makeText(mContext, "Search has not been enabled yet", Toast.LENGTH_SHORT).show();

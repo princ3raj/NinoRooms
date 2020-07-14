@@ -5,9 +5,4 @@
     <color name="colorAccent">#03DAC5</color>
 
 
-    <color name="bottomNavigationBackground">#F7F7F7</color>
-
-    <color name="bottomNavigationTextColor">#B2B2B2</color>
-    <color name="bottomNavigationTintColor">#B2B2B2</color>
-    <color name="bottomNavigationSelectedColor">#FC4926</color>
 </resources>

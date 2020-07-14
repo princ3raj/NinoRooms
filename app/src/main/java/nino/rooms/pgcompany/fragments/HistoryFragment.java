@@ -7,7 +7,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -21,6 +20,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import nino.rooms.pgcompany.R;
 import nino.rooms.pgcompany.RoomDetailsActivity;
@@ -38,16 +38,14 @@ public class HistoryFragment extends Fragment implements
 //    //progressBar
 //    ProgressDialog progressDialog;
 
-    private ImageButton mHistoryRefresh;
-
     private ImageView mEmptyView;
 
 
-    private ArrayList<NinoRooms> mHistories = new ArrayList<>();
+    private final ArrayList<NinoRooms> mHistories = new ArrayList<>();
     private RecyclerView mHistoryRecyclerView;
     private HistoryRecyclerViewAdapter mHistoryRecyclerViewAdapter;
     private HistoryRepository mHistoryRepository;
-    private ItemTouchHelper.SimpleCallback itemTouchHelperCallBack = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+    private final ItemTouchHelper.SimpleCallback itemTouchHelperCallBack = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
         @Override
         public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
             return false;
@@ -75,12 +73,12 @@ public class HistoryFragment extends Fragment implements
 
 
         // Hide the status bar.
-        View decorView = getActivity().getWindow().getDecorView();
+        View decorView = Objects.requireNonNull(getActivity()).getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
         decorView.setSystemUiVisibility(uiOptions);
-        mHistoryRefresh = view.findViewById(R.id.history_refresh);
+        ImageView historyRefresh = view.findViewById(R.id.history_refresh);
         mEmptyView = view.findViewById(R.id.history_empty_view);
-        mHistoryRefresh.setOnClickListener(new View.OnClickListener() {
+        historyRefresh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 //                progressDialog.show();

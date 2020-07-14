@@ -10,7 +10,7 @@ import nino.rooms.pgcompany.R;
 import ss.com.bannerslider.ImageLoadingService;
 
 public class PicassoImageLoadingService implements ImageLoadingService {
-    public Context context;
+    public final Context context;
 
     public PicassoImageLoadingService(Context context) {
         this.context = context;

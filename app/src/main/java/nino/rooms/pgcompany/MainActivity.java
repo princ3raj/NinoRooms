@@ -23,9 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
 
 
-   private BottomNavigationView bottomNavigation;
-
-   //fragments
+    //fragments
 
     private HomeFragment mHomeFragment;
     private BookmarkFragment mBookmarkFragment;
@@ -49,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         decorView.setSystemUiVisibility(uiOptions);
 
 
-        bottomNavigation=findViewById(R.id.bottom_navigation);
+        BottomNavigationView bottomNavigation = findViewById(R.id.bottom_navigation);
 
 
         bottomNavigation.inflateMenu(R.menu.master_navigation_menu);

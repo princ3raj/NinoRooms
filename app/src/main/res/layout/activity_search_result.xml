@@ -60,25 +60,29 @@
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_margin="18dp"
-                    android:layout_weight="14"
+                    android:layout_weight="57"
                     android:visibility="invisible" />
 
                 <ImageView
+                    android:adjustViewBounds="true"
+                    android:background="@drawable/tint_refresh"
+                    android:clickable="true"
+                    android:contentDescription="TODO"
+                    android:focusable="true"
+                    android:src="@drawable/ic_option_1"
+                    android:tint="@android:color/transparent"
                     android:id="@+id/refresh_search"
                     android:layout_width="45dp"
                     android:layout_height="45dp"
                     android:layout_margin="18dp"
-                    android:layout_weight="43"
-                    android:clickable="true"
-                    android:focusable="true"
-                    android:src="@drawable/ic_option_1" />
+                    android:tintMode="src_in"
+                    tools:layout_gravity="center" />
 
 
             </LinearLayout>
 
             <!-- Line 1 -->
             <View
-                android:id="@+id/line_1"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:layout_marginLeft="18dp"

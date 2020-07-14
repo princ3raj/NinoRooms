@@ -25,10 +25,10 @@ public class BookMarkAdapter extends RecyclerView.Adapter<BookMarkAdapter.ViewHo
 
     private static final String TAG = "BookMarkAdapter";
 
-    private ArrayList<NinoRooms> mHistories = new ArrayList<>();
+    private final ArrayList<NinoRooms> mHistories;
 
-    private Context context;
-    private OnBookMarkListener mOnBookMarkListener;
+    private final Context context;
+    private final OnBookMarkListener mOnBookMarkListener;
 
     public BookMarkAdapter(ArrayList<NinoRooms> histories, Context context, OnBookMarkListener onBookMarkListener) {
         this.context = context;
@@ -80,14 +80,14 @@ public class BookMarkAdapter extends RecyclerView.Adapter<BookMarkAdapter.ViewHo
 
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView ac_prices;
-        TextView pg_name;
+        final TextView ac_prices;
+        final TextView pg_name;
         //        TextView details;
-        TextView location;
-        ImageView pg_image;
-        OnBookMarkListener mOnBookMarkListener;
+        final TextView location;
+        final ImageView pg_image;
+        final OnBookMarkListener mOnBookMarkListener;
 
 
         public ViewHolder(@NonNull View itemView, OnBookMarkListener onBookMarkListener) {

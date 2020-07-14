@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -17,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.text.MessageFormat;
 import java.util.List;
+import java.util.Objects;
 
 import nino.rooms.pgcompany.adapters.CustomAdapter;
 import nino.rooms.pgcompany.model.NinoRooms;
@@ -33,8 +35,6 @@ public class SearchResultActivity extends AppCompatActivity {
     private static final String TAG = "SearchResultActivity";
 
 
-    private Toolbar toolbar;
-
     //for filtering results
     private TextView mTop;
     private TextView mCheapest;
@@ -46,20 +46,16 @@ public class SearchResultActivity extends AppCompatActivity {
     //Rooms_found
 
     private TextView RoomsFound;
-    private int Rooms;
 
     //city name view
     private TextView CityName;
     private String City;
 
-    private CustomAdapter adapter;
     private RecyclerView recyclerView;
 
     //progressBar
     ProgressDialog progressDialog;
     private NinoRooms NinoRooms;
-
-    private ImageView mSearchRefreshIcon;
 
 
     @Override
@@ -77,9 +73,9 @@ public class SearchResultActivity extends AppCompatActivity {
         progressDialog.show();
 
         recyclerView = findViewById(R.id.nino_rooms_view);
-        mSearchRefreshIcon = findViewById(R.id.refresh_search);
+        ImageView searchRefreshIcon = findViewById(R.id.refresh_search);
 
-        mSearchRefreshIcon.setOnClickListener(new View.OnClickListener() {
+        searchRefreshIcon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 progressDialog.show();
@@ -89,9 +85,9 @@ public class SearchResultActivity extends AppCompatActivity {
 
 
         //toolbar setup
-        toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("");
         toolbar.setNavigationIcon(R.drawable.ic_svg_arrow_back);
         toolbar.setNavigationContentDescription("back");
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -171,7 +167,7 @@ public class SearchResultActivity extends AppCompatActivity {
 
 
         Intent intent = getIntent();
-        City = intent.getStringExtra("Delhi");
+        City = intent.getStringExtra("city");
 
 
 
@@ -188,12 +184,12 @@ public class SearchResultActivity extends AppCompatActivity {
     /*Method to generate List of data using RecyclerView with custom adapter*/
     private void generateDataList(List<NinoRooms> ninoRooms) {
         recyclerView = findViewById(R.id.nino_rooms_view);
-        adapter = new CustomAdapter(this, ninoRooms);
+        CustomAdapter adapter = new CustomAdapter(this, ninoRooms);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(SearchResultActivity.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
-        Rooms = adapter.getItemCount();
-        RoomsFound.setText(MessageFormat.format("{0} Rooms Found", Rooms));
+        int rooms = adapter.getItemCount();
+        RoomsFound.setText(MessageFormat.format("{0} Rooms Found", rooms));
         CityName.setText(City);
 
     }
@@ -208,15 +204,15 @@ public class SearchResultActivity extends AppCompatActivity {
 
         call.enqueue(new Callback<List<NinoRooms>>() {
             @Override
-            public void onResponse(Call<List<NinoRooms>> call, Response<List<NinoRooms>> response) {
+            public void onResponse(@NonNull Call<List<NinoRooms>> call, @NonNull Response<List<NinoRooms>> response) {
                 progressDialog.dismiss();
                 generateDataList(response.body());
-                Log.d(TAG, "onResponse: " + response.body().toString());
+                Log.d(TAG, "onResponse: " + Objects.requireNonNull(response.body()).toString());
 
             }
 
             @Override
-            public void onFailure(Call<List<NinoRooms>> call, Throwable t) {
+            public void onFailure(@NonNull Call<List<NinoRooms>> call, @NonNull Throwable t) {
                 Log.d(TAG, "onFailure: called");
                 progressDialog.dismiss();
 

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="#fff">
 
     <ImageButton
@@ -15,6 +16,7 @@
         app:layout_constraintHorizontal_bias="0.099"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="TODO"
         app:layout_constraintVertical_bias="0.089" />
 
     <TextView
@@ -60,11 +62,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
+        android:autofillHints=""
         app:layout_constraintVertical_bias="0.138" />
 
 
     <TextView
-        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Full Name"
@@ -92,6 +94,7 @@
         app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_id"
+        android:autofillHints=""
         app:layout_constraintVertical_bias="0.111" />
 
     <TextView
@@ -123,6 +126,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editText2"
+        android:autofillHints=""
         app:layout_constraintVertical_bias="0.135" />
 
     <TextView
@@ -156,15 +160,23 @@
         app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password"
+        android:autofillHints=""
         app:layout_constraintVertical_bias="0.269" />
 
     <TextView
+        android:adjustViewBounds="true"
+        android:background="@drawable/tint_select_room"
+        android:clickable="true"
+        android:focusable="true"
+        android:src="@drawable/select_room"
+        android:tint="@android:color/transparent"
+        android:tintMode="src_in"
         android:id="@+id/register"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:layout_margin="30dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/select_room"
+        tools:layout_gravity="center"
         android:padding="12dp"
         android:text="Register"
         android:textAlignment="center"

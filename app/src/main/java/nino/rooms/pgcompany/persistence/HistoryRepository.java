@@ -13,7 +13,7 @@ import nino.rooms.pgcompany.model.NinoRooms;
 
 public class HistoryRepository {
 
-    private HistoryDatabase mHistoryDatabase;
+    private final HistoryDatabase mHistoryDatabase;
 
     public HistoryRepository(Context context) {
         mHistoryDatabase = HistoryDatabase.getInstance(context);
