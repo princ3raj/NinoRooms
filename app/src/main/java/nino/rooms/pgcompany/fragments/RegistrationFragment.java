@@ -19,18 +19,20 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.Objects;
 
 import nino.rooms.pgcompany.MainActivity;
 import nino.rooms.pgcompany.R;
+import nino.rooms.pgcompany.model.User;
 
 public class RegistrationFragment extends Fragment {
 
     private static final String TAG = "RegistrationFragment";
 
 
-    private EditText mEmail, mPassword;
+    private EditText mEmail, mPassword, mFullname, mPhoneNumber;
     //defining firebaseauth object
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
@@ -50,6 +52,8 @@ public class RegistrationFragment extends Fragment {
 
         mEmail = view.findViewById(R.id.email_id);
         mPassword = view.findViewById(R.id.password);
+        mFullname = view.findViewById(R.id.fullname);
+        mPhoneNumber = view.findViewById(R.id.phone_number);
         TextView register = view.findViewById(R.id.register);
         progressDialog = new ProgressDialog(getContext());
 
@@ -70,8 +74,10 @@ public class RegistrationFragment extends Fragment {
     private void registerUser() {
 
         //getting email and password from edit texts
-        String email = mEmail.getText().toString().trim();
+        final String email = mEmail.getText().toString().trim();
         String password = mPassword.getText().toString().trim();
+        final String phonenumber = mPhoneNumber.getText().toString().trim();
+        final String fullname = mFullname.getText().toString().trim();
 
 
         //checking if email and passwords are empty
@@ -87,6 +93,24 @@ public class RegistrationFragment extends Fragment {
             return;
         }
 
+        if (TextUtils.isEmpty(fullname)) {
+            Toast.makeText(getContext(), "Please enter the name", Toast.LENGTH_LONG).show();
+            progressDialog.dismiss();
+            return;
+        }
+
+        if (TextUtils.isEmpty(phonenumber)) {
+            Toast.makeText(getContext(), "Please enter the phone number", Toast.LENGTH_LONG).show();
+            progressDialog.dismiss();
+            return;
+        }
+
+        if (phonenumber.length() != 10) {
+            Toast.makeText(getContext(), "Enter a valid phone number", Toast.LENGTH_LONG).show();
+            progressDialog.dismiss();
+            return;
+        }
+
         //creating a new user
         firebaseAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(Objects.requireNonNull(getActivity()), new OnCompleteListener<AuthResult>() {
@@ -95,10 +119,34 @@ public class RegistrationFragment extends Fragment {
 
                         //checking if success
                         if (task.isSuccessful()) {
+
+                            User user = new User(
+                                    fullname,
+                                    phonenumber,
+                                    email
+                            );
+                            FirebaseDatabase.getInstance().getReference("")
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if (task.isSuccessful()) {
+
+                                    } else {
+                                        Toast.makeText(getContext(), "Registration Failed", Toast.LENGTH_SHORT).show();
+
+                                    }
+
+                                }
+                            });
+
+
                             progressDialog.dismiss();
+                            Toast.makeText(getContext(), "Registration Successfull", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(getContext(), MainActivity.class);
                             Objects.requireNonNull(getContext()).startActivity(intent);
-                            Toast.makeText(getContext(), "success", Toast.LENGTH_SHORT).show();
+
+
                         } else {
                             progressDialog.dismiss();
                             Log.e(TAG, "onComplete: Failed=" + Objects.requireNonNull(task.getException()).getMessage());
