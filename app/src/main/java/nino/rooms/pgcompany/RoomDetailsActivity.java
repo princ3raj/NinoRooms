@@ -48,6 +48,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
     //all variables are for searchactivity intent object
     private String phone_number;
     private String location;
+    private String address;
     private String details;
     private String pg_name;
     private String ac_prices;
@@ -99,6 +100,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
             pg_name = ninoRooms.getPg_name();
             phone_number = ninoRooms.getPhone_number();
             location = ninoRooms.getLocation();
+            address = ninoRooms.getAddress();
             details = ninoRooms.getDetails();
             ac_prices = ninoRooms.getAc_prices();
             non_ac_prices = ninoRooms.getNon_ac_prices();
@@ -123,6 +125,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
             pg_name = mNinoRoomsHistoryObject.getPg_name();
             phone_number = mNinoRoomsHistoryObject.getPhone_number();
             location = mNinoRoomsHistoryObject.getLocation();
+            address = mNinoRoomsHistoryObject.getAddress();
             details = mNinoRoomsHistoryObject.getDetails();
             ac_prices = mNinoRoomsHistoryObject.getAc_prices();
             non_ac_prices = mNinoRoomsHistoryObject.getNon_ac_prices();
@@ -150,6 +153,7 @@ public class RoomDetailsActivity extends AppCompatActivity {
             phone_number = bookmarksObject.getPhone_number();
             location = bookmarksObject.getLocation();
             details = bookmarksObject.getDetails();
+            address = bookmarksObject.getAddress();
             ac_prices = bookmarksObject.getAc_prices();
             non_ac_prices = bookmarksObject.getNon_ac_prices();
             pg_image = bookmarksObject.getPg_image();
@@ -169,12 +173,12 @@ public class RoomDetailsActivity extends AppCompatActivity {
         TextView ac_price = findViewById(R.id.ac_price);
         TextView non_ac_price = findViewById(R.id.non_ac_price);
         TextView details1 = findViewById(R.id.details);
-        TextView location1 = findViewById(R.id.location);
+        TextView address1 = findViewById(R.id.address);
 
 
         //set text to all views
         pg_name1.setText(pg_name);
-        location1.setText(location);
+        address1.setText(address);
         details1.setText(details);
         non_ac_price.setText(String.format("%s%s", getString(R.string.non_ac_price), non_ac_prices));
         ac_price.setText(String.format("%s%s", getString(R.string.ac_price), ac_prices));

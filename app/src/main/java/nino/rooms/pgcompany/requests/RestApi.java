@@ -9,7 +9,7 @@ import retrofit2.http.GET;
 public interface RestApi {
 
     // SEARCH
-    @GET("noida/read.php")
+    @GET("api/")
     Call<List<NinoRooms>> getNinoRooms();
 
 }

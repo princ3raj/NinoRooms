@@ -35,39 +35,10 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         Log.d(TAG, "CustomAdapter:called " + ninoRooms);
     }
 
-    static class CustomViewHolder extends RecyclerView.ViewHolder {
-
-        public final View mView;
-
-        private final TextView pg_name;
-        private final TextView location;
-        private final TextView details;
-        private final TextView ac_prices;
-        private final ImageView pg_image;
-
-        CustomViewHolder(View itemView) {
-            super(itemView);
-            mView = itemView;
-            pg_name = mView.findViewById(R.id.pg_name);
-            location = mView.findViewById(R.id.location);
-            details = mView.findViewById(R.id.details);
-            pg_image = mView.findViewById(R.id.pg_image);
-            ac_prices = mView.findViewById(R.id.ac_price);
-        }
-    }
-
-    @NonNull
-    @Override
-    public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.rooms_item_view, parent, false);
-        return new CustomViewHolder(view);
-    }
-
     @Override
     public void onBindViewHolder(@NonNull CustomViewHolder holder, final int position) {
         holder.pg_name.setText(mNinoRooms.get(position).getPg_name());
-        holder.location.setText(mNinoRooms.get(position).getLocation());
+        holder.address.setText(mNinoRooms.get(position).getAddress());
         holder.details.setText(mNinoRooms.get(position).getDetails());
         holder.ac_prices.setText(mNinoRooms.get(position).getAc_prices());
 
@@ -88,8 +59,37 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         });
     }
 
+    @NonNull
     @Override
-    public  int getItemCount() {
+    public CustomViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        View view = layoutInflater.inflate(R.layout.rooms_item_view, parent, false);
+        return new CustomViewHolder(view);
+    }
+
+    static class CustomViewHolder extends RecyclerView.ViewHolder {
+
+        public final View mView;
+
+        private final TextView pg_name;
+        private final TextView address;
+        private final TextView details;
+        private final TextView ac_prices;
+        private final ImageView pg_image;
+
+        CustomViewHolder(View itemView) {
+            super(itemView);
+            mView = itemView;
+            pg_name = mView.findViewById(R.id.pg_name);
+            address = mView.findViewById(R.id.address);
+            details = mView.findViewById(R.id.details);
+            pg_image = mView.findViewById(R.id.pg_image);
+            ac_prices = mView.findViewById(R.id.ac_price);
+        }
+    }
+
+    @Override
+    public int getItemCount() {
         return mNinoRooms.size();
     }
 

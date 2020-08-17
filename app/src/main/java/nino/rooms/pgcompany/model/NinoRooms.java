@@ -3,7 +3,6 @@ package nino.rooms.pgcompany.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -13,7 +12,6 @@ import com.google.gson.annotations.SerializedName;
 
 @Entity(tableName = "history")
 public class NinoRooms implements Parcelable {
-
 
 
     @PrimaryKey(autoGenerate = true)
@@ -31,12 +29,23 @@ public class NinoRooms implements Parcelable {
     @ColumnInfo(name = "location")
     @SerializedName("location")
     private String location;
+    public static final Creator<NinoRooms> CREATOR = new Creator<NinoRooms>() {
+        @Override
+        public NinoRooms createFromParcel(Parcel in) {
+            return new NinoRooms(in);
+        }
+
+        @Override
+        public NinoRooms[] newArray(int size) {
+            return new NinoRooms[size];
+        }
+    };
     @ColumnInfo(name = "details")
     @SerializedName("details")
-    private  String details;
+    private String details;
     @ColumnInfo(name = "ac_prices")
     @SerializedName("ac_prices")
-    private  String ac_prices;
+    private String ac_prices;
     @ColumnInfo(name = "non_ac_prices")
     @SerializedName("non_ac_prices")
     private String non_ac_prices;
@@ -54,26 +63,19 @@ public class NinoRooms implements Parcelable {
     private String id;
     @ColumnInfo(name = "bookmark")
     private String bookmark;
-    public static final Creator<NinoRooms> CREATOR = new Creator<NinoRooms>() {
-        @Override
-        public NinoRooms createFromParcel(Parcel in) {
-            return new NinoRooms(in);
-        }
-
-        @Override
-        public NinoRooms[] newArray(int size) {
-            return new NinoRooms[size];
-        }
-    };
     @ColumnInfo(name = "history")
     private String history;
+    @ColumnInfo(name = "address")
+    @SerializedName("address")
+    private String address;
 
-    public NinoRooms(int uid, String pg_name, String phone_number, String owner_name, String location, String details, String ac_prices, String non_ac_prices, String pg_image, String pg_image_two, String pg_image_three, String id, String bookmark, String history) {
+    public NinoRooms(int uid, String pg_name, String phone_number, String owner_name, String location, String address, String details, String ac_prices, String non_ac_prices, String pg_image, String pg_image_two, String pg_image_three, String id, String bookmark, String history) {
         this.uid = uid;
         this.pg_name = pg_name;
         this.phone_number = phone_number;
         this.owner_name = owner_name;
         this.location = location;
+        this.address = address;
         this.details = details;
         this.ac_prices = ac_prices;
         this.non_ac_prices = non_ac_prices;
@@ -91,6 +93,7 @@ public class NinoRooms implements Parcelable {
         phone_number = in.readString();
         owner_name = in.readString();
         location = in.readString();
+        address = in.readString();
         details = in.readString();
         ac_prices = in.readString();
         non_ac_prices = in.readString();
@@ -102,6 +105,15 @@ public class NinoRooms implements Parcelable {
         history = in.readString();
     }
 
+    public static Creator<NinoRooms> getCREATOR() {
+        return CREATOR;
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(uid);
@@ -109,6 +121,7 @@ public class NinoRooms implements Parcelable {
         dest.writeString(phone_number);
         dest.writeString(owner_name);
         dest.writeString(location);
+        dest.writeString(address);
         dest.writeString(details);
         dest.writeString(ac_prices);
         dest.writeString(non_ac_prices);
@@ -118,11 +131,6 @@ public class NinoRooms implements Parcelable {
         dest.writeString(id);
         dest.writeString(bookmark);
         dest.writeString(history);
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
     }
 
     public int getUid() {
@@ -163,6 +171,14 @@ public class NinoRooms implements Parcelable {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getDetails() {
@@ -237,7 +253,6 @@ public class NinoRooms implements Parcelable {
         this.history = history;
     }
 
-    @NonNull
     @Override
     public String toString() {
         return "NinoRooms{" +
@@ -246,6 +261,7 @@ public class NinoRooms implements Parcelable {
                 ", phone_number='" + phone_number + '\'' +
                 ", owner_name='" + owner_name + '\'' +
                 ", location='" + location + '\'' +
+                ", address='" + address + '\'' +
                 ", details='" + details + '\'' +
                 ", ac_prices='" + ac_prices + '\'' +
                 ", non_ac_prices='" + non_ac_prices + '\'' +

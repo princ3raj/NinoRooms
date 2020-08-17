@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "56a044352850894be53043e1b98d7f5b",
+    "identityHash": "2e8fa4e98f4090815da24d85f32976d0",
     "entities": [
       {
         "tableName": "history",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `pg_name` TEXT, `phone_number` TEXT, `owner_name` TEXT, `location` TEXT, `details` TEXT, `ac_prices` TEXT, `non_ac_prices` TEXT, `pg_image` TEXT, `pg_image_two` TEXT, `pg_image_three` TEXT, `id` TEXT, `bookmark` TEXT, `history` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `pg_name` TEXT, `phone_number` TEXT, `owner_name` TEXT, `location` TEXT, `address` TEXT, `details` TEXT, `ac_prices` TEXT, `non_ac_prices` TEXT, `pg_image` TEXT, `pg_image_two` TEXT, `pg_image_three` TEXT, `id` TEXT, `bookmark` TEXT, `history` TEXT)",
         "fields": [
           {
             "fieldPath": "uid",
@@ -35,6 +35,12 @@
           {
             "fieldPath": "location",
             "columnName": "location",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "address",
+            "columnName": "address",
             "affinity": "TEXT",
             "notNull": false
           },
@@ -106,7 +112,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '56a044352850894be53043e1b98d7f5b')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '2e8fa4e98f4090815da24d85f32976d0')"
     ]
   }
 }

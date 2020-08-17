@@ -49,8 +49,11 @@ public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter<HistoryRecy
         try {
 
 
+            //i have used address in place of location, otherwise i had to
+            //made changes everywhere
+
             holder.pg_name.setText(mHistories.get(position).getPg_name());
-            holder.location.setText(mHistories.get(position).getLocation());
+            holder.location.setText(mHistories.get(position).getAddress());
             holder.details.setText(mHistories.get(position).getDetails());
             holder.ac_prices.setText(mHistories.get(position).getAc_prices());
 
