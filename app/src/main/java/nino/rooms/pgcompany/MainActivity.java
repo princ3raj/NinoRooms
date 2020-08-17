@@ -15,7 +15,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import nino.rooms.pgcompany.fragments.BookmarkFragment;
 import nino.rooms.pgcompany.fragments.HistoryFragment;
 import nino.rooms.pgcompany.fragments.HomeFragment;
-import nino.rooms.pgcompany.fragments.SettingFragment;
+import nino.rooms.pgcompany.fragments.ProfileFragment;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
     private HomeFragment mHomeFragment;
     private BookmarkFragment mBookmarkFragment;
     private HistoryFragment mHistoryFragment;
-    private SettingFragment mSettingFragment;
+    private ProfileFragment mSettingFragment;
 
 
 
@@ -58,8 +58,8 @@ public class MainActivity extends AppCompatActivity {
 
         mHomeFragment= new HomeFragment();
         mBookmarkFragment=new BookmarkFragment();
-        mHistoryFragment=new HistoryFragment();
-        mSettingFragment=new SettingFragment();
+        mHistoryFragment = new HistoryFragment();
+        mSettingFragment = new ProfileFragment();
 
         setFragment(mHomeFragment);
         bottomNavigation.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

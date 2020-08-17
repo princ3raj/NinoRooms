@@ -14,7 +14,7 @@ import java.util.Objects;
 
 import nino.rooms.pgcompany.R;
 
-public class SettingFragment extends Fragment {
+public class ProfileFragment extends Fragment {
 
 
     @Override
@@ -25,7 +25,7 @@ public class SettingFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_setting, container, false);
+        View view = inflater.inflate(R.layout.fragment_profile, container, false);
         // Hide the status bar.
         View decorView = Objects.requireNonNull(getActivity()).getWindow().getDecorView();
         int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
