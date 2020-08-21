@@ -53,8 +53,8 @@ public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter<HistoryRecy
             //made changes everywhere
 
             holder.pg_name.setText(mHistories.get(position).getPg_name());
-            holder.location.setText(mHistories.get(position).getAddress());
-            holder.details.setText(mHistories.get(position).getDetails());
+            holder.pg_type.setText(mHistories.get(position).getPg_type());
+            holder.address.setText(mHistories.get(position).getAddress());
             holder.ac_prices.setText(mHistories.get(position).getAc_prices());
 
             Picasso.Builder builder = new Picasso.Builder(context);
@@ -81,8 +81,8 @@ public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter<HistoryRecy
 
         final TextView ac_prices;
         final TextView pg_name;
-        final TextView details;
-        final TextView location;
+        final TextView address;
+        final TextView pg_type;
         final ImageView pg_image;
         final OnHistoryListener mOnHistoryListener;
 
@@ -92,8 +92,8 @@ public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter<HistoryRecy
             ac_prices = itemView.findViewById(R.id.ac_price);
             pg_name = itemView.findViewById(R.id.pg_name);
             pg_image = itemView.findViewById(R.id.pg_image);
-            details = itemView.findViewById(R.id.details);
-            location = itemView.findViewById(R.id.location);
+            address = itemView.findViewById(R.id.address);
+            pg_type = itemView.findViewById(R.id.pg_type);
             mOnHistoryListener = onHistoryListener;
 
 

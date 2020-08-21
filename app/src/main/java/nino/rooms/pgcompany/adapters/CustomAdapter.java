@@ -39,7 +39,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
     public void onBindViewHolder(@NonNull CustomViewHolder holder, final int position) {
         holder.pg_name.setText(mNinoRooms.get(position).getPg_name());
         holder.address.setText(mNinoRooms.get(position).getAddress());
-        holder.details.setText(mNinoRooms.get(position).getDetails());
+        holder.pg_type.setText(mNinoRooms.get(position).getPg_type());
         holder.ac_prices.setText(mNinoRooms.get(position).getAc_prices());
 
         Picasso.Builder builder = new Picasso.Builder(context);
@@ -73,7 +73,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
 
         private final TextView pg_name;
         private final TextView address;
-        private final TextView details;
+        private final TextView pg_type;
         private final TextView ac_prices;
         private final ImageView pg_image;
 
@@ -82,7 +82,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             mView = itemView;
             pg_name = mView.findViewById(R.id.pg_name);
             address = mView.findViewById(R.id.address);
-            details = mView.findViewById(R.id.details);
+            pg_type = mView.findViewById(R.id.pg_type);
             pg_image = mView.findViewById(R.id.pg_image);
             ac_prices = mView.findViewById(R.id.ac_price);
         }

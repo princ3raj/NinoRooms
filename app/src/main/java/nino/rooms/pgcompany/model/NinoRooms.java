@@ -29,17 +29,6 @@ public class NinoRooms implements Parcelable {
     @ColumnInfo(name = "location")
     @SerializedName("location")
     private String location;
-    public static final Creator<NinoRooms> CREATOR = new Creator<NinoRooms>() {
-        @Override
-        public NinoRooms createFromParcel(Parcel in) {
-            return new NinoRooms(in);
-        }
-
-        @Override
-        public NinoRooms[] newArray(int size) {
-            return new NinoRooms[size];
-        }
-    };
     @ColumnInfo(name = "details")
     @SerializedName("details")
     private String details;
@@ -68,14 +57,27 @@ public class NinoRooms implements Parcelable {
     @ColumnInfo(name = "address")
     @SerializedName("address")
     private String address;
+    public static final Creator<NinoRooms> CREATOR = new Creator<NinoRooms>() {
+        @Override
+        public NinoRooms createFromParcel(Parcel in) {
+            return new NinoRooms(in);
+        }
 
-    public NinoRooms(int uid, String pg_name, String phone_number, String owner_name, String location, String address, String details, String ac_prices, String non_ac_prices, String pg_image, String pg_image_two, String pg_image_three, String id, String bookmark, String history) {
+        @Override
+        public NinoRooms[] newArray(int size) {
+            return new NinoRooms[size];
+        }
+    };
+    @ColumnInfo(name = "pg_type")
+    @SerializedName("pg_type")
+    private String pg_type;
+
+    public NinoRooms(int uid, String pg_name, String phone_number, String owner_name, String location, String details, String ac_prices, String non_ac_prices, String pg_image, String pg_image_two, String pg_image_three, String id, String bookmark, String history, String address, String pg_type) {
         this.uid = uid;
         this.pg_name = pg_name;
         this.phone_number = phone_number;
         this.owner_name = owner_name;
         this.location = location;
-        this.address = address;
         this.details = details;
         this.ac_prices = ac_prices;
         this.non_ac_prices = non_ac_prices;
@@ -85,6 +87,8 @@ public class NinoRooms implements Parcelable {
         this.id = id;
         this.bookmark = bookmark;
         this.history = history;
+        this.address = address;
+        this.pg_type = pg_type;
     }
 
     protected NinoRooms(Parcel in) {
@@ -93,7 +97,6 @@ public class NinoRooms implements Parcelable {
         phone_number = in.readString();
         owner_name = in.readString();
         location = in.readString();
-        address = in.readString();
         details = in.readString();
         ac_prices = in.readString();
         non_ac_prices = in.readString();
@@ -103,15 +106,8 @@ public class NinoRooms implements Parcelable {
         id = in.readString();
         bookmark = in.readString();
         history = in.readString();
-    }
-
-    public static Creator<NinoRooms> getCREATOR() {
-        return CREATOR;
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
+        address = in.readString();
+        pg_type = in.readString();
     }
 
     @Override
@@ -121,7 +117,6 @@ public class NinoRooms implements Parcelable {
         dest.writeString(phone_number);
         dest.writeString(owner_name);
         dest.writeString(location);
-        dest.writeString(address);
         dest.writeString(details);
         dest.writeString(ac_prices);
         dest.writeString(non_ac_prices);
@@ -131,6 +126,13 @@ public class NinoRooms implements Parcelable {
         dest.writeString(id);
         dest.writeString(bookmark);
         dest.writeString(history);
+        dest.writeString(address);
+        dest.writeString(pg_type);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public int getUid() {
@@ -171,14 +173,6 @@ public class NinoRooms implements Parcelable {
 
     public void setLocation(String location) {
         this.location = location;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
     }
 
     public String getDetails() {
@@ -253,6 +247,23 @@ public class NinoRooms implements Parcelable {
         this.history = history;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPg_type() {
+        return pg_type;
+    }
+
+    public void setPg_type(String pg_type) {
+        this.pg_type = pg_type;
+    }
+
+
     @Override
     public String toString() {
         return "NinoRooms{" +
@@ -261,7 +272,6 @@ public class NinoRooms implements Parcelable {
                 ", phone_number='" + phone_number + '\'' +
                 ", owner_name='" + owner_name + '\'' +
                 ", location='" + location + '\'' +
-                ", address='" + address + '\'' +
                 ", details='" + details + '\'' +
                 ", ac_prices='" + ac_prices + '\'' +
                 ", non_ac_prices='" + non_ac_prices + '\'' +
@@ -271,6 +281,8 @@ public class NinoRooms implements Parcelable {
                 ", id='" + id + '\'' +
                 ", bookmark='" + bookmark + '\'' +
                 ", history='" + history + '\'' +
+                ", address='" + address + '\'' +
+                ", pg_type='" + pg_type + '\'' +
                 '}';
     }
 }
