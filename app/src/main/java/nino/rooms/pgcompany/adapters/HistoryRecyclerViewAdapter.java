@@ -55,7 +55,24 @@ public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter<HistoryRecy
             holder.pg_name.setText(mHistories.get(position).getPg_name());
             holder.pg_type.setText(mHistories.get(position).getPg_type());
             holder.address.setText(mHistories.get(position).getAddress());
-            holder.ac_prices.setText(mHistories.get(position).getAc_prices());
+
+            if (Integer.parseInt(mHistories.get(position).getAc_prices()) == 0) {
+                holder.ac_prices.setText("Not Avail.");
+
+            } else {
+                holder.ac_prices.setText(String.format("Ac:%s", mHistories.get(position).getAc_prices()));
+
+            }
+
+
+            if (Integer.parseInt(mHistories.get(position).getNon_ac_prices()) == 0) {
+                holder.non_ac_prices.setText("NA");
+
+            } else {
+                holder.non_ac_prices.setText(String.format("Non-Ac:%s", mHistories.get(position).getNon_ac_prices()));
+
+            }
+
 
             Picasso.Builder builder = new Picasso.Builder(context);
             builder.downloader(new OkHttp3Downloader(context));
@@ -80,6 +97,7 @@ public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter<HistoryRecy
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         final TextView ac_prices;
+        final TextView non_ac_prices;
         final TextView pg_name;
         final TextView address;
         final TextView pg_type;
@@ -90,6 +108,7 @@ public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter<HistoryRecy
         public ViewHolder(@NonNull View itemView, OnHistoryListener onHistoryListener) {
             super(itemView);
             ac_prices = itemView.findViewById(R.id.ac_price);
+            non_ac_prices = itemView.findViewById(R.id.non_ac_price);
             pg_name = itemView.findViewById(R.id.pg_name);
             pg_image = itemView.findViewById(R.id.pg_image);
             address = itemView.findViewById(R.id.address);

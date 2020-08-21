@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 2,
-    "identityHash": "116c6699817b93b6e3837eb32d3f913c",
+    "identityHash": "d989b6a37acd08b45211ff7f681c6bac",
     "entities": [
       {
         "tableName": "history",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `pg_name` TEXT, `phone_number` TEXT, `owner_name` TEXT, `location` TEXT, `details` TEXT, `ac_prices` TEXT, `non_ac_prices` TEXT, `pg_image` TEXT, `pg_image_two` TEXT, `pg_image_three` TEXT, `id` TEXT, `bookmark` TEXT, `history` TEXT, `address` TEXT, `pg_type` TEXT)",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`uid` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `pg_name` TEXT, `phone_number` TEXT, `owner_name` TEXT, `location` TEXT, `details` TEXT, `pg_type` TEXT, `ac_prices` TEXT, `non_ac_prices` TEXT, `pg_image` TEXT, `pg_image_two` TEXT, `pg_image_three` TEXT, `pg_image_four` TEXT, `pg_image_five` TEXT, `id` TEXT, `bookmark` TEXT, `history` TEXT, `address` TEXT)",
         "fields": [
           {
             "fieldPath": "uid",
@@ -45,6 +45,12 @@
             "notNull": false
           },
           {
+            "fieldPath": "pg_type",
+            "columnName": "pg_type",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
             "fieldPath": "ac_prices",
             "columnName": "ac_prices",
             "affinity": "TEXT",
@@ -75,6 +81,18 @@
             "notNull": false
           },
           {
+            "fieldPath": "pg_image_four",
+            "columnName": "pg_image_four",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "pg_image_five",
+            "columnName": "pg_image_five",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
             "fieldPath": "id",
             "columnName": "id",
             "affinity": "TEXT",
@@ -97,12 +115,6 @@
             "columnName": "address",
             "affinity": "TEXT",
             "notNull": false
-          },
-          {
-            "fieldPath": "pg_type",
-            "columnName": "pg_type",
-            "affinity": "TEXT",
-            "notNull": false
           }
         ],
         "primaryKey": {
@@ -118,7 +130,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '116c6699817b93b6e3837eb32d3f913c')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'd989b6a37acd08b45211ff7f681c6bac')"
     ]
   }
 }

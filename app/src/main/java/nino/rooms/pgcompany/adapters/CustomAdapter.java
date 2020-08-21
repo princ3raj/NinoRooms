@@ -40,7 +40,23 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         holder.pg_name.setText(mNinoRooms.get(position).getPg_name());
         holder.address.setText(mNinoRooms.get(position).getAddress());
         holder.pg_type.setText(mNinoRooms.get(position).getPg_type());
-        holder.ac_prices.setText(mNinoRooms.get(position).getAc_prices());
+        if (Integer.parseInt(mNinoRooms.get(position).getAc_prices()) == 0) {
+            holder.ac_prices.setText("Not Avail.");
+
+        } else {
+            holder.ac_prices.setText(String.format("Ac:%s", mNinoRooms.get(position).getAc_prices()));
+
+        }
+
+
+        if (Integer.parseInt(mNinoRooms.get(position).getNon_ac_prices()) == 0) {
+            holder.non_ac_prices.setText("NA");
+
+        } else {
+            holder.non_ac_prices.setText(String.format("Non-Ac:%s", mNinoRooms.get(position).getNon_ac_prices()));
+
+        }
+
 
         Picasso.Builder builder = new Picasso.Builder(context);
         builder.downloader(new OkHttp3Downloader(context));
@@ -75,6 +91,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         private final TextView address;
         private final TextView pg_type;
         private final TextView ac_prices;
+        private final TextView non_ac_prices;
         private final ImageView pg_image;
 
         CustomViewHolder(View itemView) {
@@ -85,6 +102,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
             pg_type = mView.findViewById(R.id.pg_type);
             pg_image = mView.findViewById(R.id.pg_image);
             ac_prices = mView.findViewById(R.id.ac_price);
+            non_ac_prices = mView.findViewById(R.id.non_ac_price);
         }
     }
 

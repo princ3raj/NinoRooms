@@ -8,7 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -139,11 +138,11 @@ public class HomeFragment extends Fragment {
         });
 
         //searchIcon setup
-        SearchView searchView = view.findViewById(R.id.search_icon);
+        final SearchView searchView = view.findViewById(R.id.search_icon);
         searchView.setOnSearchClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "search is not enabled yet", Toast.LENGTH_SHORT).show();
+
 
             }
         });
@@ -151,13 +150,15 @@ public class HomeFragment extends Fragment {
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                Toast.makeText(mContext, "Search has not been enabled yet", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(getActivity(), SearchResultActivity.class);
+                intent.putExtra("searchquery", "" + query);
+                Objects.requireNonNull(getActivity()).startActivity(intent);
                 return false;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                Toast.makeText(mContext, "Search by place section", Toast.LENGTH_SHORT).show();
+
 
                 return false;
             }

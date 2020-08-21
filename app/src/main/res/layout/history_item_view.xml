@@ -58,12 +58,19 @@
                     android:layout_weight="34"
                     android:visibility="invisible" />
 
+                <View
+
+                    android:layout_width="16dp"
+                    android:layout_height="20dp"
+                    android:layout_weight="7.5"
+                    android:visibility="invisible" />
+
                 <TextView
                     android:id="@+id/ac_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="25"
-                    android:text="Rs.15000"
+                    android:text="Ac:15000"
                     android:textAppearance="@style/pg_name_recycler_view_item" />
 
 
@@ -108,10 +115,11 @@
 
 
                 <TextView
+                    android:id="@+id/non_ac_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="25"
-                    android:text="1 month"
+                    android:text="Non-Ac:4000"
                     android:textAppearance="@style/short_address_style" />
 
 

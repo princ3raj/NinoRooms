@@ -39,6 +39,8 @@ public class RoomDetailsActivity extends AppCompatActivity {
     public static String pg_image;
     public static String pg_image_two;
     public static String pg_image_three;
+    public static String pg_image_four;
+    public static String pg_image_five;
 
     //used this variable to implement odd
     //and even function
@@ -107,6 +109,8 @@ public class RoomDetailsActivity extends AppCompatActivity {
             pg_image = ninoRooms.getPg_image();
             pg_image_two = ninoRooms.getPg_image_two();
             pg_image_three = ninoRooms.getPg_image_three();
+            pg_image_four = ninoRooms.getPg_image_four();
+            pg_image_five = ninoRooms.getPg_image_five();
             mHistoryRepository = new HistoryRepository(this);
             ninoRooms.setHistory("history");
             saveNewHistory(ninoRooms);
@@ -132,6 +136,8 @@ public class RoomDetailsActivity extends AppCompatActivity {
             pg_image = mNinoRoomsHistoryObject.getPg_image();
             pg_image_two = mNinoRoomsHistoryObject.getPg_image_two();
             pg_image_three = mNinoRoomsHistoryObject.getPg_image_three();
+            pg_image_four = mNinoRoomsHistoryObject.getPg_image_four();
+            pg_image_five = mNinoRoomsHistoryObject.getPg_image_five();
             mBookMarkRepository = new HistoryRepository(this);
             test = "yeahOk";
 
@@ -159,6 +165,8 @@ public class RoomDetailsActivity extends AppCompatActivity {
             pg_image = bookmarksObject.getPg_image();
             pg_image_two = bookmarksObject.getPg_image_two();
             pg_image_three = bookmarksObject.getPg_image_three();
+            pg_image_four = bookmarksObject.getPg_image_four();
+            pg_image_five = bookmarksObject.getPg_image_five();
             bookmark = null;
             mBookmarks = findViewById(R.id.bookmark);
             mBookmarks.setImageResource(R.drawable.ic_active_bookmark);
@@ -180,8 +188,24 @@ public class RoomDetailsActivity extends AppCompatActivity {
         pg_name1.setText(pg_name);
         address1.setText(address);
         details1.setText(details);
-        non_ac_price.setText(String.format("%s%s", getString(R.string.non_ac_price), non_ac_prices));
-        ac_price.setText(String.format("%s%s", getString(R.string.ac_price), ac_prices));
+
+        if (Integer.parseInt(non_ac_prices) == 0) {
+            non_ac_price.setText("NA");
+
+        } else {
+            non_ac_price.setText(String.format("%s%s", getString(R.string.non_ac_price), non_ac_prices));
+
+        }
+
+        if (Integer.parseInt(ac_prices) == 0) {
+            ac_price.setText("NA");
+
+
+        } else {
+            ac_price.setText(String.format("%s%s", getString(R.string.ac_price), ac_prices));
+
+
+        }
 
 
         //slider initiliaztion and setup

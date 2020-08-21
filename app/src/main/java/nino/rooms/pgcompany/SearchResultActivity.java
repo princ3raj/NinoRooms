@@ -50,6 +50,7 @@ public class SearchResultActivity extends AppCompatActivity {
     //city name view
     private TextView CityName;
     private String City;
+    private String query;
 
     private RecyclerView recyclerView;
 
@@ -119,7 +120,7 @@ public class SearchResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 progressDialog.show();
-                TestRetrofitClient();
+                TopRoomRetrofitClient();
                 mTop.setTextColor(Color.parseColor("#000000"));
                 mCheapest.setTextColor(Color.parseColor("#C4C4C4"));
                 mComfort.setTextColor(Color.parseColor("#C4C4C4"));
@@ -132,7 +133,7 @@ public class SearchResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 progressDialog.show();
-                TestRetrofitClient();
+                CheapRoomRetrofitClient();
                 mCheapest.setTextColor(Color.parseColor("#000000"));
                 mTop.setTextColor(Color.parseColor("#C4C4C4"));
                 mComfort.setTextColor(Color.parseColor("#C4C4C4"));
@@ -145,7 +146,7 @@ public class SearchResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 progressDialog.show();
-                TestRetrofitClient();
+                TopRoomRetrofitClient();
                 mComfort.setTextColor(Color.parseColor("#000000"));
                 mCheapest.setTextColor(Color.parseColor("#C4C4C4"));
                 mTop.setTextColor(Color.parseColor("#C4C4C4"));
@@ -157,7 +158,7 @@ public class SearchResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 progressDialog.show();
-                TestRetrofitClient();
+                TopRoomRetrofitClient();
                 mRating.setTextColor(Color.parseColor("#000000"));
                 mCheapest.setTextColor(Color.parseColor("#C4C4C4"));
                 mComfort.setTextColor(Color.parseColor("#C4C4C4"));
@@ -168,12 +169,17 @@ public class SearchResultActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         City = intent.getStringExtra("city");
+        query = intent.getStringExtra("searchquery");
+        Log.d(TAG, "onCreate: " + query);
 
 
+        if (query == null) {
 
+            TestRetrofitClient();
 
-        TestRetrofitClient();
-
+        } else {
+            SearchRoomRetrofitClient();
+        }
 
 
     }
@@ -201,6 +207,93 @@ public class SearchResultActivity extends AppCompatActivity {
         RestApi restApi = RetrofitClientInstance.getRetrofitInstance().create(RestApi.class);
 
         Call<List<NinoRooms>> call = restApi.getNinoRooms();
+
+        call.enqueue(new Callback<List<NinoRooms>>() {
+            @Override
+            public void onResponse(@NonNull Call<List<NinoRooms>> call, @NonNull Response<List<NinoRooms>> response) {
+                progressDialog.dismiss();
+                generateDataList(response.body());
+                Log.d(TAG, "onResponse: " + Objects.requireNonNull(response.body()).toString());
+
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<List<NinoRooms>> call, @NonNull Throwable t) {
+                Log.d(TAG, "onFailure: called");
+                progressDialog.dismiss();
+
+                Toast.makeText(SearchResultActivity.this, "Make sure you are connected to internet", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
+
+
+    private void SearchRoomRetrofitClient() {
+
+
+        RestApi restApi = RetrofitClientInstance.getRetrofitInstance().create(RestApi.class);
+
+        Call<List<NinoRooms>> call = restApi.SearchNinoRooms(query);
+
+        call.enqueue(new Callback<List<NinoRooms>>() {
+            @Override
+            public void onResponse(@NonNull Call<List<NinoRooms>> call, @NonNull Response<List<NinoRooms>> response) {
+                progressDialog.dismiss();
+                generateDataList(response.body());
+                Log.d(TAG, "onResponse: " + Objects.requireNonNull(response.body()).toString());
+
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<List<NinoRooms>> call, @NonNull Throwable t) {
+                Log.d(TAG, "onFailure: called");
+                progressDialog.dismiss();
+
+                Toast.makeText(SearchResultActivity.this, "Make sure you are connected to internet", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
+
+
+    private void CheapRoomRetrofitClient() {
+
+
+        RestApi restApi = RetrofitClientInstance.getRetrofitInstance().create(RestApi.class);
+
+        Call<List<NinoRooms>> call = restApi.CheapNinoRooms();
+
+        call.enqueue(new Callback<List<NinoRooms>>() {
+            @Override
+            public void onResponse(@NonNull Call<List<NinoRooms>> call, @NonNull Response<List<NinoRooms>> response) {
+                progressDialog.dismiss();
+                generateDataList(response.body());
+                Log.d(TAG, "onResponse: " + Objects.requireNonNull(response.body()).toString());
+
+            }
+
+            @Override
+            public void onFailure(@NonNull Call<List<NinoRooms>> call, @NonNull Throwable t) {
+                Log.d(TAG, "onFailure: called");
+                progressDialog.dismiss();
+
+                Toast.makeText(SearchResultActivity.this, "Make sure you are connected to internet", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+    }
+
+
+    private void TopRoomRetrofitClient() {
+
+
+        RestApi restApi = RetrofitClientInstance.getRetrofitInstance().create(RestApi.class);
+
+        Call<List<NinoRooms>> call = restApi.TopNinoRooms();
 
         call.enqueue(new Callback<List<NinoRooms>>() {
             @Override

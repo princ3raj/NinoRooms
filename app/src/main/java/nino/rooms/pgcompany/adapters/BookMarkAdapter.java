@@ -52,8 +52,20 @@ public class BookMarkAdapter extends RecyclerView.Adapter<BookMarkAdapter.ViewHo
 
             holder.pg_name.setText(mHistories.get(position).getPg_name());
             holder.location.setText(mHistories.get(position).getAddress());
-//            holder.details.setText(mHistories.get(position).getDetails());
-            holder.ac_prices.setText(mHistories.get(position).getAc_prices());
+
+//
+//            holder.ac_prices.setText(mHistories.get(position).getAc_prices());
+
+
+            if (Integer.parseInt(mHistories.get(position).getNon_ac_prices()) == 0) {
+                holder.non_ac_prices.setText("NA");
+
+            } else {
+                holder.non_ac_prices.setText(mHistories.get(position).getNon_ac_prices());
+
+
+            }
+
 
             Picasso.Builder builder = new Picasso.Builder(context);
             builder.downloader(new OkHttp3Downloader(context));
@@ -82,9 +94,9 @@ public class BookMarkAdapter extends RecyclerView.Adapter<BookMarkAdapter.ViewHo
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        final TextView ac_prices;
+        final TextView non_ac_prices;
         final TextView pg_name;
-        //        TextView details;
+        final TextView ac_prices;
         final TextView location;
         final ImageView pg_image;
         final OnBookMarkListener mOnBookMarkListener;
@@ -92,10 +104,12 @@ public class BookMarkAdapter extends RecyclerView.Adapter<BookMarkAdapter.ViewHo
 
         public ViewHolder(@NonNull View itemView, OnBookMarkListener onBookMarkListener) {
             super(itemView);
-            ac_prices = itemView.findViewById(R.id.ac_price);
+            non_ac_prices = itemView.findViewById(R.id.non_ac_price);
+
             pg_name = itemView.findViewById(R.id.pg_name);
             pg_image = itemView.findViewById(R.id.pg_image);
-//            details = itemView.findViewById(R.id.details);
+
+            ac_prices = itemView.findViewById(R.id.ac_price);
             location = itemView.findViewById(R.id.location);
             mOnBookMarkListener = onBookMarkListener;
 

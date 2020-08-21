@@ -8,7 +8,7 @@ public class MainSliderAdapter extends SliderAdapter {
 
     @Override
     public int getItemCount() {
-        return 3;
+        return 5;
     }
 
     @Override
@@ -22,6 +22,12 @@ public class MainSliderAdapter extends SliderAdapter {
                 break;
             case 2:
                 viewHolder.bindImageSlide(RoomDetailsActivity.pg_image_three);
+                break;
+            case 3:
+                viewHolder.bindImageSlide(RoomDetailsActivity.pg_image_four);
+                break;
+            case 4:
+                viewHolder.bindImageSlide(RoomDetailsActivity.pg_image_five);
                 break;
         }
     }
