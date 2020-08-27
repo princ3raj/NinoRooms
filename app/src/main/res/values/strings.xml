@@ -34,7 +34,7 @@ View all
     <string name="top">Top</string>
     <string name="rooms_found">No Rooms found</string>
     <string name="home">Home</string>
-    <string name="setting">Setting</string>
+    <string name="support">Support</string>
 
     <string name="history_menu">History</string>
     <string name="city">City</string>
@@ -80,6 +80,11 @@ Here Life is a wonderful concept. The facilities and hassle-free accommodation i
     <string name="facilities">Facilities</string>
     <string name="internet">Internet</string>
     <string name="power">Power</string>
+    <string name="ninorooms">NinoRooms</string>
+    <string name="email_us_at">email us at:</string>
+    <string name="support_ninorooms_com">support@ninorooms.com</string>
+    <string name="direct_call_support">Direct Call Support</string>
+    <string name="phone_number_support">+91-960-272-3097</string>
 
 
 </resources>
