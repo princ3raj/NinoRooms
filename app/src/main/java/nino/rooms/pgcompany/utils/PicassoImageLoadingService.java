@@ -21,8 +21,8 @@ public class PicassoImageLoadingService implements ImageLoadingService {
         Picasso.Builder builder = new Picasso.Builder(context);
         builder.downloader(new OkHttp3Downloader(context));
         builder.build().load(url)
-                .placeholder((R.drawable.ic_launcher_background))
-                .error(R.drawable.ic_launcher_background)
+                .placeholder((R.drawable.placeholderimage))
+                .error(R.drawable.placeholderimage)
                 .into(imageView);
     }
 
@@ -36,8 +36,8 @@ public class PicassoImageLoadingService implements ImageLoadingService {
         Picasso.Builder builder = new Picasso.Builder(context);
         builder.downloader(new OkHttp3Downloader(context));
         builder.build().load(url)
-                .placeholder((R.drawable.ic_launcher_background))
-                .error(R.drawable.ic_launcher_background)
+                .placeholder((R.drawable.placeholderimage))
+                .error(R.drawable.placeholderimage)
                 .into(imageView);
 
     }

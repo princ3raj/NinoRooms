@@ -42,7 +42,6 @@ public class SearchResultActivity extends AppCompatActivity {
     private TextView mComfort;
 
 
-
     //Rooms_found
 
     private TextView RoomsFound;
@@ -53,6 +52,8 @@ public class SearchResultActivity extends AppCompatActivity {
     private String query;
 
     private RecyclerView recyclerView;
+    private ImageView empty_view;
+    private CustomAdapter customAdapter;
 
     //progressBar
     ProgressDialog progressDialog;
@@ -190,11 +191,22 @@ public class SearchResultActivity extends AppCompatActivity {
     /*Method to generate List of data using RecyclerView with custom adapter*/
     private void generateDataList(List<NinoRooms> ninoRooms) {
         recyclerView = findViewById(R.id.nino_rooms_view);
+        empty_view = findViewById(R.id.search_empty_view);
         CustomAdapter adapter = new CustomAdapter(this, ninoRooms);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(SearchResultActivity.this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
         int rooms = adapter.getItemCount();
+        if (adapter.getItemCount() == 0) {
+            empty_view.setVisibility(View.VISIBLE);
+            adapter.notifyDataSetChanged();
+
+        } else {
+            empty_view.setVisibility(View.GONE);
+            adapter.notifyDataSetChanged();
+
+        }
+
         RoomsFound.setText(MessageFormat.format("{0} Rooms Found", rooms));
         CityName.setText(City);
 

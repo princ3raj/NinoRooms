@@ -77,8 +77,8 @@ public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter<HistoryRecy
             Picasso.Builder builder = new Picasso.Builder(context);
             builder.downloader(new OkHttp3Downloader(context));
             builder.build().load(mHistories.get(position).getPg_image())
-                    .placeholder((R.drawable.ic_launcher_background))
-                    .error(R.drawable.ic_launcher_background)
+                    .placeholder((R.drawable.placeholderimage))
+                    .error(R.drawable.placeholderimage)
                     .into(holder.pg_image);
 
 

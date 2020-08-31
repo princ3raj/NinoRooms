@@ -20,7 +20,7 @@
             android:id="@+id/pg_image"
             android:layout_width="match_parent"
             android:layout_height="124dp"
-            android:background="@drawable/apartment_resized"
+            android:background="@drawable/placeholderimage"
             android:scaleType="centerCrop"
             android:contentDescription="TODO"
             android:tint="#8F000000" />

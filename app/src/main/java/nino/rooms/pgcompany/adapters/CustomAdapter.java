@@ -61,8 +61,8 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.CustomView
         Picasso.Builder builder = new Picasso.Builder(context);
         builder.downloader(new OkHttp3Downloader(context));
         builder.build().load(mNinoRooms.get(position).getPg_image())
-                .placeholder((R.drawable.ic_launcher_background))
-                .error(R.drawable.ic_launcher_background)
+                .placeholder((R.drawable.placeholderimage))
+                .error(R.drawable.placeholderimage)
                 .into(holder.pg_image);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {

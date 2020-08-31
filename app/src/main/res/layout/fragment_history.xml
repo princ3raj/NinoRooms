@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="#fff"
@@ -57,10 +57,10 @@
             android:layout_centerInParent="true"
             android:layout_marginTop="550dp"
             android:contentDescription="@string/todo"
-            android:src="@drawable/ic_newhistorystate" />
+            android:src="@drawable/ic_new_history_empty_state" />
 
 
     </RelativeLayout>
 
 
-</androidx.core.widget.NestedScrollView>
+</RelativeLayout>

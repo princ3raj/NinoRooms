@@ -53,7 +53,7 @@
                     android:layout_weight="43"
                     android:text="@string/city"
                     android:textColor="#000"
-                    android:textSize="39sp"
+                    android:textSize="24sp"
                     android:textStyle="bold" />
 
                 <View
@@ -222,6 +222,26 @@
 
 
     </androidx.core.widget.NestedScrollView>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp">
+
+
+        <ImageView
+            android:id="@+id/search_empty_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="550dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_no_rooms_found_2"
+            android:visibility="visible" />
+
+
+    </RelativeLayout>
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

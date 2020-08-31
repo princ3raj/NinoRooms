@@ -16,7 +16,7 @@
     <style name="find_deals">
 
         <item name="android:textSize">
-            35sp
+            26sp
         </item>
 
         <item name="android:textColor">
@@ -29,7 +29,7 @@
     <style name="hello_prince">
 
         <item name="android:textSize">
-            16sp
+            10sp
         </item>
 
         <item name="android:textColor">
@@ -48,7 +48,7 @@
     <style name="popular_places">
 
         <item name="android:textSize">
-            23sp
+            18sp
         </item>
 
         <item name="android:textColor">
@@ -66,7 +66,7 @@
     <style name="view_all">
 
         <item name="android:textSize">
-            20sp
+            18sp
         </item>
 
         <item name="android:textColor">
@@ -82,7 +82,7 @@
     <style name="illustrations">
 
         <item name="android:textSize">
-            12sp
+            10sp
         </item>
 
         <item name="android:textColor">
@@ -95,7 +95,7 @@
     <style name="comfort_and_convenience">
 
         <item name="android:textSize">
-            12sp
+            10sp
         </item>
 
         <item name="android:textColor">
@@ -109,7 +109,7 @@
     <style name="food_and_drinks">
 
         <item name="android:textSize">
-            12sp
+            10sp
         </item>
 
         <item name="android:textColor">
@@ -123,7 +123,7 @@
     <style name="pocket_friendly">
 
         <item name="android:textSize">
-            12sp
+            10sp
         </item>
 
         <item name="android:textColor">
@@ -136,7 +136,7 @@
     <style name="just_like_home">
 
         <item name="android:textSize">
-            23sp
+            18sp
         </item>
 
         <item name="android:textColor">
@@ -151,7 +151,7 @@
     <style name="illustration_two_style">
 
         <item name="android:textSize">
-            15sp
+            12sp
         </item>
 
         <item name="android:textColor">
@@ -171,7 +171,7 @@
     <style name="filter_text_view">
 
         <item name="android:textSize">
-            16sp
+            10sp
         </item>
 
         <item name="android:textColor">
@@ -197,7 +197,7 @@
     <style name="pg_name_recycler_view_item">
 
         <item name="android:textSize">
-            20sp
+            14sp
         </item>
 
         <item name="android:textColor">
@@ -228,7 +228,7 @@
     <style name="pg_name">
 
         <item name="android:textSize">
-            24sp
+            18sp
         </item>
 
         <item name="android:textColor">
@@ -257,7 +257,7 @@
     <style name="address">
 
         <item name="android:textSize">
-            16sp
+            14sp
         </item>
 
         <item name="android:textColor">
@@ -271,7 +271,7 @@
     <style name="month">
 
         <item name="android:textSize">
-            16sp
+            14sp
         </item>
 
         <item name="android:textColor">
@@ -300,7 +300,7 @@
     <style name="details_text">
 
         <item name="android:textSize">
-            20sp
+            16sp
         </item>
 
         <item name="android:textColor">
@@ -356,7 +356,7 @@
     <style name="favourites">
 
         <item name="android:textSize">
-            38sp
+            30sp
         </item>
 
         <item name="android:textColor">
@@ -368,7 +368,7 @@
     <style name="last_section">
 
         <item name="android:textSize">
-            14sp
+            12sp
         </item>
 
         <item name="android:textColor">

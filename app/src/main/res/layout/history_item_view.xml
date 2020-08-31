@@ -25,7 +25,7 @@
                 android:layout_height="115dp"
                 android:scaleType="centerCrop"
                 android:contentDescription="TODO"
-                android:src="@drawable/ic_launcher_background" />
+                android:src="@drawable/placeholderimage" />
 
 
             <LinearLayout

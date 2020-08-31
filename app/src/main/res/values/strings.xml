@@ -46,12 +46,11 @@ Remarkable and world-class amenities nearby ranging from health to educational c
 </string>
     <string name="non_ac_price">Non-Ac Rs.</string>
     <string name="ac_price">Ac Rs.</string>
-    <string name="search_hint">Find Locality Near by</string>
+    <string name="search_hint">College, City, Locality...</string>
     <string name="favourites">Favourites</string>
 
     <string name="last_section">
-
-Here Life is a wonderful concept. The facilities and hassle-free accommodation is what makes here life interesting.
+       We, the NinoRooms family, have one purpose: to make everyone feel safe and sound in the warmth and comfort of your homely abode.
 </string>
     <string name="fridge">Fridge</string>
     <string name="machine">Laundry</string>
@@ -70,7 +69,7 @@ Here Life is a wonderful concept. The facilities and hassle-free accommodation i
     <string name="generator">Generator</string>
     <string name="cooler">Cooler</string>
     <string name="what_makes_us_better">What makes us better</string>
-    <string name="ace_divino">Ace Divino</string>
+    <string name="ace_divino">Elite Home</string>
     <string name="rs_7_640">Rs.7,640</string>
     <string name="sector_121_noida">Sector 121, Noida</string>
     <string name="_1_month">1 month</string>
@@ -80,11 +79,20 @@ Here Life is a wonderful concept. The facilities and hassle-free accommodation i
     <string name="facilities">Facilities</string>
     <string name="internet">Internet</string>
     <string name="power">Power</string>
-    <string name="ninorooms">NinoRooms</string>
+    <string name="ninorooms">Nino Rooms</string>
     <string name="email_us_at">email us at:</string>
     <string name="support_ninorooms_com">support@ninorooms.com</string>
     <string name="direct_call_support">Direct Call Support</string>
     <string name="phone_number_support">+91-960-272-3097</string>
+    <string name="registration">Registration</string>
+    <string name="your_email_id">Your Email Id</string>
+    <string name="full_name">Full Name</string>
+    <string name="ninorooms_name">Ninorooms</string>
+    <string name="mobile">Mobile</string>
+    <string name="phone_number">9602723097</string>
+    <string name="register_button_text">Register</string>
+    <string name="your_email_id_signin">Your Email Id</string>
+    <string name="password">Password</string>
 
 
 </resources>
