@@ -58,10 +58,10 @@ public class BookMarkAdapter extends RecyclerView.Adapter<BookMarkAdapter.ViewHo
 
 
             if (Integer.parseInt(mHistories.get(position).getNon_ac_prices()) == 0) {
-                holder.non_ac_prices.setText("NA");
+                holder.non_ac_prices.setText("Not Avail.");
 
             } else {
-                holder.non_ac_prices.setText(mHistories.get(position).getNon_ac_prices());
+                holder.non_ac_prices.setText(String.format("Rs. %s", mHistories.get(position).getNon_ac_prices()));
 
 
             }

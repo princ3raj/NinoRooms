@@ -211,7 +211,7 @@
     <style name="short_address_style">
 
         <item name="android:textSize">
-            16sp
+            14sp
         </item>
 
         <item name="android:textColor">

@@ -66,7 +66,7 @@ public class HistoryRecyclerViewAdapter extends RecyclerView.Adapter<HistoryRecy
 
 
             if (Integer.parseInt(mHistories.get(position).getNon_ac_prices()) == 0) {
-                holder.non_ac_prices.setText("NA");
+                holder.non_ac_prices.setText("Not Avail.");
 
             } else {
                 holder.non_ac_prices.setText(String.format("Non-Ac:%s", mHistories.get(position).getNon_ac_prices()));

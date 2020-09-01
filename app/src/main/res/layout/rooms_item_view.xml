@@ -46,7 +46,7 @@
                     android:id="@+id/pg_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="85"
+                    android:layout_weight="90"
                     android:text="Ajnara Fragnance"
                     android:textAppearance="@style/pg_name_recycler_view_item" />
 
@@ -55,7 +55,7 @@
                     android:id="@+id/ac_price"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="14"
+                    android:layout_weight="8"
                     android:text="Ac:15000"
                     android:textAppearance="@style/pg_name_recycler_view_item" />
 
