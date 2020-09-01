@@ -199,15 +199,18 @@ public class SearchResultActivity extends AppCompatActivity {
         int rooms = adapter.getItemCount();
         if (adapter.getItemCount() == 0) {
             empty_view.setVisibility(View.VISIBLE);
+            RoomsFound.setVisibility(View.GONE);
             adapter.notifyDataSetChanged();
 
         } else {
+            RoomsFound.setText(MessageFormat.format("{0} Rooms Found", rooms));
             empty_view.setVisibility(View.GONE);
             adapter.notifyDataSetChanged();
 
+
         }
 
-        RoomsFound.setText(MessageFormat.format("{0} Rooms Found", rooms));
+
         CityName.setText(City);
 
     }
@@ -233,6 +236,9 @@ public class SearchResultActivity extends AppCompatActivity {
             public void onFailure(@NonNull Call<List<NinoRooms>> call, @NonNull Throwable t) {
                 Log.d(TAG, "onFailure: called");
                 progressDialog.dismiss();
+
+                RoomsFound.setVisibility(View.GONE);
+
 
                 Toast.makeText(SearchResultActivity.this, "Make sure you are connected to internet", Toast.LENGTH_SHORT).show();
             }
@@ -262,6 +268,7 @@ public class SearchResultActivity extends AppCompatActivity {
             public void onFailure(@NonNull Call<List<NinoRooms>> call, @NonNull Throwable t) {
                 Log.d(TAG, "onFailure: called");
                 progressDialog.dismiss();
+                RoomsFound.setVisibility(View.GONE);
 
                 Toast.makeText(SearchResultActivity.this, "Make sure you are connected to internet", Toast.LENGTH_SHORT).show();
             }
@@ -291,6 +298,7 @@ public class SearchResultActivity extends AppCompatActivity {
             public void onFailure(@NonNull Call<List<NinoRooms>> call, @NonNull Throwable t) {
                 Log.d(TAG, "onFailure: called");
                 progressDialog.dismiss();
+                RoomsFound.setVisibility(View.GONE);
 
                 Toast.makeText(SearchResultActivity.this, "Make sure you are connected to internet", Toast.LENGTH_SHORT).show();
             }
@@ -320,6 +328,7 @@ public class SearchResultActivity extends AppCompatActivity {
             public void onFailure(@NonNull Call<List<NinoRooms>> call, @NonNull Throwable t) {
                 Log.d(TAG, "onFailure: called");
                 progressDialog.dismiss();
+                RoomsFound.setVisibility(View.GONE);
 
                 Toast.makeText(SearchResultActivity.this, "Make sure you are connected to internet", Toast.LENGTH_SHORT).show();
             }

@@ -19,7 +19,7 @@
         <ImageView
             android:id="@+id/pg_image"
             android:layout_width="match_parent"
-            android:layout_height="124dp"
+            android:layout_height="140dp"
             android:background="@drawable/placeholderimage"
             android:scaleType="centerCrop"
             android:contentDescription="TODO"
@@ -33,45 +33,90 @@
             android:background="@drawable/ic_active_bookmark"
             android:contentDescription="TODO" />
 
-        <TextView
-            android:id="@+id/pg_name"
-            android:layout_width="wrap_content"
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
             android:layout_marginTop="60dp"
-            android:text="Ajnara Fragnance"
-            android:textAppearance="@style/new_bookmark_pg_name" />
+            android:weightSum="100">
+
+            <View
+
+                android:layout_width="16dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:visibility="invisible" />
 
 
-        <TextView
-            android:id="@+id/non_ac_price"
-            android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/pg_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="79"
+                android:text="Ajnara Fragnance"
+                android:textAppearance="@style/new_bookmark_pg_name" />
+
+
+            <TextView
+                android:id="@+id/non_ac_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="19"
+                android:text="Rs. 15000"
+                android:textAppearance="@style/new_bookmark_pg_name" />
+
+
+            <View
+
+                android:layout_width="16dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:visibility="invisible" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="60dp"
-            android:layout_marginEnd="15dp"
-            android:text="Rs. 15000"
-            android:textAppearance="@style/new_bookmark_pg_name" />
-
-
-        <TextView
-            android:id="@+id/location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
             android:layout_marginTop="90dp"
-            android:text="Sector 121, Noida"
-            android:textAppearance="@style/new_bookmark_address" />
+            android:weightSum="100">
+
+            <View
+
+                android:layout_width="16dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:visibility="invisible" />
 
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="90dp"
-            android:layout_marginEnd="15dp"
-            android:text="1 month"
-            android:textAppearance="@style/new_bookmark_address" />
+            <TextView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="79"
+                android:text="Sector 121, Noida"
+                android:textAppearance="@style/new_bookmark_address" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="19"
+                android:text="1 month"
+                android:textAppearance="@style/new_bookmark_address" />
+
+
+            <View
+
+                android:layout_width="16dp"
+                android:layout_height="20dp"
+                android:layout_weight="1"
+                android:visibility="invisible" />
+
+
+        </LinearLayout>
 
 
     </RelativeLayout>

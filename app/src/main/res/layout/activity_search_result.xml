@@ -48,12 +48,11 @@
                     android:id="@+id/city_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:layout_margin="18dp"
                     android:layout_weight="43"
                     android:text="@string/city"
                     android:textColor="#000"
-                    android:textSize="24sp"
+                    android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <View
@@ -185,11 +184,12 @@
                     android:id="@+id/rooms_found"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="30dp"
+                    android:layout_margin="20dp"
                     android:layout_weight="9"
                     android:background="@drawable/rectangle_four"
                     android:padding="10dp"
                     android:text="@string/rooms_found"
+                    android:visibility="visible"
                     android:textAlignment="center"
                     android:textAppearance="@style/rooms_found" />
 
@@ -237,7 +237,7 @@
             android:layout_centerInParent="true"
             android:layout_marginTop="550dp"
             android:contentDescription="@string/todo"
-            android:src="@drawable/ic_no_rooms_found_2"
+            android:src="@drawable/ic_no_rooms_found"
             android:visibility="visible" />
 
 
