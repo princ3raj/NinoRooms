@@ -93,6 +93,7 @@ Remarkable and world-class amenities nearby ranging from health to educational c
     <string name="register_button_text">Register</string>
     <string name="your_email_id_signin">Your Email Id</string>
     <string name="password">Password</string>
+    <string name="log_out">Log out</string>
 
 
 </resources>

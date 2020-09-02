@@ -1,6 +1,7 @@
 package nino.rooms.pgcompany;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 
@@ -117,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        finish();
+        Log.d(TAG, "onBackPressed: main called");
+        finishAffinity();
     }
 }

@@ -2,6 +2,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:background="#fff">
 
 
@@ -106,6 +107,32 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_id"
         app:layout_constraintVertical_bias="0.0" />
+
+
+    <TextView
+        android:id="@+id/logout"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_margin="30dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/tint_select_room"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="12dp"
+        android:src="@drawable/select_room"
+        android:text="@string/log_out"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:tint="@android:color/transparent"
+        android:tintMode="src_in"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="0.349"
+        tools:layout_gravity="center" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

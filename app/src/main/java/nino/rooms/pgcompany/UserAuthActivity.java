@@ -1,6 +1,8 @@
 package nino.rooms.pgcompany;
 
+
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,6 +17,7 @@ import nino.rooms.pgcompany.fragments.LoginFragment;
 import nino.rooms.pgcompany.fragments.RegistrationFragment;
 
 public class UserAuthActivity extends AppCompatActivity {
+    private static final String TAG = "UserAuthActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,4 +56,15 @@ public class UserAuthActivity extends AppCompatActivity {
             fragmentList.add(fragment);
         }
     }
+
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Log.d(TAG, "onBackPressed: called");
+        finishAffinity();
+
+    }
+
+
 }

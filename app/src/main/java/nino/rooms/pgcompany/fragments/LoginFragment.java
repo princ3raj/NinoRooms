@@ -58,11 +58,21 @@ public class LoginFragment extends Fragment {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
                 if (mFirebaseUser != null) {
-                    Toast.makeText(getContext(), "You are logged in", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getContext(), MainActivity.class));
-                    Objects.requireNonNull(getActivity()).finish();
+
+                    try {
+                        Toast.makeText(getActivity(), "You are logged in", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getActivity(), MainActivity.class);
+                        startActivity(intent);
+
+
+                    } catch (NullPointerException e) {
+                        Log.d(TAG, "onAuthStateChanged: called");
+
+                    }
+
 
                 }
+
 
             }
         };
@@ -113,7 +123,6 @@ public class LoginFragment extends Fragment {
                             progressDialog.dismiss();
                             Intent intent = new Intent(getContext(), MainActivity.class);
                             Objects.requireNonNull(getContext()).startActivity(intent);
-                            Toast.makeText(getContext(), "success", Toast.LENGTH_SHORT).show();
                         } else {
                             progressDialog.dismiss();
                             Log.e(TAG, "onComplete: Failed=" + Objects.requireNonNull(task.getException()).getMessage());
@@ -129,7 +138,16 @@ public class LoginFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        mFirebaseAuth.addAuthStateListener(mAuthStateListener);
-
+        FirebaseAuth.getInstance().addAuthStateListener(mAuthStateListener);
     }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+        if (mAuthStateListener == null) {
+            FirebaseAuth.getInstance().removeAuthStateListener(mAuthStateListener);
+        }
+    }
+
+
 }

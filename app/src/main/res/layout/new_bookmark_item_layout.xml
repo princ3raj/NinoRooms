@@ -52,7 +52,7 @@
                 android:id="@+id/pg_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="79"
+                android:layout_weight="88"
                 android:text="Ajnara Fragnance"
                 android:textAppearance="@style/new_bookmark_pg_name" />
 
@@ -61,7 +61,7 @@
                 android:id="@+id/non_ac_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="19"
+                android:layout_weight="10"
                 android:text="Rs. 15000"
                 android:textAppearance="@style/new_bookmark_pg_name" />
 
