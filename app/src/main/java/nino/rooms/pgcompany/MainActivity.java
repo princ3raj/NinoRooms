@@ -1,8 +1,11 @@
 package nino.rooms.pgcompany;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -15,7 +18,12 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.messaging.FirebaseMessaging;
 
 import nino.rooms.pgcompany.fragments.BookmarkFragment;
 import nino.rooms.pgcompany.fragments.HistoryFragment;
@@ -36,10 +44,9 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
     private HistoryFragment mHistoryFragment;
     private ProfileFragment mSettingFragment;
 
-
-
-
-
+    private FirebaseAuth mFirebaseAuth;
+    private FirebaseAuth.AuthStateListener mAuthStateListener;
+    private String NotificationSubscriber;
 
 
     @Override
@@ -48,6 +55,52 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
         setContentView(R.layout.activity_main);
 
         UpdateHelper.with(this).onUpdateCheck(this).check();
+
+
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        FirebaseUser mFirebaseUser = mFirebaseAuth.getCurrentUser();
+
+        assert mFirebaseUser != null;
+        NotificationSubscriber = mFirebaseUser.getEmail();
+
+
+        assert NotificationSubscriber != null;
+        String UserName = NotificationSubscriber.replace("@gmail.com", "");
+
+
+////        Register for Push Notifications
+//        Pushbots.sharedInstance().registerForRemoteNotifications();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            NotificationChannel channel = new NotificationChannel("MyNotifications", "MyNotifications", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+
+        FirebaseMessaging.getInstance().subscribeToTopic("general")
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        String msg = "Successfull";
+                        if (!task.isSuccessful()) {
+                            msg = "Failed";
+                        }
+
+                    }
+                });
+
+        FirebaseMessaging.getInstance().subscribeToTopic(UserName)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        String msg = "Succesffull";
+                        if (!task.isSuccessful()) {
+                            msg = "Failed";
+                        }
+
+                    }
+                });
+
 
         // Hide the status bar.
         View decorView = getWindow().getDecorView();

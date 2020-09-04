@@ -50,7 +50,7 @@ public class HomeFragment extends Fragment {
         delhiImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "Only Noida is available for now", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "We are not yet here. Coming Soon.", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), SearchResultActivity.class);
                 intent.putExtra("city", "Noida");
                 Objects.requireNonNull(getActivity()).startActivity(intent);
@@ -74,7 +74,7 @@ public class HomeFragment extends Fragment {
         ghaziabadImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "Only Noida is available for now", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "We are not yet here. Coming Soon.", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), SearchResultActivity.class);
                 intent.putExtra("city", "Noida");
                 Objects.requireNonNull(getActivity()).startActivity(intent);
@@ -87,7 +87,7 @@ public class HomeFragment extends Fragment {
         gurgaonImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "Only Noida is available for now", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "We are not yet here. Coming Soon", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), SearchResultActivity.class);
                 intent.putExtra("city", "Noida");
                 Objects.requireNonNull(getActivity()).startActivity(intent);
@@ -100,7 +100,7 @@ public class HomeFragment extends Fragment {
         jaipurImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "Only Noida is available for now", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "We are not yet here. Coming Soon.", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), SearchResultActivity.class);
                 intent.putExtra("city", "Noida");
                 Objects.requireNonNull(getActivity()).startActivity(intent);
@@ -112,7 +112,7 @@ public class HomeFragment extends Fragment {
         kotaImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "Only Noida is available for now", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "We are not yet here. Coming Soon.", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), SearchResultActivity.class);
                 intent.putExtra("city", "Noida");
                 Objects.requireNonNull(getActivity()).startActivity(intent);
@@ -125,7 +125,7 @@ public class HomeFragment extends Fragment {
         bhopalImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(mContext, "Only Noida is available for now", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "We are not yet here. Coming Soon.", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), SearchResultActivity.class);
                 intent.putExtra("city", "Noida");
                 Objects.requireNonNull(getActivity()).startActivity(intent);
@@ -138,7 +138,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(mContext, "Only Noida is available for now", Toast.LENGTH_SHORT).show();
+                Toast.makeText(mContext, "We are not yet here. Coming Soon.", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getActivity(), SearchResultActivity.class);
                 intent.putExtra("city", "Noida");
 

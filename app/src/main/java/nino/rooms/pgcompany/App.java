@@ -11,6 +11,8 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 import java.util.HashMap;
 import java.util.Map;
 
+import io.customerly.Customerly;
+
 import static nino.rooms.pgcompany.utils.UpdateHelper.KEY_UPDATE_ENABLE;
 import static nino.rooms.pgcompany.utils.UpdateHelper.KEY_UPDATE_URL;
 import static nino.rooms.pgcompany.utils.UpdateHelper.KEY_UPDATE_VERSION;
@@ -21,6 +23,14 @@ public class App extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
+//        // Initialize Pushbots Library
+//        Pushbots.sharedInstance().init(this);
+
+        //customerly
+        Customerly.configure(this, "1d42b905");
+        Customerly.setVerboseLogging(BuildConfig.DEBUG);
+
 
         final FirebaseRemoteConfig remoteConfig = FirebaseRemoteConfig.getInstance();
 

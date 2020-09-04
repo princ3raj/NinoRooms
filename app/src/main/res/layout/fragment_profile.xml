@@ -1,8 +1,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
     android:background="#fff">
 
 
@@ -88,14 +88,14 @@
         android:layout_height="wrap_content"
         android:text="@string/direct_call_support"
         android:textAppearance="@style/email"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintBottom_toTopOf="@+id/phone_number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_id"
         app:layout_constraintVertical_bias="0.6" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/phone_number"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
@@ -110,10 +110,42 @@
 
 
     <TextView
+        android:id="@+id/supportbutton"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="15dp"
+        android:adjustViewBounds="true"
+        android:background="@drawable/tint_select_room"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="12dp"
+        android:src="@drawable/select_room"
+        android:text="Live support"
+        android:textAlignment="center"
+        android:textColor="#fff"
+        android:textSize="21sp"
+        android:textStyle="bold"
+        android:tint="@android:color/transparent"
+        android:tintMode="src_in"
+        app:layout_constraintBottom_toTopOf="@+id/logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phone_number"
+        app:layout_constraintVertical_bias="0.26"
+        tools:layout_gravity="center" />
+
+    <TextView
         android:id="@+id/logout"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:layout_margin="30dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
         android:adjustViewBounds="true"
         android:background="@drawable/tint_select_room"
         android:clickable="true"
@@ -129,9 +161,10 @@
         android:tintMode="src_in"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.349"
+        app:layout_constraintTop_toBottomOf="@+id/phone_number"
+        app:layout_constraintVertical_bias="0.643"
         tools:layout_gravity="center" />
 
 
