@@ -29,8 +29,19 @@ Why should you choose NinoRooms?
 
 ### Sneak peek:-
 
-<img src="frame1.png" width="200"/>
+<img src="splash_screen.png" width="400"/>
 
+<img src="frame1.png" width="270"/>
+
+<img src="frame2.png" width="270"/>
+
+<img src="frame3.png" width="270"/>
+
+<img src="frame4.png" width="270"/>
+
+<img src="frame5.png" width="270"/>
+
+<img src="frame6.png" width="270"/>
 
 
 
