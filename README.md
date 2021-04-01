@@ -1,6 +1,6 @@
 # NinoRooms: choose v1.6 branch for installation
 
-### DEMO:-[watch](<iframe width="853" height="480" src="https://www.youtube.com/embed/YIt6e8Sa3dw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>)
+### DEMO:-[watch](https://youtu.be/YIt6e8Sa3dw)
 
 ### Playstore Link:-[install it from here](https://play.google.com/store/apps/details?id=nino.rooms.pgcompany)
 
@@ -26,6 +26,10 @@ Why should you choose NinoRooms?
 - Find Pg's by Universities Locations.
 - View the details and reach out by just clicking on the location.
 - If you find anything confusing about room details, you're only one touch away from contacting the owner.
+
+### Sneak peek:-
+
+<img src="frame1.png" width="200"/>
 
 
 
