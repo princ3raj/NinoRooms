@@ -5,9 +5,9 @@
 ### Playstore Link:-[install it from here](https://play.google.com/store/apps/details?id=nino.rooms.pgcompany)
 
 We, the NinoRooms family, have one purpose: to make everyone feel safe and sound in the warmth and comfort of your homely abode. So we present you with a variety of options, specifically customized to help and satisfy all your needs while bringing you a sense of belongingness with us.
-Why should you choose NinoRooms?
 
-### Specification:-
+
+### Why should you choose NinoRooms?
 - Affordable and cheap Pg's and Rooms for Renting
 - Book Pg's in Several Price range
 - Furnished Rooms with all necessary Amenities
