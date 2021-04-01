@@ -29,7 +29,7 @@ Why should you choose NinoRooms?
 
 ### Sneak peek:-
 
-<img src="splash_screen.png" width="400"/>
+<img src="spalsh_screen.png" width="600"/>
 
 <img src="frame1.png" width="270"/>
 
